@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell -NoProfile -Command \"Add-Type -A 'System.IO.Compression.FileSystem'; [System.IO.Compression.ZipFile]::OpenRead\\('BlightedWorldHeart-v1.0.6.zip'\\).Entries | Select-Object -ExpandProperty FullName\")"
+    ]
+  }
+}

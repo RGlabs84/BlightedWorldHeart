@@ -1,0 +1,10 @@
+{
+    "name": "BlightedWorldHeart",
+    "version_number": "1.0.5",
+    "website_url": "https://discord.gg/GTTCnGS6Ym",
+    "description": "A massive raid-boss mod for Valheim using TheHive prefab. Spawns the Blighted World Heart, summoning endless waves of enemies, unique Sub-Bosses, and dropping dozens of new custom weapons and armors with Poison, Spirit, and Defense affixes.",
+    "dependencies": [
+    "denikson-BepInExPack_Valheim-5.4.2333",
+    "ValheimModding-Jotunn-2.29.0"
+    ]
+}
