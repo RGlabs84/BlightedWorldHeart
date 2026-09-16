@@ -13,17 +13,19 @@ namespace BlightedHeart
         // No Destructible component, no RPC collisions.
         // ============================================================
         private static readonly int RPC_BlightedDamage = "RPC_BlightedHeartDamage".GetStableHashCode();
-        
+
         public float m_health;
         public float m_maxHealth = 2000f;
         private bool m_isDead = false;
-        
+
         public Heightmap.Biome CurrentBiome;
         private float _lastWaveTime;
         private float _waveInterval = 30f;
-        
+
         private bool _subBoss1Spawned = false;
         private bool _subBoss2Spawned = false;
+        public bool SubBoss1Active => m_subBoss1 != null && !m_subBoss1.IsDead();
+        public bool SubBoss2Active => m_subBoss2 != null && !m_subBoss2.IsDead();
         public Character m_subBoss1;
         public Character m_subBoss2;
         
@@ -233,7 +235,14 @@ namespace BlightedHeart
         private void OnDeath()
         {
             Jotunn.Logger.LogInfo("[BlightedHeart] The Blighted World Heart has been destroyed!");
-            
+
+            // NOT the place to record a defeat for BarrkBotExport: OnDeath only runs on whichever peer
+            // currently owns this ZDO, which during an active fight is typically a *player's* client, not
+            // the dedicated server (ownership follows whoever is standing in the zone) - see the "Fires
+            // server-side?" table in PAUSED/TheRavensCall/KILL_TRACKING_FINDINGS.md. BarrkBotExport instead
+            // watches ZDOMan.m_onZDODestroyed, which is broadcast to every peer including the server
+            // regardless of who owned the object.
+
             // Drop loot
             DropLoot();
             
@@ -446,16 +455,7 @@ namespace BlightedHeart
                 GameObject prefab = ZNetScene.instance.GetPrefab(prefabName);
                 if (prefab != null)
                 {
-                    Vector3 spawnPos = transform.position + UnityEngine.Random.insideUnitSphere * 10f;
-                    float height;
-                    if (ZoneSystem.instance.GetSolidHeight(spawnPos, out height))
-                    {
-                        spawnPos.y = height;
-                    }
-                    else
-                    {
-                        spawnPos.y = transform.position.y;
-                    }
+                    Vector3 spawnPos = GetGroundedSpawnPosition(10f);
                     GameObject spawnedEnemy = UnityEngine.Object.Instantiate(prefab, spawnPos, Quaternion.identity);
                     m_spawnedEnemies.Add(spawnedEnemy);
                     spawned++;
@@ -519,6 +519,28 @@ namespace BlightedHeart
             }
         }
 
+        // Solid-height margin vanilla gives the 1.0 Deep North altar (offeraltar_FrozenKing_bossroom), whose
+        // boss room is enclosed. A ray started that far above the Heart finds the room's floor; the default
+        // 1000 m ray starts above the roof and finds the roof instead.
+        private const int IndoorSolidHeightMargin = 4;
+
+        // A random point within `radius` of the Heart (horizontal only), snapped to the ground. The short ray is
+        // tried first so that inside the Deep North boss room spawns land on the floor rather than the roof; in
+        // open terrain it can start below ground on an uphill slope and miss, so the full 1000 m ray is the
+        // fallback there, and the Heart's own height is the last resort exactly as before.
+        private Vector3 GetGroundedSpawnPosition(float radius)
+        {
+            Vector2 offset = UnityEngine.Random.insideUnitCircle * radius;
+            Vector3 spawnPos = transform.position + new Vector3(offset.x, 0f, offset.y);
+            float height;
+            if (ZoneSystem.instance.GetSolidHeight(spawnPos, out height, IndoorSolidHeightMargin) ||
+                ZoneSystem.instance.GetSolidHeight(spawnPos, out height))
+            {
+                spawnPos.y = height;
+            }
+            return spawnPos;
+        }
+
         private void SpawnSubBoss(int index, float maxHealth)
         {
             string subBossPrefabName = GetSubBossForBiome(CurrentBiome);
@@ -530,16 +552,7 @@ namespace BlightedHeart
             
             if (prefab != null)
             {
-                Vector3 spawnPos = transform.position + UnityEngine.Random.insideUnitSphere * 5f;
-                float height;
-                if (ZoneSystem.instance.GetSolidHeight(spawnPos, out height))
-                {
-                    spawnPos.y = height;
-                }
-                else
-                {
-                    spawnPos.y = transform.position.y;
-                }
+                Vector3 spawnPos = GetGroundedSpawnPosition(5f);
                 
                 GameObject subBoss = UnityEngine.Object.Instantiate(prefab, spawnPos, Quaternion.identity);
                 
@@ -572,6 +585,19 @@ namespace BlightedHeart
                 
                 // Attach our subboss component to fix UI overlap
                 subBoss.AddComponent<BlightedSubBoss>();
+
+                // Shadows of Midgard interop: stamp SoM's networked stealth-exemption flag so SoM
+                // leaves sub-bosses entirely alone (no stealth senses, no flee/retreat orders) on
+                // EVERY peer. The BlightedSubBoss component above is AddComponent'd locally and is
+                // not networked, so it cannot protect the sub-boss after ZDO ownership migrates to
+                // another client - the ZDO flag can. The key string is SoM's frozen public API
+                // (ShadowsOfMidgard.StealthExemption.ZDOKey, "present and 1" means exempt); writing
+                // it with SoM absent is one harmless ZDO int.
+                ZNetView subBossView = subBoss.GetComponent<ZNetView>();
+                if (subBossView != null && subBossView.GetZDO() != null)
+                {
+                    subBossView.GetZDO().Set("SoMStealthExempt", 1);
+                }
             
                 if (index == 1) 
                 {
@@ -611,7 +637,7 @@ namespace BlightedHeart
                 case Heightmap.Biome.Plains: return new[] { "Goblin", "Deathsquito" };
                 case Heightmap.Biome.Mistlands: return new[] { "Seeker", "SeekerBrood" };
                 case Heightmap.Biome.AshLands: return new[] { "Charred_Melee", "Charred_Archer" };
-                case Heightmap.Biome.DeepNorth: return new[] { "Wolf", "Hatchling" }; // No unique DeepNorth mobs yet; fallback to Mountain, matching BlightedItemsManager's loot fallback
+                case Heightmap.Biome.DeepNorth: return new[] { "Greydwarf_Frozen", "Skeleton_DeepNorth", "Elaking" }; // all DeepNorth faction, so the wave does not fight itself
                 default: return new[] { "Boar" };
             }
         }
@@ -643,8 +669,7 @@ namespace BlightedHeart
                     options = new[] { "Morgen", "Charred_Melee" };
                     break;
                 case Heightmap.Biome.DeepNorth:
-                    // No unique DeepNorth mobs yet; fallback to Mountain, matching BlightedItemsManager's loot fallback
-                    options = new[] { "Fenring", "StoneGolem" };
+                    options = new[] { "JotunWarrior", "JotunWitch", "Barka", "TrollFrost" };
                     break;
                 default:
                     options = new[] { "Boar" };

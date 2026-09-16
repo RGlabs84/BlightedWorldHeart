@@ -15,6 +15,9 @@ namespace BlightedHeart
         // Maps blighted prefab name -> base vanilla prefab name, so we can resolve
         // vanilla recipe materials after ObjectDB is fully populated.
         private static Dictionary<string, string> _deferredRecipeLookups = new Dictionary<string, string>();
+        // Maps blighted prefab name -> biome it was registered under, so ResolveVanillaRecipeMaterials can tell
+        // whether a recipe still carries exactly the trophy requirements we gave it (see IsUntouchedTrophyOnlyRecipe).
+        private static Dictionary<string, Heightmap.Biome> _deferredRecipeBiomes = new Dictionary<string, Heightmap.Biome>();
         private static bool _recipesResolved = false;
 
         public static void Setup()
@@ -22,37 +25,40 @@ namespace BlightedHeart
             PrefabManager.OnVanillaPrefabsAvailable -= Setup;
             Jotunn.Logger.LogInfo("Setting up Blighted custom items...");
 
-            CreateBiomeItems(Heightmap.Biome.Meadows, 
-                new[] { "Club", "SpearFlint", "Bow" }, 
-                new[] { "ArmorLeatherChest", "ArmorLeatherLegs", "HelmetLeather", "CapeDeerHide", "ShieldWood" });
-                
-            CreateBiomeItems(Heightmap.Biome.BlackForest, 
-                new[] { "SwordBronze", "MaceBronze", "AxeBronze" }, 
+            CreateBiomeItems(Heightmap.Biome.Meadows,
+                new[] { "Club", "SpearFlint", "Bow", "AxeFlint", "KnifeFlint" },
+                new[] { "ArmorLeatherChest", "ArmorLeatherLegs", "HelmetLeather", "CapeDeerHide", "ShieldWood", "ShieldWoodTower" });
+
+            CreateBiomeItems(Heightmap.Biome.BlackForest,
+                new[] { "SwordBronze", "MaceBronze", "AxeBronze", "AtgeirBronze", "SpearBronze", "KnifeCopper", "BowFineWood" },
                 new[] { "ArmorBronzeChest", "ArmorBronzeLegs", "HelmetBronze", "CapeTrollHide", "ShieldBronzeBuckler" });
-                
-            CreateBiomeItems(Heightmap.Biome.Swamp, 
-                new[] { "SwordIron", "MaceIron", "Battleaxe" }, 
-                new[] { "ArmorIronChest", "ArmorIronLegs", "HelmetIron", "ShieldBanded" });
-                
-            CreateBiomeItems(Heightmap.Biome.Mountain, 
-                new[] { "SwordSilver", "BowDraugrFang" }, 
+
+            CreateBiomeItems(Heightmap.Biome.Swamp,
+                new[] { "SwordIron", "MaceIron", "Battleaxe", "AtgeirIron", "BowHuntsman" },
+                new[] { "ArmorIronChest", "ArmorIronLegs", "HelmetIron", "ShieldBanded", "ShieldIronTower", "ShieldIronSquare", "ShieldBoneTower", "ShieldSerpentscale" });
+
+            CreateBiomeItems(Heightmap.Biome.Mountain,
+                new[] { "SwordSilver", "BowDraugrFang", "MaceSilver", "KnifeSilver", "SpearWolfFang" },
                 new[] { "ArmorWolfChest", "ArmorWolfLegs", "HelmetDrake", "CapeWolf", "ShieldSilver" });
-                
-            CreateBiomeItems(Heightmap.Biome.Plains, 
-                new[] { "SwordBlackmetal", "MaceNeedle", "AtgeirBlackmetal" }, 
-                new[] { "ArmorPaddedCuirass", "ArmorPaddedGreaves", "HelmetPadded", "CapeLox", "ShieldBlackmetal" });
-                
-            CreateBiomeItems(Heightmap.Biome.Mistlands, 
-                new[] { "SwordMistwalker", "BowSpineSnap" }, 
-                new[] { "ArmorCarapaceChest", "ArmorCarapaceLegs", "HelmetCarapace", "CapeFeather", "ShieldCarapace" });
-                
-            CreateBiomeItems(Heightmap.Biome.AshLands, 
-                new[] { "SwordFlametal", "MaceFlametal" }, 
-                new[] { "ArmorFlametalChest", "ArmorFlametalLegs", "HelmetFlametal", "CapeAsh", "ShieldFlametal" });
-                
-            CreateBiomeItems(Heightmap.Biome.DeepNorth, 
-                new[] { "SwordSilver", "BowDraugrFang" }, 
-                new[] { "ArmorWolfChest", "ArmorWolfLegs", "HelmetDrake", "CapeWolf", "ShieldSilver" }); // Fallback
+
+            CreateBiomeItems(Heightmap.Biome.Plains,
+                new[] { "SwordBlackmetal", "MaceNeedle", "AtgeirBlackmetal", "AxeBlackMetal" },
+                new[] { "ArmorPaddedCuirass", "ArmorPaddedGreaves", "HelmetPadded", "CapeLox", "ShieldBlackmetal", "ShieldBlackmetalTower" });
+
+            CreateBiomeItems(Heightmap.Biome.Mistlands,
+                new[] { "SwordMistwalker", "BowSpineSnap", "AtgeirHimminAfl", "CrossbowArbalest" },
+                new[] { "ArmorCarapaceChest", "ArmorCarapaceLegs", "HelmetCarapace", "CapeFeather", "ShieldCarapace", "ShieldCarapaceBuckler" });
+
+            CreateBiomeItems(Heightmap.Biome.AshLands,
+                new[] { "AxeJotunBane", "THSwordKrom", "AxeBerzerkr", "MaceEldner", "SwordNiedhogg", "SpearSplitner", "BowAshlands" }, // SwordFlametal/MaceFlametal were removed from the game in 1.0
+                new[] { "ArmorFlametalChest", "ArmorFlametalLegs", "HelmetFlametal", "CapeAsh", "ShieldFlametal", "ShieldFlametalTower", "ArmorAshlandsMediumChest", "ArmorAshlandsMediumlegs", "HelmetAshlandsMediumHood" });
+
+            // Valheim 1.0 Deep North set: the Frost-Fire imbued gold weapons (the biome's signature element),
+            // the Heavy and Medium armor lines, the cape and the three gold shields. The Mage line
+            // (piece_magetable) is left out, matching Mistlands/Ashlands which skip their mage gear too.
+            CreateBiomeItems(Heightmap.Biome.DeepNorth,
+                new[] { "SwordGold_FrostFire", "MaceGold_FrostFire", "AxeGold_FrostFire", "AtgeirGold_FrostFire", "SpearGold_FrostFire", "KnifeGold_FrostFire", "BowGold_FrostFire", "CrossbowGold_FrostFire", "THSwordGold_FrostFire", "BattleaxeGold_FrostFire", "FistGold_FrostFire", "SledgeGold_FrostFire" },
+                new[] { "ArmorDeepNorthHeavyChest", "ArmorDeepNorthHeavylegs", "HelmetDNHeavy", "ArmorDeepNorthMediumChest", "ArmorDeepNorthMediumlegs", "HelmetDNMediumHood", "CapeDeepNorth", "ShieldGold", "ShieldGoldBuckler", "ShieldGoldTower" });
             
             Jotunn.Logger.LogInfo("Blighted custom items created.");
         }
@@ -129,13 +135,23 @@ namespace BlightedHeart
             }
         }
 
-        private static string GetStationName(string basePrefab)
+        // Station is keyed off which biome's array this base item was placed in, not the prefab name -
+        // substring guesses (e.g. "Contains(Silver)") broke on real vanilla names like AtgeirHimminAfl
+        // (a Mistlands weapon that happens to cost Silver) and SpearWolfFang (Mountain, no tier keyword
+        // in its name at all), silently downgrading them to the wrong crafting station.
+        private static string GetStationName(Heightmap.Biome biome)
         {
-            if (basePrefab.Contains("Carapace") || basePrefab.Contains("Flametal") || basePrefab.Contains("Mistwalker") || basePrefab.Contains("SpineSnap") || basePrefab.Contains("Ash") || basePrefab.Contains("Feather"))
-                return "blackforge";
-            if (basePrefab.Contains("Bronze") || basePrefab.Contains("Iron") || basePrefab.Contains("Silver") || basePrefab.Contains("Blackmetal") || basePrefab.Contains("Banded") || basePrefab.Contains("Padded") || basePrefab.Contains("Needle") || basePrefab.Contains("DraugrFang") || basePrefab.Contains("Battleaxe") || basePrefab.Contains("Drake"))
-                return "forge";
-            return "piece_workbench";
+            switch (biome)
+            {
+                case Heightmap.Biome.Meadows:
+                    return "piece_workbench";
+                case Heightmap.Biome.Mistlands:
+                case Heightmap.Biome.AshLands:
+                case Heightmap.Biome.DeepNorth:
+                    return "blackforge";
+                default:
+                    return "forge";
+            }
         }
 
         private static string[] GetBiomeTrophies(Heightmap.Biome biome)
@@ -149,7 +165,7 @@ namespace BlightedHeart
                 case Heightmap.Biome.Plains: return new[] { "TrophyGoblin", "TrophyDeathsquito" };
                 case Heightmap.Biome.Mistlands: return new[] { "TrophySeeker", "TrophyTick" };
                 case Heightmap.Biome.AshLands: return new[] { "TrophyCharredMelee", "TrophyCharredArcher" };
-                case Heightmap.Biome.DeepNorth: return new[] { "TrophyWolf", "TrophyHatchling" };
+                case Heightmap.Biome.DeepNorth: return new[] { "TrophyElaking", "TrophyWrithan" };
                 default: return new[] { "TrophyBoar", "TrophyNeck" };
             }
         }
@@ -163,13 +179,6 @@ namespace BlightedHeart
         {
             if (_recipesResolved) return;
 
-            if (BlightedHeartPlugin.IsWackyDBInstalled)
-            {
-                Jotunn.Logger.LogInfo("WackyDB Recipe Compatibility mode is active. Skipping vanilla recipe material injection.");
-                _recipesResolved = true;
-                return;
-            }
-
             if (ObjectDB.instance == null)
             {
                 // Don't latch _recipesResolved here — retry on the next OnSpawned call (e.g. respawn)
@@ -181,6 +190,18 @@ namespace BlightedHeart
             _recipesResolved = true;
             int resolved = 0;
             int failed = 0;
+            int leftToYaml = 0;
+            int leftToSync = 0;
+
+            // With WackyDB installed the admin may own some Blighted recipes through YAML. Only those are left
+            // alone; every other Blighted recipe gets its normal upgrade materials, same as without WackyDB.
+            // (1.0.6-1.0.10 skipped injection for ALL recipes whenever WackyDB was merely present, which made
+            // every upgrade cost two trophies and nothing else.)
+            bool wackyDb = BlightedHeartPlugin.IsWackyDBInstalled;
+            if (wackyDb)
+            {
+                Jotunn.Logger.LogInfo($"WackyDB detected: {WackyDbCompat.RecipeYamlCount} recipe YAML(s) under '{WackyDbCompat.RecipesDir}'. Blighted recipes named there are left to the YAML.");
+            }
 
             foreach (var kvp in _deferredRecipeLookups)
             {
@@ -191,6 +212,27 @@ namespace BlightedHeart
                 Recipe blightedRecipe = ObjectDB.instance.m_recipes.FirstOrDefault(
                     r => r != null && r.m_item != null && r.m_item.gameObject.name == blightedName);
                 if (blightedRecipe == null) continue;
+
+                if (wackyDb)
+                {
+                    // A YAML on this machine names the recipe (Jotunn's "Recipe_<prefab>", or whatever WackyDB
+                    // renamed the object to if it replaced it): the admin owns it, never inject on top.
+                    if (WackyDbCompat.HasRecipeYaml("Recipe_" + blightedName) || WackyDbCompat.HasRecipeYaml(blightedRecipe.name))
+                    {
+                        leftToYaml++;
+                        continue;
+                    }
+
+                    // No YAML here, but the recipe no longer carries exactly the trophy requirements we registered.
+                    // WackyDB is server-authoritative and syncs its YAML to clients in memory - it never lands on a
+                    // client's disk - so this is what a server-side YAML looks like from a client. Same rule: leave it.
+                    Heightmap.Biome biome;
+                    if (_deferredRecipeBiomes.TryGetValue(blightedName, out biome) && !IsUntouchedTrophyOnlyRecipe(blightedRecipe, biome))
+                    {
+                        leftToSync++;
+                        continue;
+                    }
+                }
 
                 // Find the vanilla recipe
                 Recipe vanillaRecipe = ObjectDB.instance.m_recipes.FirstOrDefault(
@@ -208,16 +250,43 @@ namespace BlightedHeart
                     ? new List<Piece.Requirement>(blightedRecipe.m_resources)
                     : new List<Piece.Requirement>();
 
+                // Carry over exactly what vanilla charges to UPGRADE the base item, never what it charges to
+                // craft it: a Blighted item is never crafted, so a one-off crafting ingredient (0 per level -
+                // in 1.0 that is every Deep North Mold*, plus things like the Chain in a wolf chest) is skipped
+                // rather than turned into a per-level cost as the old max(1, amount/2) rule did.
+                //
+                // 1.0's UpgraderN{Weapon,Armor} entries are the Refinement Forge's (CraftingStation.m_upgrader)
+                // business: vanilla ignores them at a forge and at the Refinement Forge counts ONLY them, where an
+                // upgrade can also fail or destroy the item. Copied without the flag (as 1.0.10 did) they turned
+                // into "1 Upgrader per level at the forge". Off by default they are dropped, so Blighted items
+                // upgrade exactly as before 1.0; opted in they are copied verbatim, flag included, and the item
+                // is refinable for the same 1 Upgrader per level as its base item.
+                bool refinementForge = BlightedConfigManager.AllowRefinementForgeUpgrades.Value;
                 foreach (var res in vanillaRecipe.m_resources)
                 {
                     if (res.m_resItem == null) continue;
-                    int perLevel = res.m_amountPerLevel > 0 ? res.m_amountPerLevel : Mathf.Max(1, res.m_amount / 2);
+
+                    if (res.m_upgraderResource)
+                    {
+                        if (!refinementForge) continue;
+                        existingResources.Add(new Piece.Requirement()
+                        {
+                            m_resItem = res.m_resItem,
+                            m_amount = res.m_amount,
+                            m_amountPerLevel = res.m_amountPerLevel,
+                            m_upgraderResource = true,
+                            m_recover = res.m_recover
+                        });
+                        continue;
+                    }
+
+                    if (res.m_amountPerLevel <= 0) continue;
 
                     existingResources.Add(new Piece.Requirement()
                     {
                         m_resItem = res.m_resItem,
                         m_amount = 0,           // Cannot be crafted (0 cost at level 1)
-                        m_amountPerLevel = perLevel,
+                        m_amountPerLevel = res.m_amountPerLevel,
                         m_recover = true
                     });
                 }
@@ -226,7 +295,14 @@ namespace BlightedHeart
                 resolved++;
             }
 
-            Jotunn.Logger.LogInfo($"Resolved vanilla recipe materials for {resolved} blighted items ({failed} could not be resolved).");
+            if (wackyDb)
+            {
+                Jotunn.Logger.LogInfo($"Resolved vanilla recipe materials for {resolved} blighted items ({failed} could not be resolved, {leftToYaml} left to WackyDB YAML on disk, {leftToSync} left to WackyDB server-synced YAML).");
+            }
+            else
+            {
+                Jotunn.Logger.LogInfo($"Resolved vanilla recipe materials for {resolved} blighted items ({failed} could not be resolved).");
+            }
 
             // Validate all blighted recipes in ObjectDB to ensure none have corrupted
             // fields that would crash vanilla's GetAvailableRecipes foreach loop.
@@ -291,6 +367,30 @@ namespace BlightedHeart
             }
         }
 
+        /// <summary>
+        /// True if the recipe still has exactly the requirements CreateWeaponVariant/CreateArmorVariant gave it:
+        /// one entry per biome trophy, 0 at level 1, 2 per level, nothing else. Any difference means something
+        /// (in practice a WackyDB YAML) has already rewritten the recipe, and we must not add materials on top.
+        /// Order-insensitive so a YAML that merely re-lists the same trophies still counts as untouched.
+        /// </summary>
+        private static bool IsUntouchedTrophyOnlyRecipe(Recipe recipe, Heightmap.Biome biome)
+        {
+            string[] trophies = GetBiomeTrophies(biome);
+            var resources = recipe.m_resources;
+            if (resources == null || resources.Length != trophies.Length) return false;
+
+            var seen = new HashSet<string>();
+            foreach (var res in resources)
+            {
+                if (res == null || res.m_resItem == null) return false;
+                if (res.m_amount != 0 || res.m_amountPerLevel != 2) return false;
+
+                string name = res.m_resItem.gameObject.name;
+                if (System.Array.IndexOf(trophies, name) < 0 || !seen.Add(name)) return false;
+            }
+            return true;
+        }
+
         private static string CreateWeaponVariant(Heightmap.Biome biome, string basePrefab, string suffixId, string suffixName, string effectDescription, float scale, System.Action<ItemDrop.ItemData.SharedData> modify)
         {
             string newName = $"Blighted{biome}_{basePrefab}_{suffixId}";
@@ -329,6 +429,7 @@ namespace BlightedHeart
 
             // Track for deferred vanilla recipe resolution
             _deferredRecipeLookups[newName] = basePrefab;
+            _deferredRecipeBiomes[newName] = biome;
 
             // Add trophy requirements for upgrades
             foreach (string trophy in trophies)
@@ -345,7 +446,7 @@ namespace BlightedHeart
             {
                 Item = newName,
                 Amount = 1,
-                CraftingStation = GetStationName(basePrefab),
+                CraftingStation = GetStationName(biome),
                 Enabled = true,
                 Requirements = reqs.ToArray()
             });
@@ -386,6 +487,7 @@ namespace BlightedHeart
 
             // Track for deferred vanilla recipe resolution
             _deferredRecipeLookups[newName] = basePrefab;
+            _deferredRecipeBiomes[newName] = biome;
 
             // Add trophy requirements for upgrades
             foreach (string trophy in trophies)
@@ -402,7 +504,7 @@ namespace BlightedHeart
             {
                 Item = newName,
                 Amount = 1,
-                CraftingStation = GetStationName(basePrefab),
+                CraftingStation = GetStationName(biome),
                 Enabled = true,
                 Requirements = reqs.ToArray()
             });
@@ -494,6 +596,12 @@ namespace BlightedHeart
             return true;
         }
 
+        // Blighted items are drop-only: every recipe is built with a 0 cost at level 1 so it exists purely
+        // to drive the Upgrade tab. This filter is the ONLY thing keeping those free recipes out of the
+        // Craft tab, so it must run regardless of which other mods are loaded. In particular it must NOT
+        // be bypassed for WackyDB - that bypass (1.0.6-1.0.10) put all 326 recipes in the Craft tab at zero
+        // cost. It is already YAML-safe: IsRecipeFreeAtLevel1 only hides recipes that are literally free, so
+        // an admin who gives a Blighted item a real level-1 cost in WackyDB YAML still sees it as craftable.
         [HarmonyPatch(typeof(Player), nameof(Player.GetAvailableRecipes))]
         [HarmonyPostfix]
         [HarmonyPriority(Priority.Last)]
@@ -501,7 +609,6 @@ namespace BlightedHeart
         {
             try
             {
-                if (BlightedHeartPlugin.IsWackyDBInstalled) return;
                 if (__instance != null && __instance.NoCostCheat()) return;
 
                 if (available != null && InventoryGui.instance != null && InventoryGui.instance.InCraftTab())
@@ -520,12 +627,15 @@ namespace BlightedHeart
             }
         }
 
+        // Upgrader-station requirements (1.0 UpgraderN items, m_upgraderResource) are skipped: vanilla never
+        // counts them at a station with a Craft tab, so their amount of 1 does not make the item cost anything
+        // to craft - the recipe is still free there and must still be hidden.
         private static bool IsRecipeFreeAtLevel1(Recipe r)
         {
             if (r.m_resources == null || r.m_resources.Length == 0) return true;
             foreach (var req in r.m_resources)
             {
-                if (req != null && req.m_amount > 0) return false;
+                if (req != null && !req.m_upgraderResource && req.m_amount > 0) return false;
             }
             return true;
         }
@@ -546,11 +656,13 @@ namespace BlightedHeart
                 r => r != null && r.m_item != null && r.m_item.gameObject.name == prefabName);
             if (recipe == null || recipe.m_resources == null) return;
 
+            // m_knownMaterial is keyed by the item's m_shared.m_name (what IsKnownMaterial and recipe
+            // discovery look up), not the prefab name.
             foreach (var res in recipe.m_resources)
             {
-                if (res.m_resItem != null)
+                if (res.m_resItem != null && res.m_resItem.m_itemData != null && res.m_resItem.m_itemData.m_shared != null)
                 {
-                    __instance.m_knownMaterial.Add(res.m_resItem.gameObject.name);
+                    __instance.m_knownMaterial.Add(res.m_resItem.m_itemData.m_shared.m_name);
                 }
             }
         }

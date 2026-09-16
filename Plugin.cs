@@ -16,21 +16,26 @@ namespace BlightedHeart
     {
         public const string PluginGUID = "wubarrk.blightedworldheart";
         public const string PluginName = "BlightedWorldHeart";
-        public const string PluginVersion = "1.0.7";
+        public const string PluginVersion = "1.1.0";
 
         public static bool IsWackyDBInstalled = false;
+        public static BlightedHeartPlugin Instance;
 
         private readonly Harmony _harmony = new Harmony(PluginGUID);
 
         private void Awake()
         {
+            Instance = this;
+
             // Set up config
             BlightedConfigManager.SetupConfig(this);
 
-            IsWackyDBInstalled = BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("WackyMole.WackysDatabase");
+            // Matched IGNORING CASE - Chainloader.PluginInfos is ordinal/case-sensitive, so a plugin that
+            // re-cases its own GUID between releases silently stops being detected. See PluginLookup.
+            IsWackyDBInstalled = PluginLookup.IsLoaded("WackyMole.WackysDatabase");
             if (IsWackyDBInstalled)
             {
-                Jotunn.Logger.LogInfo("Wacky's Database detected! Enabling WackyDB compatibility mode for Blighted items.");
+                Jotunn.Logger.LogInfo("Wacky's Database detected! Blighted recipes that have a WackyDB recipe YAML are left to that YAML; all others get their normal upgrade costs.");
             }
 
             // Prefab Manager Hook

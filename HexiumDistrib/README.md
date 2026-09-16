@@ -30,11 +30,11 @@ The Blighted World Heart is a living, adapting nightmare. It bends the very envi
 ## ✨ Epic Features
 * **The Blighted World Heart**: A corrupted monstrosity summoned via dark sacrifices. Once awakened, it unleashes an unrelenting, endless tide of foes. Survive, or be consumed!
 * **Nightmarish Sub-Bosses**: As the Heart bleeds, it calls forth scaled-up champions of the horde (e.g., furious 2-Star Loxes, titanic Trolls, and terrifying Seekers) that must be slaughtered to proceed.
-* **Legendary Custom Loot System**: Triumph over the Heart to claim the ultimate prize: Blighted Gear. Discover over **200+** incredibly rare, unique Blighted variations of Vanilla weapons and armors, forged in the heat of battle!
+* **Legendary Custom Loot System**: Triumph over the Heart to claim the ultimate prize: Blighted Gear. Discover over **360+** incredibly rare, unique Blighted variations of Vanilla weapons and armors, forged in the heat of battle — including the full Valheim 1.0 Deep North set of Frost-Fire gold weapons and Deep North armor!
 * **Dynamic Multiplayer Scaling**: The spoils of war grow with your warband. The Heart guarantees 3 legendary loot drops upon its destruction, plus 1 additional artifact for every Viking brother or sister who stood by your side.
 * **Fully Server Authoritative & Synced**: Forged for dedicated realms. Every brutal config value is locked in server-side and automatically synchronized via Jotunn.
 * **Sleek Custom UI**: Keep your eyes on the prize with a beautifully dynamic Boss Health Bar that relentlessly tracks the Heart and its summoned Sub-Bosses.
-* **Wacky's Database Compatibility**: Safely customize the stats, recipes, and requirements of any Blighted Item using Wacky's Database! WackyDB is auto-detected on startup, handing full authoritative control of Blighted Items over to your YAML configurations.
+* **Wacky's Database Compatibility**: Safely customize the stats, recipes, and requirements of any Blighted Item using Wacky's Database! WackyDB is auto-detected on startup, handing full authoritative control of Blighted Items over to your YAML configurations. A Blighted recipe with a WackyDB YAML (`name: Recipe_Blighted...`) is left entirely to that YAML; every other Blighted recipe keeps its normal upgrade cost. Blighted items stay drop-only (hidden from the Craft tab) until you give one a real level-1 cost in its recipe YAML — then it becomes craftable.
 
 ---
 
@@ -65,6 +65,9 @@ Bend the nightmare to your will via BepInEx config or Jotunn's Configuration Man
 * **Summoning Sacrifices**: Demand greater tributes! Customize the specific items and quantities required to invoke the Heart in any territory.
 * **Loot Scaling**: Master the economy of war by adjusting the power curve of Blighted gear dropped across different biomes.
 
+### 📡 BarrkBOT Metrics Export
+Server admins can optionally enable a read-only status file (`BepInEx/config/BlightedHeart/barrkbot_blightedheart.json`) reporting per-biome raid state — active/inactive, current Heart health %, active Sub-Bosses, and lifetime summon/defeat counts — for external tools like BarrkBOT to read. World/event data only; no player data is written. Toggle it in the `BarrkBOT Export` config section. On a dedicated server the lifetime summon/defeat counts and biomes are reliable everywhere; the live `active` / health % / Sub-Boss fields are only populated while the Heart is instantiated on the server itself, which a dedicated server only does near the world origin.
+
 ### 🕯️ Default Sacrifice Requirements
 By default, corrupting an altar requires **1x of the local Boss's unique drop**.
 
@@ -76,7 +79,8 @@ By default, corrupting an altar requires **1x of the local Boss's unique drop**.
 | 🏔️ **Mountain** | 1x Dragon Tear |
 | 🌾 **Plains** | 1x Yagluth Thing |
 | 🌫️ **Mistlands** | 1x Queen Drop |
-| 🔥 **Ashlands & Deep North** | 1x Fader Drop |
+| 🔥 **Ashlands** | 1x Fader Drop |
+| ❄️ **Deep North** | 1x Sacrificial Blood (Kall Fimbulbringer's drop) |
 
 > _Note: These items and quantities can be completely customized in the configuration file!_
 
@@ -87,3 +91,10 @@ By default, corrupting an altar requires **1x of the local Boss's unique drop**.
 2. Install **Jotunn**.
 3. Extract the `BlightedHeart.dll` file into your `BepInEx/plugins` folder.
 4. Prepare for battle!
+
+<br>
+<small>
+
+**License:** MIT — use, modify, and redistribute freely, including commercially; just keep the copyright notice. See `LICENSE.md` for the full text.
+
+</small>

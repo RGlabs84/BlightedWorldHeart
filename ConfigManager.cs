@@ -27,6 +27,9 @@ namespace BlightedHeart
         public static ConfigEntry<bool> EnableWaveAnnouncement;
         public static ConfigEntry<MessageHud.MessageType> WaveAnnouncementLocation;
         public static ConfigEntry<float> MagicDamageMultiplier;
+        public static ConfigEntry<bool> AllowRefinementForgeUpgrades;
+        public static ConfigEntry<bool> EnableBarrkBotExport;
+        public static ConfigEntry<float> BarrkBotExportIntervalSeconds;
 
         public static void SetupConfig(BlightedHeartPlugin plugin)
         {
@@ -37,6 +40,10 @@ namespace BlightedHeart
             EnableWaveAnnouncement = plugin.Config.Bind("General", "Enable Wave Announcement", true, new ConfigDescription("Toggle for wave spawn text.", null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
             WaveAnnouncementLocation = plugin.Config.Bind("General", "Wave Announcement Location", MessageHud.MessageType.Center, new ConfigDescription("Where the wave text displays.", null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
             MagicDamageMultiplier = plugin.Config.Bind("General", "Magic Damage Multiplier", 0.25f, new ConfigDescription("Damage multiplier for elemental/magic damage (Fire, Frost, Lightning, Poison, Spirit, Pure) against the Blighted Heart.", null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            AllowRefinementForgeUpgrades = plugin.Config.Bind("General", "Allow Refinement Forge Upgrades", false, new ConfigDescription("Valheim 1.0 only. Also let Blighted items be upgraded at the Refinement Forge (Upgrade Station) with the same Upgrader item as their base item - including past max quality, with vanilla's chance to FAIL or DESTROY the item. Off: Blighted items upgrade only at the normal station with trophies + materials, exactly as before 1.0.", null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+
+            EnableBarrkBotExport = plugin.Config.Bind("BarrkBOT Export", "Enable BarrkBOT Export", true, new ConfigDescription("Write a per-biome raid status file to BepInEx/config/BlightedHeart/barrkbot_blightedheart.json for external tools (e.g. BarrkBOT) to read. Server-side only; off means nothing is written.", null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            BarrkBotExportIntervalSeconds = plugin.Config.Bind("BarrkBOT Export", "Export Interval Seconds", 30f, new ConfigDescription("How often the BarrkBOT export file is rewritten.", new AcceptableValueRange<float>(15f, 600f), new ConfigurationManagerAttributes { IsAdminOnly = true }));
 
 
             // Setup per-biome configuration
@@ -47,7 +54,7 @@ namespace BlightedHeart
             SetupBiomeConfig(plugin, Heightmap.Biome.Plains, 20700f, 0.5f, 0.2f, 5175f, 8625f, 3.5f, 10, 8f, "YagluthDrop", 1);
             SetupBiomeConfig(plugin, Heightmap.Biome.Mistlands, 27600f, 0.5f, 0.2f, 6900f, 11500f, 4.5f, 11, 8f, "QueenDrop", 1);
             SetupBiomeConfig(plugin, Heightmap.Biome.AshLands, 34500f, 0.5f, 0.2f, 8625f, 14375f, 5.5f, 12, 8f, "FaderDrop", 1);
-            SetupBiomeConfig(plugin, Heightmap.Biome.DeepNorth, 43125f, 0.5f, 0.2f, 10350f, 17250f, 6.0f, 13, 8f, "FaderDrop", 1);
+            SetupBiomeConfig(plugin, Heightmap.Biome.DeepNorth, 43125f, 0.5f, 0.2f, 10350f, 17250f, 6.0f, 13, 8f, "FrozenKingDrop", 1); // Kall Fimbulbringer's drop (1.0 Deep North boss)
             
             // Allow Server Admins to change the config
             // Let Jotunn and BepInEx handle automatic saving

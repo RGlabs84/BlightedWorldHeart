@@ -74,24 +74,42 @@ namespace BlightedHeart
                 yield break;
             }
 
-            Vector3 spawnPos = bowl.transform.position + Vector3.up * 1f;
+            // Same placement rules as vanilla OfferingBowl.GetSpawnPosition/CanSpawnBoss, read off the altar
+            // itself. The 1.0 Deep North altar (offeraltar_FrozenKing_bossroom) sits inside the enclosed
+            // DN_Bossroom and carries an explicit spawn point plus m_getSolidHeightMargin = 4; the old fixed
+            // "bowl + 1 m, then a 1000 m solid-height ray" started that ray above the room and put the Heart
+            // on its roof. Every older altar keeps the default 1000 m margin, so nothing changes for them.
+            Vector3 spawnPos;
+            bool hasSpawnPoint = bowl.m_spawnPoints != null && bowl.m_spawnPoints.Count > 0 && bowl.m_spawnPoints[0] != null;
+            if (hasSpawnPoint)
+            {
+                spawnPos = bowl.m_spawnPoints[0].transform.position;
+            }
+            else
+            {
+                Vector3 areaOffset = bowl.transform.localToWorldMatrix * bowl.m_spawnAreaOffset;
+                spawnPos = bowl.transform.position + areaOffset + Vector3.up * 1f;
+            }
 
             Heightmap.Biome spawnBiome = Heightmap.FindBiome(spawnPos);
 
             // If we are in the Swamp, the altar is inside a giant skull. 
             // We want to move the boss outside the skull to avoid it getting stuck.
             // We use the player's position to determine which way is "out".
-            if (spawnBiome == Heightmap.Biome.Swamp && user != null)
+            if (spawnBiome == Heightmap.Biome.Swamp && user != null && !hasSpawnPoint)
             {
                 Vector3 dirToUser = user.transform.position - bowl.transform.position;
                 dirToUser.y = 0; // horizontal only
                 spawnPos += dirToUser.normalized * 12f; // Push it 12 units outwards
             }
 
-            float solidHeight;
-            if (ZoneSystem.instance.GetSolidHeight(spawnPos, out solidHeight))
+            if (bowl.m_enableSolidHeightCheck)
             {
-                spawnPos.y = solidHeight;
+                float solidHeight;
+                if (ZoneSystem.instance.GetSolidHeight(spawnPos, out solidHeight, bowl.m_getSolidHeightMargin))
+                {
+                    spawnPos.y = solidHeight + bowl.m_spawnYOffset;
+                }
             }
             // Trigger build-up effects (sparkling, lightning, etc.)
             if (bowl.m_spawnBossStartEffects != null)
