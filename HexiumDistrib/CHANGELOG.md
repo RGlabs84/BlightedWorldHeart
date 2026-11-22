@@ -7,6 +7,68 @@
 
 ---
 
+## 🟢 [1.2.0]
+
+### ✨ New
+- **Six Hive Sub-Bosses of the Heart's own** replace the borrowed vanilla champions: the **Hive Brute** (a Troll), the **Rootstalker** (a Wolf), the **Gorgemaw** (a Lox), the **Eyeblight Seer** (a Greydwarf Shaman), the **Barkbound Husk** (a Draugr) and the **Broodhusk** (a Seeker). Each is the real creature, with its own moves and attacks, overgrown by the Hive: bark crust and moss, roots, dead branches, clusters of glowing eyes, its skin sickened and veined with blight.
+- Each altar calls its own: Meadows the Rootstalker, Black Forest the Seer or the Brute, Swamp the Husk, Mountain the Rootstalker or the Brute, Plains the Gorgemaw, Mistlands the Broodhusk; the Ashlands and Deep North altars any of the six. Their health is still the per-altar Sub-Boss HP setting.
+- They take on the Heart's biome colour, as the Heart does. They are never tameable, never breed, and drop nothing.
+
+### 🛠️ Fixed
+- **Summons no longer fight each other.** The Heart's waves mix creatures from different vanilla factions (Greydwarfs with Skeletons in the Black Forest, Wolves with Drakes in the Mountains), and vanilla makes those factions enemies, so at the Elder's altar half the wave turned on the other half instead of you. Everything the Heart summons, waves and Sub-Bosses alike, now joins the **Blighted** faction: allied with each other (their attacks no longer hit one another either) and hostile to everyone and everything else, including players, tames, wildlife, other monsters and other bosses. Training dummies are left alone.
+- The faction is stored on the creature itself, so it holds when the creature changes hands between players (someone logs off mid-fight) and when its area unloads and reloads.
+
+### ⚙️ Added
+- `General > Blighted Faction` (admin-only, default on). Turn it off to give summons their vanilla factions back.
+
+### 🔁 Compatibility
+- Everyone must update together: server and every client need 1.2.0.
+
+## 🟢 [1.1.4]
+
+### 🛠️ Changed
+- Store page only: the README is rewritten to the new layout and is now the same on every store; the website link now goes to https://ravenirongames.com/.
+- No change to the mod: `BlightedHeart.dll` is the same file as in 1.1.3.
+
+## 🟢 [1.1.3]
+
+### 🛠️ Changed
+- **Rebuilt for Valheim 1.0.21.** Rebuilt against the Valheim 1.0.21 game assemblies (network version 41) on BepInExPack 5.4.2360, and re-verified: static reference check clean against both the client and dedicated-server assemblies, and the mod boots on a real 1.0.21 dedicated server. The patches this mod relies on (`Character.OnDeath`, `Character.Damage`, `Player.GetAvailableRecipes` and the other `Player` recipe hooks, `OfferingBowl`) were re-read against 1.0.21; the only changes under them are the game's new cheat-flag bookkeeping, so there is no source change and no behaviour change.
+- Website link moved to https://www.rossgilsonlabs.dev.
+- The BepInExPack dependency is now `denikson-BepInExPack_Valheim-5.4.2360`.
+- Everyone must update together: server and every client must run 1.0.21 and the same mod version.
+
+## 🟢 [1.1.2]
+
+### 🛠️ Fixed
+- **Recipe-unlock popup spam.** Every Blighted recipe is free at level 1 (they exist to drive the Upgrade tab), so the moment you learned a crafting station - or raised its level - the game unlocked that station's whole Blighted set at once and queued a "New recipe" popup (and a message-log line) for every one: 39 on a workbench, 159 on a forge, 169 on a black forge, one after another for minutes. The recipes still unlock (that is what lists a Blighted item in the Upgrade tab) but silently. Picking up a Blighted item you have not seen before still shows the normal single "New item" popup.
+
+### ⚖️ Changed
+- **Heart tougher, Sub-Bosses weaker - rebalanced defaults.** At the Black Forest (Elder) altar the Heart went down far too fast while its Sub-Bosses hit far too hard for their tier. Every default is now `per-tier unit x biome tier`, so all eight biomes, and the Heart-to-Sub-Boss relationship, stay proportional to each other:
+
+  | Biome | Heart HP | Sub-Boss 1 HP | Sub-Boss 2 HP |
+  | :--- | ---: | ---: | ---: |
+  | Meadows | 12,000 | 500 | 800 |
+  | Black Forest | 24,000 | 1,000 | 1,600 |
+  | Swamp | 36,000 | 1,500 | 2,400 |
+  | Mountain | 48,000 | 2,000 | 3,200 |
+  | Plains | 72,000 | 3,000 | 4,800 |
+  | Mistlands | 96,000 | 4,000 | 6,400 |
+  | Ashlands | 120,000 | 5,000 | 8,000 |
+  | Deep North | 150,000 | 6,250 | 10,000 |
+
+  The Heart is about 3.5x tougher (12,000 per tier, was 3,450) - it is a stationary target that takes full damage from everyone, so it has to out-last a mobile vanilla boss. Sub-Bosses have roughly 45% less HP (500 / 800 per tier, was 862.5 / 1,437.5) and are now sized like a 1-star / 2-star vanilla elite of their biome instead of a fixed 25% / 42% of the Heart, which would have grown with it.
+- **Sub-Boss damage is now a setting, and lower by default.** Sub-Bosses were hard-coded to level 3, which adds +100% to all their damage. New `General / Sub-Boss Level` (default **2**, +50%; each level above 1 adds +50%).
+- **Existing config files are upgraded automatically, once.** BepInEx writes every default into the cfg file, so an existing server would otherwise keep the old numbers forever. On first start, any Boss HP / Sub-Boss 1 HP / Sub-Boss 2 HP still on its old default is moved to the new one; a value you changed yourself is never touched. The log lists each entry it moved, and a hidden `Defaults Revision` entry makes sure it only ever happens once.
+- **Boss HP range widened** from 100 - 100,000 to 100 - 1,000,000. The new Ashlands and Deep North defaults are above the old cap, which would have silently clamped them.
+
+---
+
+## 🟢 [1.1.1]
+
+### 🛠️ Fixed
+- **Valheim 1.0.16 compatibility.** Rebuilt for Valheim 1.0.16 (client build 25527674 / dedicated server build 25527701, network version 40). No gameplay code changed and nothing about the mod behaves differently: every hook this mod places on the game resolves on 1.0.16 exactly as before. Verified by a static reference check against the 1.0.16 client and dedicated-server assemblies and by loading on a real 1.0.16 dedicated server.
+
 ## 🟢 [1.1.0]
 
 ### ✨ Added

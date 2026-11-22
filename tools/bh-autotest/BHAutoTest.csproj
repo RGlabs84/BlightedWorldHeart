@@ -1,0 +1,55 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- BHAutoTest: the unattended in-game test driver for BlightedHeart (README.md in this folder). Never ships.
+       Ported from Runic's tools/runic-autotest (itself a port of Better Continents' BCAutoTest): the Runic playbook.
+       BlightedHeart.csproj excludes tools/**, so this project never leaks into the mod build.
+       Build (always through the RAM gate):
+         ~/valheim-testbed/heavy.sh 4G bh-autotest bash -c "dotnet build tools/bh-autotest/BHAutoTest.csproj -c Release"
+       Output: tools/bh-autotest/bin/BHAutoTest.dll -->
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <AssemblyName>BHAutoTest</AssemblyName>
+    <RootNamespace>BHAutoTest</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>false</ImplicitUsings>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Deterministic>true</Deterministic>
+    <DebugType>portable</DebugType>
+    <OutputPath>bin/</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <NoWarn>$(NoWarn);CS0618;CS0649;CS8632;CS0436</NoWarn>
+    <LibsTools Condition="'$(LibsTools)' == '' And Exists('$(MSBuildProjectDirectory)/../../../libs-Tools/assembly_valheim.dll')">$(MSBuildProjectDirectory)/../../../libs-Tools</LibsTools>
+    <LibsTools Condition="'$(LibsTools)' == ''">$(HOME)/WubarrkCODING/libs-Tools</LibsTools>
+    <!-- The mod under test, as built by BlightedHeart.csproj. -->
+    <ModDll Condition="'$(ModDll)' == ''">$(MSBuildProjectDirectory)/../../bin/Release/net48/BlightedHeart.dll</ModDll>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.1" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- BlightedHeart itself, publicized: the driver calls its internals directly, so a rename is a BUILD error here. -->
+    <Reference Include="BlightedHeart"><HintPath>$(ModDll)</HintPath><Publicize>true</Publicize><Private>false</Private></Reference>
+    <Reference Include="Jotunn"><HintPath>$(LibsTools)/Jotunn.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="assembly_valheim"><HintPath>$(LibsTools)/assembly_valheim.dll</HintPath><Publicize>true</Publicize><Private>false</Private></Reference>
+    <Reference Include="assembly_utils"><HintPath>$(LibsTools)/assembly_utils.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="assembly_guiutils"><HintPath>$(LibsTools)/assembly_guiutils.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Splatform"><HintPath>$(LibsTools)/Splatform.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="BepInEx"><HintPath>$(LibsTools)/BepInEx.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="0Harmony"><HintPath>$(LibsTools)/0Harmony.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Newtonsoft.Json"><HintPath>$(LibsTools)/Newtonsoft.Json.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="netstandard"><HintPath>$(LibsTools)/netstandard.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine"><HintPath>$(LibsTools)/UnityEngine.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(LibsTools)/UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.PhysicsModule"><HintPath>$(LibsTools)/UnityEngine.PhysicsModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.AudioModule"><HintPath>$(LibsTools)/UnityEngine.AudioModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule"><HintPath>$(LibsTools)/UnityEngine.ParticleSystemModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.AnimationModule"><HintPath>$(LibsTools)/UnityEngine.AnimationModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.IMGUIModule"><HintPath>$(LibsTools)/UnityEngine.IMGUIModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.UIModule"><HintPath>$(LibsTools)/UnityEngine.UIModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.UI"><HintPath>$(LibsTools)/UnityEngine.UI.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Unity.TextMeshPro"><HintPath>$(LibsTools)/Unity.TextMeshPro.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+</Project>

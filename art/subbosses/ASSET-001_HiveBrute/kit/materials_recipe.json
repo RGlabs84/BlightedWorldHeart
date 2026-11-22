@@ -1,0 +1,44 @@
+{
+ "_about": "ASSET-001 Hive Brute STEP 3: the material recipe for every part (runtime = our COPIES of the vanilla materials; nothing vanilla is edited). Colours are multipliers; 'linear' = SetVector, 'srgb' = SetColor (Runic lesson 25).",
+ "body (Troll Body)": {
+  "material": "copy of the Troll material",
+  "albedo": "repaint: read _MainTex back, apply kit/repaint/repaint.json with kit/repaint/troll_hive_mask.png (R bark, G extremities, B veins, A roots + mouth slit) and kit/repaint/troll_moss_mask.png (R moss); write a texture copy at 1024",
+  "emission": "_EmissionMap = mask B x blight_colour (repaint.json), _EmissionColor white x emission_strength 0.9, _EMISSION on",
+  "hair": "Hair renderer disabled"
+ },
+ "lump (TheHive /Visual/low)": {
+  "material": "copy of TheHive_Mat",
+  "_MossAlpha": 0.5,
+  "emission": "off (_EmissiveTex mask left dark)",
+  "mesh": "clone + kit/deform/lump_offsets.json (positions) + kit/deform/lump_uv_offsets.json (UV0), RecalculateNormals/Bounds"
+ },
+ "eye (eye_globe)": {
+  "material": "copy of TheHive_Eye",
+  "_Color": "x0.18 (dark wet base), Glossiness 0.88",
+  "_EmissionMap": "kit/eye/eye_globe_core_pupil_mask.png R (core) - the pupil (G) is 0 in R",
+  "_MainTex": "darken by (1 - 0.92 x mask G) where the pupil is (texture copy)",
+  "_EmissionColor": "linear (1.0, 0.28, 0.04) x 10"
+ },
+ "sack (GuckSack)": {
+  "material": "copy of the GuckSack material",
+  "_EmissionMap": "its own _MainTex",
+  "_EmissionColor": "linear (0.25, 1.0, 0.06) x 3"
+ },
+ "fangs (Troll Body islands: claws + teeth)": {
+  "material": "copy of the Troll material",
+  "_Color": "srgb (0.62, 0.45, 0.22)",
+  "vertex colours": "kit/vertex_colors/fangs.json (multiply albedo; needs a vertex-colour-aware shader, or bake into a small texture copy)"
+ },
+ "roots (root07, catacomb)": {
+  "material": "copy of the root07 material",
+  "_Color": "x0.35 (dark)",
+  "emission": "x0.25 of vanilla"
+ },
+ "branches (gd_king Elder islands)": {
+  "material": "copy of Elder_mat",
+  "_MainTex": "texture copy: saturation x0.2, then x(0.17, 0.145, 0.115) (weathered grey-brown, the pink out)",
+  "emission": "off",
+  "Glossiness": 0.15
+ },
+ "biome tint (BlightedWorldHeartAI.ApplyBiomeVisuals)": "OWNER DECISION: as coded it sets _Color = biome tint AND _EmissionColor = tint x2 on EVERY renderer - see previews/final_biome_blackforest_panel.png (left: _Color only, right: as coded - the whole Brute glows flat purple). Recommendation: exclude the sub-bosses, or tint _Color only."
+}

@@ -239,7 +239,7 @@ namespace BlightedHeart
             // NOT the place to record a defeat for BarrkBotExport: OnDeath only runs on whichever peer
             // currently owns this ZDO, which during an active fight is typically a *player's* client, not
             // the dedicated server (ownership follows whoever is standing in the zone) - see the "Fires
-            // server-side?" table in PAUSED/TheRavensCall/KILL_TRACKING_FINDINGS.md. BarrkBotExport instead
+            // server-side?" table in PAUSED/TheRavensCall-OLD-1.2.1/KILL_TRACKING_FINDINGS.md. BarrkBotExport instead
             // watches ZDOMan.m_onZDODestroyed, which is broadcast to every peer including the server
             // regardless of who owned the object.
 
@@ -362,7 +362,7 @@ namespace BlightedHeart
             }
         }
 
-        private Color GetBiomeColor(Heightmap.Biome biome)
+        internal static Color GetBiomeColor(Heightmap.Biome biome)   // shared with the Sub-Bosses (BlightedSubBosses)
         {
             switch (biome)
             {
@@ -459,6 +459,9 @@ namespace BlightedHeart
                     GameObject spawnedEnemy = UnityEngine.Object.Instantiate(prefab, spawnPos, Quaternion.identity);
                     m_spawnedEnemies.Add(spawnedEnemy);
                     spawned++;
+
+                    // Join the Heart's faction so mixed-faction waves fight the players, not each other
+                    BlightedFaction.Join(spawnedEnemy);
                     
                     // Remove standard vanilla loot from summoned wave enemies
                     var charDrops = spawnedEnemy.GetComponentsInChildren<CharacterDrop>(true);
@@ -578,13 +581,16 @@ namespace BlightedHeart
                 Character character = subBoss.GetComponent<Character>();
                 if (character != null)
                 {
-                    character.SetLevel(3);
+                    character.SetLevel(BlightedConfigManager.SubBossLevel.Value);
                     character.SetMaxHealth(maxHealth);
                     character.SetHealth(maxHealth);
                 }
                 
                 // Attach our subboss component to fix UI overlap
                 subBoss.AddComponent<BlightedSubBoss>();
+
+                // Join the Heart's faction: allied with the waves, hostile to everything else
+                BlightedFaction.Join(subBoss);
 
                 // Shadows of Midgard interop: stamp SoM's networked stealth-exemption flag so SoM
                 // leaves sub-bosses entirely alone (no stealth senses, no flee/retreat orders) on
@@ -597,6 +603,8 @@ namespace BlightedHeart
                 if (subBossView != null && subBossView.GetZDO() != null)
                 {
                     subBossView.GetZDO().Set("SoMStealthExempt", 1);
+                    // Every peer tints the Sub-Boss to the biome it was summoned in (BlightedSubBossLook reads this).
+                    subBossView.GetZDO().Set(BlightedSubBosses.ZdoBiome, (int)CurrentBiome);
                 }
             
                 if (index == 1) 
@@ -644,6 +652,11 @@ namespace BlightedHeart
 
         private string GetSubBossForBiome(Heightmap.Biome biome)
         {
+            // 1.2.0: the Hive Sub-Bosses (owner's biome mapping, BlightedSubBosses). The vanilla lists below stay as the
+            // fallback if a clone could not be registered.
+            string ours = BlightedSubBosses.PickFor(biome);
+            if (ours != null) return ours;
+
             string[] options;
             switch (biome)
             {

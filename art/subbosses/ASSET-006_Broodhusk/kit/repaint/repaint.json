@@ -1,0 +1,44 @@
+{
+ "about": "ASSET-006 early repaint recipe: the Hive Brute's method (kit_tools/troll_repaint.py) scaled to the Seeker (distances / 2.5). Mask = repaint/brood_hive_mask.png in the Seeker's UV0 (R bark from the crust, G: the wings (1) and the darkened leg ends, B blight veins + the brood glow halo = emission, A dark roots); lines at 2048, box-filtered to 1024.",
+ "sick_mix": 0.35,
+ "sick_skin": [
+  0.42,
+  0.4,
+  0.28
+ ],
+ "bark_tint": [
+  0.75,
+  0.56,
+  0.36
+ ],
+ "infection_margin_darken": 0.45,
+ "extremity_darken": 0.4,
+ "bark_texture": "olivetree_trunk01 (TheHive_Mat _MainTex), triplanar in rest-pose metres, tile 0.48 m",
+ "wings": {
+  "recolour": "torn bark-skin: luminance x [0.36, 0.27, 0.19] (the orange membrane goes dark leathery brown) x the bark grain at 40 %, ragged holes: alpha 0 where a 3-octave noise > 0.42 within the outer half of the wing",
+  "hole_threshold": 0.42
+ },
+ "seeker_emission": 0.15,
+ "seeker_emission_note": "multiplier on its own blood-orange _EmissionColor (it lit the pincers and wing veins orange)",
+ "mandibles": {
+  "recolour": "its own pincers and teeth: min(luminance / mean, 1.3) x [0.36, 0.27, 0.14] (dirty yellow-brown)"
+ },
+ "root_colour": [
+  0.03,
+  0.025,
+  0.02
+ ],
+ "vein_albedo": [
+  0.05,
+  0.06,
+  0.02
+ ],
+ "blight_colour": [
+  0.42,
+  0.55,
+  0.12
+ ],
+ "emission_strength_preview": 0.85,
+ "brood_halo": "0.5 x smoothstep(0.16, 0.04 m) round each brood cell, in the emission mask",
+ "mask_size": "1024 (lines at 2048)"
+}

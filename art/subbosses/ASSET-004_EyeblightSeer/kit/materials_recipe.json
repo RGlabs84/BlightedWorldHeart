@@ -1,0 +1,84 @@
+{
+ "_about": "seer STEP 3 (2026-11-22): material recipe per material (our COPIES of vanilla materials), read back from the scene after step3_post.py. Colours are linear multipliers on the albedo; 'notes' say what step 3 changed.",
+ "repaint": "see repaint/repaint.json + the masks in repaint/ (body _MainTex repainted at runtime)",
+ "biome tint (ApplyBiomeVisuals)": "OWNER DECISION pending: previews/final_biome_blackforest_panel.png (left _Color only, right as coded)",
+ "Elder_branch": {
+  "users": 2,
+  "albedo_multipliers": [
+   [
+    0.3,
+    0.27,
+    0.24
+   ]
+  ],
+  "roughness": 0.95,
+  "emission_strength": 0.0,
+  "notes": "branch; matte (glossiness ~0.05), emission off"
+ },
+ "Shaman_repaint": {
+  "users": 1,
+  "albedo_multipliers": [
+   [
+    1.0,
+    1.0,
+    1.0
+   ]
+  ],
+  "roughness": 0.71,
+  "emission_strength": 1.0
+ },
+ "TheHive_Mat": {
+  "users": 9,
+  "albedo_multipliers": [
+   [
+    1.0,
+    0.826,
+    0.458
+   ]
+  ],
+  "roughness": 1.0,
+  "emission_strength": 0.0,
+  "notes": "crust: _MossAlpha 0.5"
+ },
+ "TrollFang_dirtyyellow": {
+  "users": 11,
+  "albedo_multipliers": [
+   [
+    0.547,
+    0.397,
+    0.194
+   ]
+  ],
+  "roughness": 0.76,
+  "emission_strength": 0.0
+ },
+ "V_TheHive_Eye_core": {
+  "users": 23,
+  "albedo_multipliers": [
+   [
+    0.18,
+    0.117,
+    0.032
+   ],
+   [
+    1.0,
+    0.28,
+    0.04
+   ]
+  ],
+  "roughness": 0.12,
+  "emission_strength": 0.0
+ },
+ "root07_mat": {
+  "users": 8,
+  "albedo_multipliers": [
+   [
+    0.42,
+    0.32,
+    0.26
+   ]
+  ],
+  "roughness": 0.7,
+  "emission_strength": 0.0
+ }
+}

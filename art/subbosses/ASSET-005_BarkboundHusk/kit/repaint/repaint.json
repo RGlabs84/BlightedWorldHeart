@@ -1,0 +1,45 @@
+{
+ "about": "ASSET-005 early repaint recipe: the Hive Brute's method (kit_tools/troll_repaint.py) scaled to the Draugr (distances / 2.3). Mask = repaint/husk_hive_mask.png in DraugrMesh1 UV0 (R bark, G extremity darkening, B blight veins = emission, A dark roots), lines computed at 2048 and box-filtered to 1024. Colours are linear multipliers on the texture's stored texel values, as the runtime reads them back; the vanilla luminance is kept (lum / mean lum) so the Draugr still reads.",
+ "sick_skin": [
+  0.3,
+  0.32,
+  0.24
+ ],
+ "sick_mix": 0.55,
+ "extremity_darken": 0.5,
+ "bark_tint": [
+  0.62,
+  0.46,
+  0.3
+ ],
+ "infection_margin_darken": 0.45,
+ "bark_texture": "olivetree_trunk01 (TheHive_Mat _MainTex), triplanar in rest-pose metres, tile 0.52 m",
+ "root_colour": [
+  0.03,
+  0.025,
+  0.02
+ ],
+ "vein_albedo": [
+  0.05,
+  0.06,
+  0.02
+ ],
+ "blight_colour": [
+  0.42,
+  0.55,
+  0.12
+ ],
+ "emission_strength_preview": 0.85,
+ "draugr_eye_glow": 0.1,
+ "root_armour_recolour": {
+  "saturation": 0.3,
+  "tint": [
+   0.95,
+   0.72,
+   0.5
+  ]
+ },
+ "draugr_eye_glow_note": "multiplier on the Draugr's own _EmissionColor (its green eyes under the brow), so the Hive eyes lead",
+ "veins": "off the head and the hair/beard cards; faded out within 0.25-0.5 m of the Hive eyes",
+ "mask_size": "1024 (lines computed at 2048, box-filtered)"
+}

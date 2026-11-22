@@ -3,9 +3,20 @@
     <TargetFramework>net48</TargetFramework>
     <AssemblyName>BlightedHeart</AssemblyName>
     <Description>A Valheim mod that adds the Blighted World Heart boss.</Description>
-    <Version>1.1.0</Version>
+    <Version>1.2.0</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
+    <!-- Release packaging (studio rule 2026-11-20, DwarvenDefender's csproj): a deterministic build whose matching portable PDB
+         ships beside the DLL with no home-folder path in it; no SourceLink (it embeds the repo path and the git commit).
+         tools/fold.py checks the pair with libs-Tools/pdb_match.py. -->
+    <Deterministic>true</Deterministic>
+    <PathMap>$(MSBuildProjectDirectory)=BlightedHeart,$(NuGetPackageRoot)=nuget/</PathMap>
+    <DebugType>portable</DebugType>
+    <EnableSourceLink>false</EnableSourceLink>
+    <EnableSourceControlManagerQueries>false</EnableSourceControlManagerQueries>
+    <!-- CS0436: the assembly publicizer's own IgnoresAccessChecksToAttribute meets the copy in its content files (harmless, the
+         same suppression Runic uses) -->
+    <NoWarn>$(NoWarn);CS0436</NoWarn>
     <RestoreAdditionalProjectSources>
       https://api.nuget.org/v3/index.json;
       https://nuget.bepinex.dev/v3/index.json
@@ -19,6 +30,21 @@
     <PackageReference Include="UnityEngine.Modules" Version="2022.3.28" IncludeAssets="compile" />
     <PackageReference Include="JotunnLib" Version="[2.30.0]" />
     <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.1" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- tools/ holds the in-game test driver (tools/bh-autotest), its own project: never part of the mod. -->
+    <Compile Remove="tools/**" />
+    <None Remove="tools/**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- 1.2.0 Sub-Boss kits: compiled runtime data (our transforms/offsets/triangle ids, no game geometry) -->
+    <EmbeddedResource Include="art\subbosses\runtime\*.json" LogicalName="BlightedHeart.SubBossKits.%(Filename)%(Extension)" />
+    <!-- 1.2.0 stage 3: the eye core/pupil mask (our data, eye_globe UVs; one file, identical in all six kits) -->
+    <EmbeddedResource Include="art\subbosses\ASSET-001_HiveBrute\kit\eye\eye_globe_core_pupil_mask.png" LogicalName="BlightedHeart.SubBossEyeMask.png" />
+    <!-- 1.2.0 stage 3b: the body repaint's maps + recipe table (our data; kit_tools/make_repaint_maps.py) -->
+    <EmbeddedResource Include="art\subbosses\runtime\repaint\*.png;art\subbosses\runtime\repaint\repaint.json" LogicalName="BlightedHeart.SubBossRepaint.%(Filename)%(Extension)" />
   </ItemGroup>
 
   <ItemGroup>
