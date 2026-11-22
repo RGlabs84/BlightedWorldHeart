@@ -1,0 +1,1835 @@
+{
+ "_about": "ASSET-004 Eyeblight Seer kitbash v1: vanilla parts on the vanilla Greydwarf_Shaman. Rigid parts: the vanilla mesh under a child of the named bone with the given local transform (Unity, bind pose); conformed lumps add deform/lump_offsets.json; laid roots are their vanilla mesh with per-vertex positions (identity transform). The pose test (pose_test.py) marks the pieces it skins with transferred weights.",
+ "base": {
+  "prefab": "Greydwarf_Shaman",
+  "renderer": "Visual/Cube + Visual/Cube.001",
+  "hidden": [
+   "Visual/Plane",
+   "Visual/Plane.001 (eye quads)"
+  ],
+  "mesh": "Cube",
+  "material": "greydwarf_shaman",
+  "tris": 1418
+ },
+ "helm_bulb": {
+  "source": {
+   "prefab": "TheHive",
+   "renderer": "Visual/low",
+   "mesh": "default (low) + vertex offsets (deform/lump_offsets.json)",
+   "material": "TheHive_Mat"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 238,
+  "fit": {
+   "base_pairs": 112,
+   "verts_inside_base": 12,
+   "nearest_to_base_mm": 0.7,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   -0.000307,
+   0.006437,
+   0.002163
+  ],
+  "localRotation": [
+   0.277599,
+   -0.143527,
+   0.016405,
+   0.949774
+  ],
+  "localScale": [
+   0.001997,
+   0.001562,
+   0.001736
+  ],
+  "vertex_offsets": "deform/lump_offsets.json#helm_bulb"
+ },
+ "helm_crest_l": {
+  "source": {
+   "prefab": "TheHive",
+   "renderer": "Visual/low",
+   "mesh": "default (low) + vertex offsets (deform/lump_offsets.json)",
+   "material": "TheHive_Mat"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 238,
+  "fit": {
+   "base_pairs": 106,
+   "verts_inside_base": 29,
+   "nearest_to_base_mm": 0.0,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   0.002306,
+   0.002931,
+   0.00153
+  ],
+  "localRotation": [
+   -0.35668,
+   -0.611366,
+   -0.629182,
+   0.321156
+  ],
+  "localScale": [
+   0.000926,
+   0.000648,
+   0.001157
+  ],
+  "vertex_offsets": "deform/lump_offsets.json#helm_crest_l"
+ },
+ "helm_cheek_r": {
+  "source": {
+   "prefab": "TheHive",
+   "renderer": "Visual/low",
+   "mesh": "default (low) + vertex offsets (deform/lump_offsets.json)",
+   "material": "TheHive_Mat"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 238,
+  "fit": {
+   "base_pairs": 66,
+   "verts_inside_base": 23,
+   "nearest_to_base_mm": 0.1,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   -0.002316,
+   0.004687,
+   -0.001277
+  ],
+  "localRotation": [
+   0.264613,
+   -0.388082,
+   0.584597,
+   0.661528
+  ],
+  "localScale": [
+   0.000625,
+   0.000417,
+   0.000903
+  ],
+  "vertex_offsets": "deform/lump_offsets.json#helm_cheek_r"
+ },
+ "back_hunch_0": {
+  "source": {
+   "prefab": "TheHive",
+   "renderer": "Visual/low",
+   "mesh": "default (low) + vertex offsets (deform/lump_offsets.json)",
+   "material": "TheHive_Mat"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 238,
+  "fit": {
+   "base_pairs": 69,
+   "verts_inside_base": 24,
+   "nearest_to_base_mm": 0.4,
+   "touches_other_piece": false,
+   "floating": false
+  },
+  "parent": "spine2",
+  "localPosition": [
+   0.001448,
+   0.004241,
+   -0.005946
+  ],
+  "localRotation": [
+   -0.610877,
+   -0.358201,
+   0.198157,
+   0.677683
+  ],
+  "localScale": [
+   0.002164,
+   0.001377,
+   0.002361
+  ],
+  "vertex_offsets": "deform/lump_offsets.json#back_hunch_0"
+ },
+ "back_hunch_1": {
+  "source": {
+   "prefab": "TheHive",
+   "renderer": "Visual/low",
+   "mesh": "default (low) + vertex offsets (deform/lump_offsets.json)",
+   "material": "TheHive_Mat"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 238,
+  "fit": {
+   "base_pairs": 112,
+   "verts_inside_base": 30,
+   "nearest_to_base_mm": 0.1,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "spine3",
+  "localPosition": [
+   0.002624,
+   -0.003325,
+   0.003547
+  ],
+  "localRotation": [
+   0.804969,
+   0.330345,
+   0.437382,
+   0.227143
+  ],
+  "localScale": [
+   0.001389,
+   0.000972,
+   0.001528
+  ],
+  "vertex_offsets": "deform/lump_offsets.json#back_hunch_1"
+ },
+ "shoulder_lump_L": {
+  "source": {
+   "prefab": "TheHive",
+   "renderer": "Visual/low",
+   "mesh": "default (low) + vertex offsets (deform/lump_offsets.json)",
+   "material": "TheHive_Mat"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 238,
+  "fit": {
+   "base_pairs": 113,
+   "verts_inside_base": 41,
+   "nearest_to_base_mm": 0.1,
+   "touches_other_piece": false,
+   "floating": false
+  },
+  "parent": "l_arm1",
+  "localPosition": [
+   0.00179,
+   5.8e-05,
+   0.003063
+  ],
+  "localRotation": [
+   0.345815,
+   -0.296388,
+   -0.446798,
+   0.770024
+  ],
+  "localScale": [
+   0.001319,
+   0.00066,
+   0.0011
+  ],
+  "vertex_offsets": "deform/lump_offsets.json#shoulder_lump_L"
+ },
+ "shoulder_lump_R": {
+  "source": {
+   "prefab": "TheHive",
+   "renderer": "Visual/low",
+   "mesh": "default (low) + vertex offsets (deform/lump_offsets.json)",
+   "material": "TheHive_Mat"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 238,
+  "fit": {
+   "base_pairs": 135,
+   "verts_inside_base": 23,
+   "nearest_to_base_mm": 0.1,
+   "touches_other_piece": false,
+   "floating": false
+  },
+  "parent": "r_arm1",
+  "localPosition": [
+   -0.001529,
+   0.000105,
+   0.003185
+  ],
+  "localRotation": [
+   0.337475,
+   -0.781206,
+   -0.473873,
+   0.226435
+  ],
+  "localScale": [
+   0.000955,
+   0.000521,
+   0.000868
+  ],
+  "vertex_offsets": "deform/lump_offsets.json#shoulder_lump_R"
+ },
+ "helm_eye_00": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (material)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye + eye/eye_globe_core_pupil_mask.png"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 136.4,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   -0.000874,
+   0.007369,
+   0.003062
+  ],
+  "localRotation": [
+   0.558948,
+   0.099615,
+   0.274226,
+   0.776179
+  ],
+  "localScale": [
+   0.002573,
+   0.002315,
+   0.002573
+  ]
+ },
+ "helm_eye_01": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (material)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye + eye/eye_globe_core_pupil_mask.png"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 144.4,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   0.00042,
+   0.007417,
+   0.002514
+  ],
+  "localRotation": [
+   0.205828,
+   0.019554,
+   -0.386463,
+   0.898832
+  ],
+  "localScale": [
+   0.001544,
+   0.001389,
+   0.001544
+  ]
+ },
+ "helm_eye_02": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (material)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye + eye/eye_globe_core_pupil_mask.png"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 199.3,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   -0.000827,
+   0.008356,
+   0.002078
+  ],
+  "localRotation": [
+   0.134285,
+   -0.002292,
+   0.016152,
+   0.990808
+  ],
+  "localScale": [
+   0.001372,
+   0.001235,
+   0.001372
+  ]
+ },
+ "helm_eye_03": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (material)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye + eye/eye_globe_core_pupil_mask.png"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 103.0,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   0.000426,
+   0.006318,
+   0.003267
+  ],
+  "localRotation": [
+   0.410436,
+   -0.103359,
+   -0.476325,
+   0.770697
+  ],
+  "localScale": [
+   0.001286,
+   0.001158,
+   0.001286
+  ]
+ },
+ "helm_eye_04": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (material)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye + eye/eye_globe_core_pupil_mask.png"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 138.8,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   0.000197,
+   0.007811,
+   0.001449
+  ],
+  "localRotation": [
+   -0.045146,
+   0.104058,
+   -0.3104,
+   0.943814
+  ],
+  "localScale": [
+   0.001158,
+   0.001042,
+   0.001158
+  ]
+ },
+ "helm_eye_05": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (material)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye + eye/eye_globe_core_pupil_mask.png"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 162.9,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   -0.002025,
+   0.007529,
+   0.001943
+  ],
+  "localRotation": [
+   0.107657,
+   -0.077795,
+   0.518636,
+   0.844615
+  ],
+  "localScale": [
+   0.001072,
+   0.000965,
+   0.001072
+  ]
+ },
+ "helm_eye_06": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (material)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye + eye/eye_globe_core_pupil_mask.png"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 104.7,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   -0.00107,
+   0.005856,
+   0.003339
+  ],
+  "localRotation": [
+   0.531425,
+   0.1895,
+   0.465711,
+   0.681755
+  ],
+  "localScale": [
+   0.000986,
+   0.000888,
+   0.000986
+  ]
+ },
+ "helm_eye_07": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (material)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye + eye/eye_globe_core_pupil_mask.png"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 150.1,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   -0.000727,
+   0.008091,
+   0.001124
+  ],
+  "localRotation": [
+   -0.212185,
+   0.061085,
+   -0.11416,
+   0.968614
+  ],
+  "localScale": [
+   0.0009,
+   0.00081,
+   0.0009
+  ]
+ },
+ "helm_eye_08": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (material)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye + eye/eye_globe_core_pupil_mask.png"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 133.8,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   -0.002058,
+   0.006609,
+   0.002495
+  ],
+  "localRotation": [
+   0.355229,
+   0.138069,
+   0.638798,
+   0.668346
+  ],
+  "localScale": [
+   0.000858,
+   0.000772,
+   0.000858
+  ]
+ },
+ "helm_eye_09": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (material)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye + eye/eye_globe_core_pupil_mask.png"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 89.9,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   -0.000253,
+   0.005587,
+   0.003578
+  ],
+  "localRotation": [
+   0.696056,
+   0.133151,
+   0.227095,
+   0.667985
+  ],
+  "localScale": [
+   0.000815,
+   0.000733,
+   0.000815
+  ]
+ },
+ "helm_eye_10": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (material)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye + eye/eye_globe_core_pupil_mask.png"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 150.9,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   -0.001774,
+   0.007762,
+   0.001303
+  ],
+  "localRotation": [
+   -0.195612,
+   -0.202506,
+   0.376255,
+   0.8827
+  ],
+  "localScale": [
+   0.000772,
+   0.000695,
+   0.000772
+  ]
+ },
+ "helm_eye_11": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (material)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye + eye/eye_globe_core_pupil_mask.png"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 111.1,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   0.001174,
+   0.006507,
+   0.002394
+  ],
+  "localRotation": [
+   0.16799,
+   0.040363,
+   -0.531156,
+   0.829472
+  ],
+  "localScale": [
+   0.000729,
+   0.000656,
+   0.000729
+  ]
+ },
+ "helm_eye_12": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (material)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye + eye/eye_globe_core_pupil_mask.png"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 115.2,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   0.001073,
+   0.006988,
+   0.001601
+  ],
+  "localRotation": [
+   0.326006,
+   -0.054691,
+   -0.495606,
+   0.803184
+  ],
+  "localScale": [
+   0.000686,
+   0.000617,
+   0.000686
+  ]
+ },
+ "helm_eye_13": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (material)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye + eye/eye_globe_core_pupil_mask.png"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 132.3,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   -0.001129,
+   0.007782,
+   0.000813
+  ],
+  "localRotation": [
+   -0.353396,
+   -0.202273,
+   0.260945,
+   0.875274
+  ],
+  "localScale": [
+   0.000643,
+   0.000579,
+   0.000643
+  ]
+ },
+ "helm_eye_14": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (material)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye + eye/eye_globe_core_pupil_mask.png"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 103.0,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   0.001255,
+   0.006018,
+   0.002755
+  ],
+  "localRotation": [
+   0.266752,
+   -0.025759,
+   -0.541981,
+   0.796515
+  ],
+  "localScale": [
+   0.000643,
+   0.000579,
+   0.000643
+  ]
+ },
+ "helm_eye_15": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (material)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye + eye/eye_globe_core_pupil_mask.png"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 117.0,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   -0.002061,
+   0.005988,
+   0.002581
+  ],
+  "localRotation": [
+   0.302403,
+   0.057001,
+   0.565035,
+   0.765532
+  ],
+  "localScale": [
+   0.0006,
+   0.00054,
+   0.0006
+  ]
+ },
+ "helm_eye_16": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (material)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye + eye/eye_globe_core_pupil_mask.png"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 117.2,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   0.000599,
+   0.007483,
+   0.000945
+  ],
+  "localRotation": [
+   -0.081711,
+   0.129886,
+   -0.341383,
+   0.927314
+  ],
+  "localScale": [
+   0.0006,
+   0.00054,
+   0.0006
+  ]
+ },
+ "helm_eye_17": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (material)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye + eye/eye_globe_core_pupil_mask.png"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 81.7,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   0.000159,
+   0.00524,
+   0.003566
+  ],
+  "localRotation": [
+   0.64145,
+   -0.26521,
+   -0.42427,
+   0.58155
+  ],
+  "localScale": [
+   0.000557,
+   0.000502,
+   0.000557
+  ]
+ },
+ "helm_eye_18": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (material)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye + eye/eye_globe_core_pupil_mask.png"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 131.1,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   -0.002135,
+   0.007233,
+   0.001169
+  ],
+  "localRotation": [
+   0.048222,
+   -0.134759,
+   0.622923,
+   0.769078
+  ],
+  "localScale": [
+   0.000557,
+   0.000502,
+   0.000557
+  ]
+ },
+ "helm_eye_19": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (material)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye + eye/eye_globe_core_pupil_mask.png"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 105.6,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   -0.001504,
+   0.005319,
+   0.003206
+  ],
+  "localRotation": [
+   0.531425,
+   0.1895,
+   0.465711,
+   0.681755
+  ],
+  "localScale": [
+   0.000515,
+   0.000463,
+   0.000515
+  ]
+ },
+ "helm_eye_20": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (material)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye + eye/eye_globe_core_pupil_mask.png"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 46.6,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   0.00249,
+   0.003151,
+   0.001865
+  ],
+  "localRotation": [
+   0.529941,
+   -0.077985,
+   -0.247542,
+   0.807344
+  ],
+  "localScale": [
+   0.000772,
+   0.000695,
+   0.000772
+  ]
+ },
+ "helm_eye_21": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (material)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye + eye/eye_globe_core_pupil_mask.png"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 55.7,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   0.00266,
+   0.002979,
+   0.001815
+  ],
+  "localRotation": [
+   0.421304,
+   -0.121669,
+   -0.500858,
+   0.746217
+  ],
+  "localScale": [
+   0.0006,
+   0.00054,
+   0.0006
+  ]
+ },
+ "helm_eye_22": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (material)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye + eye/eye_globe_core_pupil_mask.png"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 9.7,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   -0.002346,
+   0.004881,
+   -0.001211
+  ],
+  "localRotation": [
+   0.036018,
+   -0.086704,
+   0.359123,
+   0.928556
+  ],
+  "localScale": [
+   0.000686,
+   0.000617,
+   0.000686
+  ]
+ },
+ "maw_lip_U": {
+  "source": {
+   "prefab": "TheHive",
+   "renderer": "Visual/low",
+   "mesh": "default (low) + vertex offsets (deform/lump_offsets.json)",
+   "material": "TheHive_Mat"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 238,
+  "fit": {
+   "base_pairs": 96,
+   "verts_inside_base": 13,
+   "nearest_to_base_mm": 0.0,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   -5.1e-05,
+   0.006308,
+   -0.00201
+  ],
+  "localRotation": [
+   0.175146,
+   -0.006228,
+   0.062532,
+   0.982535
+  ],
+  "localScale": [
+   0.003009,
+   0.00081,
+   0.000637
+  ],
+  "vertex_offsets": "deform/lump_offsets.json#maw_lip_U"
+ },
+ "maw_lip_L": {
+  "source": {
+   "prefab": "TheHive",
+   "renderer": "Visual/low",
+   "mesh": "default (low) + vertex offsets (deform/lump_offsets.json)",
+   "material": "TheHive_Mat"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 238,
+  "fit": {
+   "base_pairs": 82,
+   "verts_inside_base": 18,
+   "nearest_to_base_mm": 0.0,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   -3e-05,
+   0.006771,
+   -0.005438
+  ],
+  "localRotation": [
+   0.048247,
+   -0.011477,
+   0.049612,
+   0.997537
+  ],
+  "localScale": [
+   0.002604,
+   0.000729,
+   0.000625
+  ],
+  "vertex_offsets": "deform/lump_offsets.json#maw_lip_L"
+ },
+ "maw_fang_00": {
+  "source": {
+   "prefab": "Troll",
+   "renderer": "Visual/Body",
+   "mesh": "Body island (claw, 56 tris)",
+   "material": "troll (tint 0.62/0.45/0.22)"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 56,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 58.5,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   0.001871,
+   0.006282,
+   -0.002505
+  ],
+  "localRotation": [
+   0.097901,
+   -0.835307,
+   0.537319,
+   0.062976
+  ],
+  "localScale": [
+   0.004855,
+   0.004855,
+   0.004855
+  ]
+ },
+ "maw_fang_01": {
+  "source": {
+   "prefab": "Troll",
+   "renderer": "Visual/Body",
+   "mesh": "Body island (tooth, 18 tris)",
+   "material": "troll (tint 0.62/0.45/0.22)"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 18,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 55.2,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   0.001068,
+   0.00658,
+   -0.002685
+  ],
+  "localRotation": [
+   0.124873,
+   -0.826494,
+   0.542762,
+   0.082005
+  ],
+  "localScale": [
+   0.01113,
+   0.01113,
+   0.01113
+  ]
+ },
+ "maw_fang_02": {
+  "source": {
+   "prefab": "Troll",
+   "renderer": "Visual/Body",
+   "mesh": "Body island (claw, 56 tris)",
+   "material": "troll (tint 0.62/0.45/0.22)"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 56,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 32.0,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   4.7e-05,
+   0.006391,
+   -0.00271
+  ],
+  "localRotation": [
+   0.100608,
+   -0.862386,
+   0.492811,
+   0.057492
+  ],
+  "localScale": [
+   0.005062,
+   0.005062,
+   0.005062
+  ]
+ },
+ "maw_fang_03": {
+  "source": {
+   "prefab": "Troll",
+   "renderer": "Visual/Body",
+   "mesh": "Body island (claw, 56 tris)",
+   "material": "troll (tint 0.62/0.45/0.22)"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 56,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 45.6,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   -0.000871,
+   0.006293,
+   -0.002519
+  ],
+  "localRotation": [
+   0.025492,
+   -0.832057,
+   0.553844,
+   0.016968
+  ],
+  "localScale": [
+   0.00616,
+   0.00616,
+   0.00616
+  ]
+ },
+ "maw_fang_04": {
+  "source": {
+   "prefab": "Troll",
+   "renderer": "Visual/Body",
+   "mesh": "Body island (tooth, 18 tris)",
+   "material": "troll (tint 0.62/0.45/0.22)"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 18,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 37.4,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   -0.001128,
+   0.00632,
+   -0.002704
+  ],
+  "localRotation": [
+   0.093636,
+   0.797915,
+   -0.591395,
+   0.069401
+  ],
+  "localScale": [
+   0.0139,
+   0.0139,
+   0.0139
+  ]
+ },
+ "maw_fang_05": {
+  "source": {
+   "prefab": "Troll",
+   "renderer": "Visual/Body",
+   "mesh": "Body island (claw, 56 tris)",
+   "material": "troll (tint 0.62/0.45/0.22)"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 56,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 27.5,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   -0.002697,
+   0.005278,
+   -0.002769
+  ],
+  "localRotation": [
+   0.134717,
+   0.840888,
+   -0.517574,
+   0.08292
+  ],
+  "localScale": [
+   0.005299,
+   0.005299,
+   0.005299
+  ]
+ },
+ "maw_fang_06": {
+  "source": {
+   "prefab": "Troll",
+   "renderer": "Visual/Body",
+   "mesh": "Body island (claw, 56 tris)",
+   "material": "troll (tint 0.62/0.45/0.22)"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 56,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 19.5,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   0.001902,
+   0.006377,
+   -0.005228
+  ],
+  "localRotation": [
+   -0.038854,
+   -0.698006,
+   -0.713932,
+   0.039741
+  ],
+  "localScale": [
+   0.006526,
+   0.006526,
+   0.006526
+  ]
+ },
+ "maw_fang_07": {
+  "source": {
+   "prefab": "Troll",
+   "renderer": "Visual/Body",
+   "mesh": "Body island (tooth, 18 tris)",
+   "material": "troll (tint 0.62/0.45/0.22)"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 18,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 40.8,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   0.001874,
+   0.006492,
+   -0.004933
+  ],
+  "localRotation": [
+   -0.087884,
+   0.607185,
+   0.781541,
+   0.113121
+  ],
+  "localScale": [
+   0.010761,
+   0.010761,
+   0.010761
+  ]
+ },
+ "maw_fang_08": {
+  "source": {
+   "prefab": "Troll",
+   "renderer": "Visual/Body",
+   "mesh": "Body island (claw, 56 tris)",
+   "material": "troll (tint 0.62/0.45/0.22)"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 56,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 12.6,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   0.001303,
+   0.006173,
+   -0.005018
+  ],
+  "localRotation": [
+   -0.023339,
+   -0.726711,
+   -0.686193,
+   0.022037
+  ],
+  "localScale": [
+   0.004512,
+   0.004512,
+   0.004512
+  ]
+ },
+ "maw_fang_09": {
+  "source": {
+   "prefab": "Troll",
+   "renderer": "Visual/Body",
+   "mesh": "Body island (claw, 56 tris)",
+   "material": "troll (tint 0.62/0.45/0.22)"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 56,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 21.1,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   0.001006,
+   0.006417,
+   -0.00496
+  ],
+  "localRotation": [
+   -0.010146,
+   -0.708253,
+   -0.705814,
+   0.010111
+  ],
+  "localScale": [
+   0.004596,
+   0.004596,
+   0.004596
+  ]
+ },
+ "maw_fang_10": {
+  "source": {
+   "prefab": "Troll",
+   "renderer": "Visual/Body",
+   "mesh": "Body island (tooth, 18 tris)",
+   "material": "troll (tint 0.62/0.45/0.22)"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 18,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 7.7,
+   "touches_other_piece": false,
+   "floating": false
+  },
+  "parent": "head",
+  "localPosition": [
+   -0.000386,
+   0.006294,
+   -0.004753
+  ],
+  "localRotation": [
+   -0.076197,
+   -0.599762,
+   -0.790191,
+   0.100391
+  ],
+  "localScale": [
+   0.011115,
+   0.011115,
+   0.011115
+  ]
+ },
+ "root_back_0": {
+  "source": {
+   "prefab": "fi_vil_combs_root07",
+   "renderer": "fi_vil_combs_root07",
+   "mesh": "Mesh",
+   "material": "fi_village_catacombs"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 90,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 8.0,
+   "touches_other_piece": false,
+   "floating": false
+  },
+  "parent": "spine2",
+  "localPosition": [
+   0.0,
+   -0.024156,
+   0.002321
+  ],
+  "localRotation": [
+   0.000258,
+   0.0,
+   -0.0,
+   1.0
+  ],
+  "localScale": [
+   0.016667,
+   0.016667,
+   0.016667
+  ]
+ },
+ "root_back_1": {
+  "source": {
+   "prefab": "fi_vil_combs_root07",
+   "renderer": "fi_vil_combs_root07",
+   "mesh": "Mesh",
+   "material": "fi_village_catacombs"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 90,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 7.7,
+   "touches_other_piece": false,
+   "floating": false
+  },
+  "parent": "spine2",
+  "localPosition": [
+   0.0,
+   -0.024156,
+   0.002321
+  ],
+  "localRotation": [
+   0.000258,
+   0.0,
+   -0.0,
+   1.0
+  ],
+  "localScale": [
+   0.016667,
+   0.016667,
+   0.016667
+  ]
+ },
+ "root_back_2": {
+  "source": {
+   "prefab": "fi_vil_combs_root07",
+   "renderer": "fi_vil_combs_root07",
+   "mesh": "Mesh",
+   "material": "fi_village_catacombs"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 90,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 8.0,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "spine1",
+  "localPosition": [
+   0.0,
+   -0.017572,
+   0.002333
+  ],
+  "localRotation": [
+   0.0,
+   0.0,
+   0.0,
+   1.0
+  ],
+  "localScale": [
+   0.016667,
+   0.016667,
+   0.016667
+  ]
+ },
+ "root_chest_0": {
+  "source": {
+   "prefab": "fi_vil_combs_root07",
+   "renderer": "fi_vil_combs_root07",
+   "mesh": "Mesh",
+   "material": "fi_village_catacombs"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 90,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 6.6,
+   "touches_other_piece": false,
+   "floating": false
+  },
+  "parent": "spine3",
+  "localPosition": [
+   0.0,
+   -0.005013,
+   -0.030442
+  ],
+  "localRotation": [
+   -0.0,
+   0.786373,
+   0.617752,
+   0.0
+  ],
+  "localScale": [
+   0.016667,
+   0.016667,
+   0.016667
+  ]
+ },
+ "root_chest_1": {
+  "source": {
+   "prefab": "fi_vil_combs_root07",
+   "renderer": "fi_vil_combs_root07",
+   "mesh": "Mesh",
+   "material": "fi_village_catacombs"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 90,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 8.0,
+   "touches_other_piece": false,
+   "floating": false
+  },
+  "parent": "spine2",
+  "localPosition": [
+   0.0,
+   -0.024156,
+   0.002321
+  ],
+  "localRotation": [
+   0.000258,
+   0.0,
+   -0.0,
+   1.0
+  ],
+  "localScale": [
+   0.016667,
+   0.016667,
+   0.016667
+  ]
+ },
+ "root_fore_L": {
+  "source": {
+   "prefab": "fi_vil_combs_root07",
+   "renderer": "fi_vil_combs_root07",
+   "mesh": "Mesh",
+   "material": "fi_village_catacombs"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 90,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 35,
+   "nearest_to_base_mm": 8.0,
+   "touches_other_piece": false,
+   "floating": false
+  },
+  "parent": "l_arm2",
+  "localPosition": [
+   0.003165,
+   -0.012261,
+   -0.030636
+  ],
+  "localRotation": [
+   0.518208,
+   -0.482047,
+   -0.509244,
+   0.489654
+  ],
+  "localScale": [
+   0.016667,
+   0.016667,
+   0.016667
+  ]
+ },
+ "root_thigh_L": {
+  "source": {
+   "prefab": "fi_vil_combs_root07",
+   "renderer": "fi_vil_combs_root07",
+   "mesh": "Mesh",
+   "material": "fi_village_catacombs"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 90,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 8.0,
+   "touches_other_piece": false,
+   "floating": false
+  },
+  "parent": "l_leg1",
+  "localPosition": [
+   -0.004391,
+   0.011118,
+   -0.01462
+  ],
+  "localRotation": [
+   0.125559,
+   -0.456325,
+   -0.878965,
+   0.058498
+  ],
+  "localScale": [
+   0.016667,
+   0.016667,
+   0.016667
+  ]
+ },
+ "root_shin_R": {
+  "source": {
+   "prefab": "fi_vil_combs_root07",
+   "renderer": "fi_vil_combs_root07",
+   "mesh": "Mesh",
+   "material": "fi_village_catacombs"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 90,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 8.0,
+   "touches_other_piece": false,
+   "floating": false
+  },
+  "parent": "r_leg2",
+  "localPosition": [
+   -0.004891,
+   0.013225,
+   0.005939
+  ],
+  "localRotation": [
+   0.974297,
+   0.013557,
+   -0.167676,
+   0.149821
+  ],
+  "localScale": [
+   0.016667,
+   0.016667,
+   0.016667
+  ]
+ },
+ "branch_back_limb": {
+  "source": {
+   "tint_linear": [
+    0.3,
+    0.27,
+    0.24
+   ],
+   "prefab": "gd_king",
+   "renderer": "Visual/gd_king (SkinnedMeshRenderer, baked static)",
+   "mesh": "gd_king.001, kept triangles (branches/elder_branch_tris.json)",
+   "material": "Elder_mat"
+  },
+  "mode": "rigid",
+  "tris": 136,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 28.8,
+   "touches_other_piece": false,
+   "floating": true
+  },
+  "parent": "spine2",
+  "localPosition": [
+   0.116602,
+   -0.064505,
+   0.065196
+  ],
+  "localRotation": [
+   -0.294963,
+   -0.197261,
+   0.446603,
+   0.821359
+  ],
+  "localScale": [
+   0.009042,
+   0.011103,
+   0.012047
+  ]
+ },
+ "branch_back_spur": {
+  "source": {
+   "tint_linear": [
+    0.3,
+    0.27,
+    0.24
+   ],
+   "prefab": "gd_king",
+   "renderer": "Visual/gd_king (SkinnedMeshRenderer, baked static)",
+   "mesh": "gd_king.001, kept triangles (branches/elder_branch_tris.json)",
+   "material": "Elder_mat"
+  },
+  "mode": "rigid",
+  "tris": 48,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 1,
+   "nearest_to_base_mm": 23.7,
+   "touches_other_piece": false,
+   "floating": true
+  },
+  "parent": "spine3",
+  "localPosition": [
+   -0.15454,
+   0.086414,
+   0.031904
+  ],
+  "localRotation": [
+   0.888621,
+   0.43249,
+   -0.067742,
+   0.136808
+  ],
+  "localScale": [
+   0.010987,
+   0.008937,
+   0.009903
+  ]
+ }
+}

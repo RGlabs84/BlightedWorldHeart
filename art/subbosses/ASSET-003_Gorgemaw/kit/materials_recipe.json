@@ -1,0 +1,34 @@
+{
+ "_about": "ASSET-003 Gorgemaw STEP 3 (2026-11-22): material recipe per part (our COPIES of vanilla materials). Colours are multipliers.",
+ "body (Lox Body)": {
+  "material": "copy of 'lox'",
+  "albedo": "read _MainTex (256) back, paint a 512 copy: repaint.json with repaint/lox_hive_mask.png (R bark, G extremities, B veins + mouth glow, A roots + mouth) and repaint/lox_moss_mask.png (R moss)",
+  "emission": "_EmissionMap = hive mask B x blight colour"
+ },
+ "Furr1 (fur cards)": "HIDDEN (renderer disabled); the Body's own painted fur is repainted",
+ "lump (TheHive /Visual/low), 16 parts": {
+  "material": "copy of TheHive_Mat",
+  "_MossAlpha": 0.5,
+  "emission": "off",
+  "mesh": "clone + deform/lump_offsets.json + deform/lump_uv_offsets.json; then, for the 4 DENSE lumps (mass_front_l, mass_mid_r, mass_peak, mass_hips_r), one smooth subdivision (split every edge at its midpoint, Loop-style smoothing 1.0, UVs interpolated) once at spawn"
+ },
+ "maw fangs (Troll Body claw/tooth islands)": {
+  "material": "copy of the 'troll' material, _Color tint (0.62, 0.45, 0.22)",
+  "note": "no root-dirt vertex colours on the Gorgemaw (the Brute's fangs have them)"
+ },
+ "sack (GuckSack)": {
+  "_EmissionMap": "its _MainTex",
+  "_EmissionColor": "linear (0.25, 1.0, 0.06) x 3.0"
+ },
+ "eyes (eye_globe)": "as the Brute: kit/eye/eye_globe_core_pupil_mask.png (R core emission, G pupil)",
+ "roots (ThornRoots, Tentaroots)": {
+  "_Color": "x0.2 (near-black brown)",
+  "emission": "x0.25 of vanilla"
+ },
+ "branches (Pickable_Branch, 2 heavy limbs)": {
+  "_MainTex": "texture copy: saturation x0.35, then x(0.075, 0.058, 0.042) dark brown",
+  "emission": "off (remove its emission term)",
+  "Glossiness": 0.05
+ },
+ "biome tint (ApplyBiomeVisuals)": "OWNER DECISION pending, see previews/final_biome_blackforest_panel.png (left _Color only; right as coded, _EmissionColor = tint x2: the whole Gorgemaw glows flat)"
+}

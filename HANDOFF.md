@@ -2,8 +2,8 @@
 
 ## Environment / conventions (read this first)
 
-- Repo: `c:\WubarrkCODING\BlightedHeart` — Valheim BepInEx/Jotunn mod, .NET Framework 4.8. **Not a git repo** — there is no commit history or diff to inspect; everything described below is just the current on-disk state of the listed files.
-- Reference DLLs live in the **shared** `C:\WubarrkCODING\libs-Tools\` folder, not a per-project `libs\` folder. `BlightedHeart.csproj` references it via `..\libs-Tools\<dll>` HintPaths (migrated this session — do not recreate a local `libs\` or `decompiled\` folder in this project).
+- Repo: `c:\WubarrkCODING\ValheimMods\BlightedHeart` — Valheim BepInEx/Jotunn mod, .NET Framework 4.8. **Not a git repo** — there is no commit history or diff to inspect; everything described below is just the current on-disk state of the listed files.
+- Reference DLLs live in the **shared** `C:\WubarrkCODING\ValheimMods\libs-Tools\` folder, not a per-project `libs\` folder. `BlightedHeart.csproj` references it via `..\libs-Tools\<dll>` HintPaths (migrated this session — do not recreate a local `libs\` or `decompiled\` folder in this project).
 - `libs-Tools` already contains a full decompiled dump of the live game assembly at `DECOMPILED ASSEMBLY VALHEIM\assembly_valheim.decompiled.cs` (~145k lines). Grep that before decompiling anything fresh. Key locations already found this session: `InventoryGui` class ~line 41121, `UpdateRecipeList` ~line 42039 (also inside there, the `InCraftTab()`/`else` branch split), `InCraftTab()`/`InUpradeTab()` ~lines 43079–43087, `Player.NoCostCheat()` ~line 21056.
 - `ilspycmd` (dotnet global tool) is available for decompiling. It targets .NET 6, which isn't installed — always run it with `DOTNET_ROLL_FORWARD=LatestMajor` prefixed, e.g. `DOTNET_ROLL_FORWARD=LatestMajor ilspycmd -r "<Managed dir>" -t "<TypeName>" "<path>\assembly_valheim.dll"`.
 - AAACrafting's own decompiled source (plain C# text, despite the extension) is at `COMPAT DATA\AAACrafting-TS-2.1.6.blob` in this repo — grep it instead of re-decompiling AAACrafting's DLL from scratch.

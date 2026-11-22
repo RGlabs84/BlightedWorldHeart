@@ -1,0 +1,42 @@
+{
+ "_about": "ASSET-002 Rootstalker STEP 3: material recipe per part (our COPIES of vanilla materials). Colours are multipliers.",
+ "body (Wolf M)": {
+  "material": "copy of 'Wolf Skin Grey'",
+  "albedo": "read _MainTex (256) back, paint a 512 copy: repaint.json with repaint/wolf_hive_mask.png (R bark, G extremities, B veins+glow, A roots), repaint/wolf_mouth_mask.png (R wet opening, G gum band, B radiating folds) and repaint/wolf_moss_mask.png (R moss)",
+  "emission": "_EmissionMap = hive mask B x blight colour; _EmissionColor white x 1.6",
+  "glossiness": "raise where mouth mask R (wet opening) if the shader allows; else skip"
+ },
+ "lump (TheHive /Visual/low)": {
+  "material": "copy of TheHive_Mat",
+  "_MossAlpha": 0.5,
+  "emission": "off",
+  "mesh": "clone + deform/lump_offsets.json + deform/lump_uv_offsets.json"
+ },
+ "maw lips (2 TheHive lumps)": {
+  "material": "copy of TheHive_Mat",
+  "vertex colours": "vertex_colors/maw.json maw_lip_* (dark inner edge) - multiply albedo"
+ },
+ "gum rows (Wolf M mouth islands 35/42 tris)": {
+  "material": "copy of the Wolf material, _Color srgb (0.85, 0.74, 0.52)",
+  "vertex colours": "vertex_colors/maw.json maw_row_* (painted depth: near-black maroon inside, dark gum at the edge)"
+ },
+ "canines (Wolf M islands 12/21 tris)": {
+  "material": "copy of hugeskull bone material, tint (0.42, 0.33, 0.19)",
+  "vertex colours": "vertex_colors/maw.json wcanine* (dirty root -> pale tip)"
+ },
+ "sack (GuckSack)": {
+  "_EmissionMap": "its _MainTex",
+  "_EmissionColor": "linear (0.25, 1.0, 0.06) x 2.5 (deep glow)"
+ },
+ "eyes (eye_globe)": "as the Brute: kit/eye/eye_globe_core_pupil_mask.png (R core emission, G pupil), base x0.18, _EmissionColor linear (1.0, 0.28, 0.04) x 10",
+ "roots (root07)": {
+  "_Color": "x0.35",
+  "emission": "x0.25"
+ },
+ "branches (gd_king Elder islands)": {
+  "_MainTex": "texture copy: saturation x0.2, then x(0.17, 0.145, 0.115)",
+  "emission": "off",
+  "Glossiness": 0.15
+ },
+ "biome tint (ApplyBiomeVisuals)": "OWNER DECISION, see previews/final_biome_blackforest_panel.png (left _Color only, right as coded with _EmissionColor = tint x2: the whole Rootstalker glows flat purple)"
+}

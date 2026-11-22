@@ -16,7 +16,7 @@ namespace BlightedHeart
     {
         public const string PluginGUID = "wubarrk.blightedworldheart";
         public const string PluginName = "BlightedWorldHeart";
-        public const string PluginVersion = "1.1.0";
+        public const string PluginVersion = "1.2.0";
 
         public static bool IsWackyDBInstalled = false;
         public static BlightedHeartPlugin Instance;
@@ -41,6 +41,7 @@ namespace BlightedHeart
             // Prefab Manager Hook
             PrefabManager.OnVanillaPrefabsAvailable += SetupBlightedHeartPrefab;
             PrefabManager.OnVanillaPrefabsAvailable += BlightedItemsManager.Setup;
+            PrefabManager.OnVanillaPrefabsAvailable += BlightedSubBosses.Setup;   // 1.2.0: the six Hive Sub-Bosses
 
             _harmony.PatchAll();
             

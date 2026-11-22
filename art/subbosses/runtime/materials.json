@@ -1,0 +1,509 @@
+{
+ "_about": "BlightedHeart Sub-Boss material table (stage 3, the Runic playbook: one table, every part slot names a key; built once per process, shared by every instance). Keys = the APPROVED scene's material per part submesh ('looks' in runtime/<Id>.json; a Blender '.NNN' suffix is ignored). Values read from the approved scenes (kit_tools/list_scene_materials.py) and the per-asset materials_recipe.json. Every material is OUR copy of a vanilla material (or of Custom/Creature for the eyes and brood cells); nothing vanilla is edited. Colours are the LINEAR multipliers the renders used, written raw with SetVector (Runic DESIGN 9.25). Fields: src = the vanilla material copied ('part' = the part's own host material); shader 'creature' = a Custom/Creature copy instead; color = _Color; gloss = _Glossiness; moss = _MossAlpha; emission = 'off' | 'keep' | {color, map: main|eye_core|brood}; albedo = a texture copy: {pre: linear multiply, saturation: HSV S multiply (linear space, Blender HUE_SAT)} | 'eye_pupil' | 'white'; vc = vertex colours (stage 4: NOT applied yet, the flat colour ships).",
+ "eye_mask": "art/subbosses/ASSET-001_HiveBrute/kit/eye/eye_globe_core_pupil_mask.png (R core emission, G slit pupil; identical in all six kits)",
+ "kits": {
+  "BlightedSB_HiveBrute": {
+   "V_TheHive_Mat_614496": {
+    "src": "part",
+    "color": [
+     1.0,
+     0.6497,
+     0.1768
+    ],
+    "moss": 0.5,
+    "emission": "off",
+    "why": "crust: vanilla colour, moss 0.5, emission off (recipe 'lump')"
+   },
+   "V_TheHive_Eye_core": {
+    "src": "part",
+    "shader": "creature",
+    "color": [
+     0.18,
+     0.1169,
+     0.0318
+    ],
+    "gloss": 0.88,
+    "albedo": "eye_pupil",
+    "emission": {
+     "color": [
+      10.03,
+      2.808,
+      0.401
+     ],
+     "map": "eye_core"
+    },
+    "why": "eye: base 0.18 x vanilla, pupil darkened (1 - 0.92 G), emission = tex x R x (1, 0.28, 0.04) x 7 x 1.433"
+   },
+   "V_gucksack_252228": {
+    "src": "part",
+    "emission": {
+     "color": [
+      0.75,
+      3.0,
+      0.18
+     ],
+     "map": "main"
+    },
+    "why": "sack: _EmissionMap = its _MainTex, (0.25, 1.0, 0.06) x 3"
+   },
+   "TrollFang_dirtyyellow": {
+    "src": "part",
+    "color": [
+     0.62,
+     0.45,
+     0.22
+    ],
+    "vc": "fangs",
+    "why": "fangs: dirty yellow (vertex colours stage 4)"
+   },
+   "V_fi_village_catacombs_roots_853734_dark": {
+    "src": "part",
+    "color": [
+     0.35,
+     0.35,
+     0.35
+    ],
+    "emission": "off",
+    "why": "roots: x0.35 dark (vanilla emission is black)"
+   },
+   "V_Elder_branch_darkened": {
+    "src": "part",
+    "color": [
+     0.17,
+     0.145,
+     0.115
+    ],
+    "albedo": {
+     "pre": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "saturation": 0.2
+    },
+    "gloss": 0.15,
+    "emission": "off",
+    "why": "branch: saturation x0.2 then x(0.17, 0.145, 0.115), emission off"
+   }
+  },
+  "BlightedSB_Rootstalker": {
+   "V_TheHive_Mat_614496": {
+    "src": "part",
+    "color": [
+     1.0,
+     0.6497,
+     0.1768
+    ],
+    "moss": 0.5,
+    "emission": "off",
+    "why": "crust"
+   },
+   "V_TheHive_lip_vc": {
+    "src": "part",
+    "color": [
+     1.0,
+     0.6497,
+     0.1768
+    ],
+    "moss": 0.5,
+    "emission": "off",
+    "vc": "maw_lip",
+    "why": "maw lips: crust (dark inner edge = vertex colours, stage 4)"
+   },
+   "V_TheHive_Eye_core": {
+    "src": "part",
+    "shader": "creature",
+    "color": [
+     0.18,
+     0.1169,
+     0.0318
+    ],
+    "gloss": 0.88,
+    "albedo": "eye_pupil",
+    "emission": {
+     "color": [
+      10.03,
+      2.808,
+      0.401
+     ],
+     "map": "eye_core"
+    },
+    "why": "eye (as the Brute)"
+   },
+   "V_gucksack_252228": {
+    "src": "part",
+    "emission": {
+     "color": [
+      0.625,
+      2.5,
+      0.15
+     ],
+     "map": "main"
+    },
+    "why": "sack: x2.5 (deep glow)"
+   },
+   "WolfGum_depth_vc": {
+    "src": "part",
+    "color": [
+     0.85,
+     0.74,
+     0.52
+    ],
+    "gloss": 0.1,
+    "vc": "maw_row",
+    "why": "gum rows: wolf texture x(0.85, 0.74, 0.52) (painted depth = vertex colours, stage 4)"
+   },
+   "V_canine_bone_vc": {
+    "src": "part",
+    "shader": "creature",
+    "albedo": "white",
+    "color": [
+     0.2536,
+     0.1993,
+     0.1147
+    ],
+    "gloss": 0.65,
+    "vc": "wcanine",
+    "why": "canines: flat dirty bone (dirty root -> pale tip = vertex colours, stage 4)"
+   },
+   "V_fi_village_catacombs_roots_853734_dark": {
+    "src": "part",
+    "color": [
+     0.35,
+     0.35,
+     0.35
+    ],
+    "emission": "off",
+    "why": "roots x0.35"
+   },
+   "V_Elder_branch_weathered": {
+    "src": "part",
+    "color": [
+     0.17,
+     0.145,
+     0.115
+    ],
+    "albedo": {
+     "pre": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "saturation": 0.2
+    },
+    "gloss": 0.15,
+    "emission": "off",
+    "why": "branch"
+   }
+  },
+  "BlightedSB_Gorgemaw": {
+   "V_TheHive_Mat_614496": {
+    "src": "part",
+    "color": [
+     1.0,
+     0.6497,
+     0.1768
+    ],
+    "moss": 0.5,
+    "emission": "off",
+    "why": "crust (the 4 DENSE lumps' subdivision is stage 4)"
+   },
+   "V_TheHive_Eye_core": {
+    "src": "part",
+    "shader": "creature",
+    "color": [
+     0.18,
+     0.1169,
+     0.0318
+    ],
+    "gloss": 0.88,
+    "albedo": "eye_pupil",
+    "emission": {
+     "color": [
+      10.03,
+      2.808,
+      0.401
+     ],
+     "map": "eye_core"
+    },
+    "why": "eye (as the Brute)"
+   },
+   "V_gucksack_252228": {
+    "src": "part",
+    "emission": {
+     "color": [
+      0.75,
+      3.0,
+      0.18
+     ],
+     "map": "main"
+    },
+    "why": "sack x3"
+   },
+   "TrollFang_dirtyyellow": {
+    "src": "part",
+    "color": [
+     0.62,
+     0.45,
+     0.22
+    ],
+    "why": "fangs (no vertex colours on the Gorgemaw)"
+   },
+   "V_Thornroot_mat_160378_dark": {
+    "src": "part",
+    "color": [
+     0.2,
+     0.2,
+     0.2
+    ],
+    "emission": {
+     "color": [
+      1.127,
+      5.992,
+      0.0
+     ],
+     "map": null
+    },
+    "why": "roots x0.2, emission x0.25 of vanilla (4.51, 23.97, 0)"
+   },
+   "V_Tentaroot_mat_155976_dark": {
+    "src": "part",
+    "color": [
+     0.2,
+     0.2,
+     0.2
+    ],
+    "emission": {
+     "color": [
+      0.954,
+      0.0,
+      0.13
+     ],
+     "map": null
+    },
+    "why": "roots x0.2, emission as the render: (0.2, 0, 0.0273) x 4.77"
+   },
+   "V_branch_dark": {
+    "src": "part",
+    "color": [
+     0.075,
+     0.058,
+     0.042
+    ],
+    "albedo": {
+     "pre": [
+      1.0,
+      0.8543,
+      0.8543
+     ],
+     "saturation": 0.35
+    },
+    "gloss": 0.05,
+    "emission": "off",
+    "why": "heavy limbs: vanilla tint, saturation x0.35, then x(0.075, 0.058, 0.042) dark brown"
+   }
+  },
+  "BlightedSB_EyeblightSeer": {
+   "TheHive_Mat": {
+    "src": "part",
+    "color": [
+     1.0,
+     0.8265,
+     0.4575
+    ],
+    "moss": 0.5,
+    "emission": "off",
+    "why": "crust (agent B renders: the stored colour as linear)"
+   },
+   "V_TheHive_Eye_core": {
+    "src": "part",
+    "shader": "creature",
+    "color": [
+     0.18,
+     0.1169,
+     0.0318
+    ],
+    "gloss": 0.88,
+    "albedo": "eye_pupil",
+    "emission": {
+     "color": [
+      10.03,
+      2.808,
+      0.401
+     ],
+     "map": "eye_core"
+    },
+    "why": "eye"
+   },
+   "TrollFang_dirtyyellow": {
+    "src": "part",
+    "color": [
+     0.5471,
+     0.3971,
+     0.1941
+    ],
+    "why": "fangs"
+   },
+   "root07_mat": {
+    "src": "part",
+    "color": [
+     0.42,
+     0.32,
+     0.26
+    ],
+    "gloss": 0.3,
+    "emission": "off",
+    "why": "roots"
+   },
+   "Elder_branch": {
+    "src": "part",
+    "color": [
+     0.3,
+     0.27,
+     0.24
+    ],
+    "gloss": 0.05,
+    "emission": "off",
+    "why": "branch: matte, emission off (no weathering on the Seer)"
+   }
+  },
+  "BlightedSB_BarkboundHusk": {
+   "TheHive_Mat": {
+    "src": "part",
+    "color": [
+     1.0,
+     0.8265,
+     0.4575
+    ],
+    "moss": 0.5,
+    "emission": "off",
+    "why": "crust"
+   },
+   "V_TheHive_Eye_core": {
+    "src": "part",
+    "shader": "creature",
+    "color": [
+     0.18,
+     0.1169,
+     0.0318
+    ],
+    "gloss": 0.88,
+    "albedo": "eye_pupil",
+    "emission": {
+     "color": [
+      10.03,
+      2.808,
+      0.401
+     ],
+     "map": "eye_core"
+    },
+    "why": "eye"
+   },
+   "root07_mat": {
+    "src": "part",
+    "color": [
+     0.42,
+     0.32,
+     0.26
+    ],
+    "gloss": 0.3,
+    "emission": "off",
+    "why": "roots"
+   },
+   "Elder_branch": {
+    "src": "part",
+    "color": [
+     0.17,
+     0.145,
+     0.115
+    ],
+    "albedo": {
+     "pre": [
+      0.5,
+      0.45,
+      0.4
+     ],
+     "saturation": 0.2
+    },
+    "gloss": 0.05,
+    "emission": "off",
+    "why": "branch: x(0.5, 0.45, 0.4), saturation x0.2, then x(0.17, 0.145, 0.115) (step3_post.py)"
+   }
+  },
+  "BlightedSB_Broodhusk": {
+   "TheHive_Mat": {
+    "src": "part",
+    "color": [
+     1.0,
+     0.8265,
+     0.4575
+    ],
+    "moss": 0.5,
+    "emission": "off",
+    "why": "crust"
+   },
+   "AshBranch_barked": {
+    "src": "part",
+    "color": [
+     0.42,
+     0.2975,
+     0.1373
+    ],
+    "moss": 0.0,
+    "gloss": 0.05,
+    "emission": "off",
+    "why": "ash branches in TheHive bark, matte"
+   },
+   "V_TheHive_Eye_core": {
+    "src": "part",
+    "shader": "creature",
+    "color": [
+     0.18,
+     0.1169,
+     0.0318
+    ],
+    "gloss": 0.88,
+    "albedo": "eye_pupil",
+    "emission": {
+     "color": [
+      10.03,
+      2.808,
+      0.401
+     ],
+     "map": "eye_core"
+    },
+    "why": "eye"
+   },
+   "V_Brood_cell": {
+    "src": "part",
+    "shader": "creature",
+    "color": [
+     0.16,
+     0.11,
+     0.04
+    ],
+    "gloss": 0.8,
+    "emission": {
+     "color": [
+      4.5,
+      3.72,
+      0.48
+     ],
+     "map": "brood"
+    },
+    "why": "brood cell: dark amber membrane, glow (R+G)^0.45 x (0.75, 0.62, 0.08) x 6"
+   },
+   "root07_mat": {
+    "src": "part",
+    "color": [
+     0.42,
+     0.32,
+     0.26
+    ],
+    "gloss": 0.3,
+    "emission": "off",
+    "why": "roots"
+   }
+  }
+ }
+}

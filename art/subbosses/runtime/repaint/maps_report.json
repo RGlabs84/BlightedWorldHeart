@@ -1,0 +1,83 @@
+{
+ "BlightedSB_HiveBrute": {
+  "size": 1024,
+  "bark_size": 2048,
+  "covered": 344074,
+  "tile_m": 1.2,
+  "regions": {
+   "0": 1048576
+  },
+  "masks": [
+   "hive",
+   "moss"
+  ]
+ },
+ "BlightedSB_Rootstalker": {
+  "size": 512,
+  "bark_size": 1024,
+  "covered": 38016,
+  "tile_m": 0.3,
+  "regions": {
+   "0": 262144
+  },
+  "masks": [
+   "hive",
+   "moss",
+   "mouth"
+  ]
+ },
+ "BlightedSB_Gorgemaw": {
+  "size": 512,
+  "bark_size": 1024,
+  "covered": 75699,
+  "tile_m": 1.2,
+  "regions": {
+   "0": 255714,
+   "1": 6430
+  },
+  "masks": [
+   "hive",
+   "moss"
+  ]
+ },
+ "BlightedSB_EyeblightSeer": {
+  "size": 1024,
+  "bark_size": 1024,
+  "covered": 398032,
+  "tile_m": 0.6864,
+  "regions": {
+   "0": 1043953,
+   "2": 4623
+  },
+  "masks": [
+   "hive"
+  ]
+ },
+ "BlightedSB_BarkboundHusk": {
+  "size": 1024,
+  "bark_size": 1024,
+  "covered": 238155,
+  "tile_m": 0.5217,
+  "regions": {
+   "0": 1048576
+  },
+  "masks": [
+   "hive"
+  ]
+ },
+ "BlightedSB_Broodhusk": {
+  "size": 1024,
+  "bark_size": 1024,
+  "covered": 285792,
+  "tile_m": 0.48,
+  "regions": {
+   "0": 949865,
+   "3": 44063,
+   "4": 4179,
+   "5": 50469
+  },
+  "masks": [
+   "hive"
+  ]
+ }
+}

@@ -48,7 +48,7 @@ namespace BlightedHeart
 
                 // Defeats are recorded here, not from BlightedWorldHeartAI.OnDeath() - that method only runs
                 // on whichever peer currently owns the boss's ZDO, which during an active fight is normally
-                // a player's client, not this server (see PAUSED/TheRavensCall/KILL_TRACKING_FINDINGS.md).
+                // a player's client, not this server (see PAUSED/TheRavensCall-OLD-1.2.1/KILL_TRACKING_FINDINGS.md).
                 // m_onZDODestroyed is broadcast to every peer, including the server, once the destroy is
                 // confirmed network-wide, regardless of who owned the object - the same event ZNetScene
                 // itself subscribes to for its own bookkeeping. It also can't be confused with a zone unload

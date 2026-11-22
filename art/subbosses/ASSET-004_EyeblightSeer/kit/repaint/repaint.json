@@ -1,0 +1,40 @@
+{
+ "about": "ASSET-004 early repaint recipe: the Hive Brute's method (kit_tools/troll_repaint.py) scaled to the Shaman (distances / 1.75). Mask = repaint/seer_hive_mask.png in the Shaman Cube's UV0 (R bark, G extremity darkening, B blight veins = emission, A dark roots + the gullet behind the jaw), lines computed at 2048 and box-filtered to 1024. The vanilla texture is only 128 px: the runtime upsamples it to the mask's 1024 before recolouring (a new Texture2D; vanilla pixels are read back, never shipped).",
+ "sick_skin": [
+  0.5,
+  0.53,
+  0.4
+ ],
+ "sick_mix": 0.45,
+ "extremity_darken": 0.4,
+ "bark_tint": [
+  0.85,
+  0.64,
+  0.42
+ ],
+ "infection_margin_darken": 0.45,
+ "bark_texture": "olivetree_trunk01 (TheHive_Mat _MainTex), triplanar in rest-pose metres, tile 0.69 m",
+ "root_colour": [
+  0.03,
+  0.025,
+  0.02
+ ],
+ "vein_albedo": [
+  0.05,
+  0.06,
+  0.02
+ ],
+ "blight_colour": [
+  0.42,
+  0.55,
+  0.12
+ ],
+ "emission_strength_preview": 0.85,
+ "veins": "off the head; faded out within 0.25-0.5 m of the Hive eyes",
+ "antlers": "its own antlers weathered toward grey-brown bark: 0.45 x vanilla + 0.55 x luminance x [0.62, 0.55, 0.46] (they sat bone-pale next to the dark branches)",
+ "mask_size": "1024 (lines at 2048, box-filtered)",
+ "hidden_renderers": [
+  "Plane",
+  "Plane.001"
+ ]
+}

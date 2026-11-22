@@ -640,6 +640,39 @@ namespace BlightedHeart
             return true;
         }
 
+        // Every Blighted recipe is free at level 1 (see IsRecipeFreeAtLevel1), so Player.UpdateKnownRecipesList
+        // - which discovers any recipe whose requirements it "has" once the station is known - unlocks a
+        // station's WHOLE Blighted set in one pass: 39 recipes on a workbench, 159 on a forge, 169 on a
+        // black forge. Vanilla's AddKnownRecipe queues a "New recipe" unlock popup (plus a message-log line)
+        // for each, so learning a station or a station level buried the screen in popups for minutes.
+        //
+        // The recipe must still become KNOWN - GetAvailableRecipes only lists known recipes, and that is what
+        // puts a Blighted item in the Upgrade tab - so this adds it to the same set vanilla does, minus the
+        // popup. Picking up a Blighted item you have not seen before still shows the normal one "New item"
+        // popup from AddKnownItem; only the mass recipe unlock is silenced.
+        [HarmonyPatch(typeof(Player), "AddKnownRecipe")]
+        [HarmonyPrefix]
+        public static bool AddKnownRecipePrefix(Player __instance, Recipe recipe)
+        {
+            try
+            {
+                if (recipe == null || recipe.m_item == null) return true;
+                if (!recipe.m_item.gameObject.name.StartsWith("Blighted")) return true;
+
+                var shared = recipe.m_item.m_itemData != null ? recipe.m_item.m_itemData.m_shared : null;
+                if (shared == null || string.IsNullOrEmpty(shared.m_name)) return true;
+
+                __instance.m_knownRecipes.Add(shared.m_name);
+                return false;
+            }
+            catch (System.Exception ex)
+            {
+                // Falling back to vanilla only costs the popups; never let this patch break discovery itself.
+                Jotunn.Logger.LogWarning($"AddKnownRecipePrefix failed (non-fatal, using vanilla behaviour): {ex.Message}");
+                return true;
+            }
+        }
+
         [HarmonyPatch(typeof(Player), nameof(Player.AddKnownItem), new System.Type[] { typeof(ItemDrop.ItemData) })]
         [HarmonyPrefix]
         public static void AddKnownItemPrefix(Player __instance, ItemDrop.ItemData item)

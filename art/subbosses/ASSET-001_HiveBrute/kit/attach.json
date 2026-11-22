@@ -1,0 +1,3685 @@
+{
+ "_about": "ASSET-001 Hive Brute kitbash: every add-on is an UNMODIFIED vanilla mesh + its vanilla material on one Troll bone. For each part: create an ANCHOR as a child of `parent` with localPosition/localRotation/localScale (Runic armor_attach convention: localScale 1/130 cancels the Troll's x130 bone chain, localRotation undoes the bone's REST rotation, so the anchor is world-aligned in the rest pose), then a child carrying the vanilla mesh with `part_localRotation` / `part_localScale` (Unity axes) at position 0. Units: Unity, the Troll prefab's REST pose (= bind turned 180 deg about Y).",
+ "_donor": "Troll (1.0.21, bundle c4210710)",
+ "_base_tris": {
+  "Body": 4652,
+  "Hair": 1554
+ },
+ "_sources": {
+  "branch0": {
+   "prefab": "gd_king",
+   "renderer": "/gd_king/Visual/gd_king",
+   "mesh": "gd_king.001 island (sheet cell 1)",
+   "triangles": [
+    0,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160,
+    161,
+    162
+   ],
+   "material": "Elder_mat + STEP 3 recipe (desaturate 0.2, x(0.17, 0.145, 0.115), no emission)",
+   "scale_note": "placed with x/y scale 1.9x the length scale",
+   "frame": "root at origin, root->tip +z (computed from the island)",
+   "length_m_in_elder": 4.797
+  },
+  "branch1": {
+   "prefab": "gd_king",
+   "renderer": "/gd_king/Visual/gd_king",
+   "mesh": "gd_king.001 island (sheet cell 3)",
+   "triangles": [
+    14511,
+    14512,
+    14513,
+    14514,
+    14515,
+    14516,
+    14517,
+    14518,
+    14519,
+    14520,
+    14521,
+    14522,
+    14523,
+    14524,
+    14525,
+    14526,
+    14527,
+    14528,
+    14529,
+    14530,
+    14531,
+    14532,
+    14533,
+    14534,
+    14535,
+    14536,
+    14537,
+    14538,
+    14539,
+    14540,
+    14541,
+    14542,
+    14543,
+    14544,
+    14545,
+    14546,
+    14547,
+    14548,
+    14549,
+    14550,
+    14551,
+    14552,
+    14553,
+    14554,
+    14555,
+    14556,
+    14557,
+    14558,
+    14559,
+    14560,
+    14561,
+    14562,
+    14563,
+    14564,
+    14565,
+    14566,
+    14567,
+    14568,
+    14569,
+    14570,
+    14571,
+    14572,
+    14573,
+    14574,
+    14575,
+    14576,
+    14577,
+    14578,
+    14579,
+    14580,
+    14581,
+    14582,
+    14583,
+    14584,
+    14585,
+    14586,
+    14587,
+    14588,
+    14589,
+    14590,
+    14591,
+    14592,
+    14593,
+    14594,
+    14595,
+    14596,
+    14597,
+    14598,
+    14599,
+    14600,
+    14601,
+    14602,
+    14603,
+    14604,
+    14605,
+    14606,
+    14607,
+    14608,
+    14609,
+    14610,
+    14611,
+    14612,
+    14613,
+    14614,
+    14615,
+    14616,
+    14617,
+    14618,
+    14619,
+    14620,
+    14621,
+    14622,
+    14623,
+    14624,
+    14625,
+    14626,
+    14627,
+    14628,
+    14629,
+    14630,
+    14631,
+    14632,
+    14633,
+    14634,
+    14635,
+    14636,
+    14637,
+    14638,
+    14639,
+    14640,
+    14641,
+    14642,
+    14643,
+    14644,
+    14645,
+    14646
+   ],
+   "material": "Elder_mat + STEP 3 recipe (desaturate 0.2, x(0.17, 0.145, 0.115), no emission)",
+   "scale_note": "placed with x/y scale 1.9x the length scale",
+   "frame": "root at origin, root->tip +z (computed from the island)",
+   "length_m_in_elder": 2.695
+  },
+  "branch2": {
+   "prefab": "gd_king",
+   "renderer": "/gd_king/Visual/gd_king",
+   "mesh": "gd_king.001 island (sheet cell 4)",
+   "triangles": [
+    11296,
+    11297,
+    11298,
+    11299,
+    11300,
+    11301,
+    11302,
+    11303,
+    11304,
+    11305,
+    11306,
+    11307,
+    11308,
+    11309,
+    11310,
+    11311,
+    11312,
+    11313,
+    11314,
+    11315,
+    11316,
+    11317,
+    11318,
+    11319,
+    11320,
+    11321,
+    11322,
+    11323,
+    11324,
+    11325,
+    11326,
+    11327,
+    11328,
+    11329,
+    11330,
+    11331,
+    11332,
+    11333,
+    11334,
+    11335,
+    11336,
+    11337,
+    11338,
+    11339,
+    11340,
+    11341,
+    11342,
+    11343,
+    11344,
+    11345,
+    11346,
+    11347,
+    11348,
+    11349,
+    11350,
+    11351,
+    11352,
+    11353,
+    11354,
+    11355,
+    11356,
+    11357,
+    11358,
+    11359,
+    11360,
+    11361,
+    11362,
+    11363,
+    11364,
+    11365,
+    11366,
+    11367,
+    11368,
+    11369,
+    11370,
+    11371,
+    11372,
+    11373,
+    11374,
+    11375,
+    11376,
+    11377,
+    11378,
+    11379,
+    11380,
+    11381,
+    11382,
+    11383,
+    11384,
+    11385,
+    11386,
+    11387,
+    11388,
+    11389,
+    11390,
+    11391,
+    11392,
+    11393,
+    11394,
+    11395,
+    11396,
+    11397,
+    11398,
+    11399,
+    11400,
+    11401,
+    11402,
+    11403,
+    11404,
+    11405,
+    11406,
+    11407,
+    11408,
+    11409,
+    11410,
+    11411,
+    11412,
+    11413,
+    11414,
+    11415,
+    11416,
+    11417,
+    11418,
+    11419,
+    11420,
+    11421,
+    11422,
+    11423,
+    11424,
+    11425,
+    11426,
+    11427,
+    11428,
+    11429,
+    11430,
+    11431
+   ],
+   "material": "Elder_mat + STEP 3 recipe (desaturate 0.2, x(0.17, 0.145, 0.115), no emission)",
+   "scale_note": "placed with x/y scale 1.9x the length scale",
+   "frame": "root at origin, root->tip +z (computed from the island)",
+   "length_m_in_elder": 2.438
+  },
+  "branch3": {
+   "prefab": "gd_king",
+   "renderer": "/gd_king/Visual/gd_king",
+   "mesh": "gd_king.001 island (sheet cell 6)",
+   "triangles": [
+    521,
+    522,
+    523,
+    524,
+    525,
+    526,
+    527,
+    528,
+    529,
+    530,
+    531,
+    532,
+    533,
+    534,
+    535,
+    536,
+    537,
+    538,
+    539,
+    540,
+    541,
+    542,
+    543,
+    544,
+    545,
+    546,
+    547,
+    548,
+    549,
+    550,
+    551,
+    552,
+    553,
+    554,
+    555,
+    556,
+    557,
+    558,
+    559,
+    560,
+    561,
+    562,
+    563,
+    564,
+    565,
+    566,
+    567,
+    568,
+    569,
+    570,
+    571,
+    572,
+    573,
+    574,
+    575,
+    576,
+    577,
+    578,
+    579,
+    580,
+    581,
+    582,
+    583,
+    584,
+    585,
+    586,
+    587,
+    588,
+    589,
+    590,
+    591,
+    592,
+    593,
+    594,
+    595,
+    596,
+    597,
+    598,
+    599,
+    600,
+    601,
+    602,
+    603,
+    604,
+    605,
+    606,
+    607,
+    608,
+    609,
+    610,
+    611,
+    612,
+    613,
+    614,
+    615,
+    616,
+    617,
+    618,
+    619,
+    620,
+    621,
+    622,
+    623,
+    624,
+    625,
+    626,
+    627,
+    628,
+    629,
+    630,
+    631,
+    632,
+    633,
+    634,
+    635,
+    636,
+    637,
+    638,
+    639,
+    640,
+    641,
+    642,
+    643,
+    644,
+    645,
+    646,
+    647,
+    648,
+    649,
+    650,
+    651,
+    652,
+    653,
+    654,
+    655,
+    656
+   ],
+   "material": "Elder_mat + STEP 3 recipe (desaturate 0.2, x(0.17, 0.145, 0.115), no emission)",
+   "scale_note": "placed with x/y scale 1.9x the length scale",
+   "frame": "root at origin, root->tip +z (computed from the island)",
+   "length_m_in_elder": 1.959
+  },
+  "ttooth0": {
+   "prefab": "Troll",
+   "renderer": "Body",
+   "mesh": "Troll Body island (ttooth): 18 triangles",
+   "triangles": [
+    1618,
+    1619,
+    4354,
+    4355,
+    4356,
+    4357,
+    4358,
+    4359,
+    4360,
+    4361,
+    4362,
+    4363,
+    4364,
+    4365,
+    4366,
+    4367,
+    4368,
+    4369
+   ],
+   "material": "the Troll's own material, instance tint (0.62, 0.45, 0.22)",
+   "frame": "root at origin, root->tip +z, bulge +y (computed from the island, deterministic)"
+  },
+  "ttooth1": {
+   "prefab": "Troll",
+   "renderer": "Body",
+   "mesh": "Troll Body island (ttooth): 18 triangles",
+   "triangles": [
+    1620,
+    1621,
+    1622,
+    1623,
+    1624,
+    1625,
+    1626,
+    1627,
+    1628,
+    1629,
+    1630,
+    1631,
+    1632,
+    1633,
+    1634,
+    1635,
+    1636,
+    1637
+   ],
+   "material": "the Troll's own material, instance tint (0.62, 0.45, 0.22)",
+   "frame": "root at origin, root->tip +z, bulge +y (computed from the island, deterministic)"
+  },
+  "ttooth2": {
+   "prefab": "Troll",
+   "renderer": "Body",
+   "mesh": "Troll Body island (ttooth): 18 triangles",
+   "triangles": [
+    1638,
+    1639,
+    1640,
+    1641,
+    1642,
+    1643,
+    1644,
+    1645,
+    1646,
+    1647,
+    1648,
+    1649,
+    1650,
+    1651,
+    1652,
+    1653,
+    1654,
+    1655
+   ],
+   "material": "the Troll's own material, instance tint (0.62, 0.45, 0.22)",
+   "frame": "root at origin, root->tip +z, bulge +y (computed from the island, deterministic)"
+  },
+  "ttooth3": {
+   "prefab": "Troll",
+   "renderer": "Body",
+   "mesh": "Troll Body island (ttooth): 18 triangles",
+   "triangles": [
+    3746,
+    3747,
+    4320,
+    4321,
+    4322,
+    4323,
+    4324,
+    4325,
+    4326,
+    4327,
+    4328,
+    4329,
+    4330,
+    4331,
+    4332,
+    4333,
+    4334,
+    4335
+   ],
+   "material": "the Troll's own material, instance tint (0.62, 0.45, 0.22)",
+   "frame": "root at origin, root->tip +z, bulge +y (computed from the island, deterministic)"
+  },
+  "ttooth4": {
+   "prefab": "Troll",
+   "renderer": "Body",
+   "mesh": "Troll Body island (ttooth): 18 triangles",
+   "triangles": [
+    3748,
+    3749,
+    3750,
+    3751,
+    3752,
+    3753,
+    3754,
+    3755,
+    3756,
+    3757,
+    3758,
+    3759,
+    3760,
+    3761,
+    3762,
+    3763,
+    3764,
+    3765
+   ],
+   "material": "the Troll's own material, instance tint (0.62, 0.45, 0.22)",
+   "frame": "root at origin, root->tip +z, bulge +y (computed from the island, deterministic)"
+  },
+  "ttooth5": {
+   "prefab": "Troll",
+   "renderer": "Body",
+   "mesh": "Troll Body island (ttooth): 18 triangles",
+   "triangles": [
+    3766,
+    3767,
+    3768,
+    3769,
+    3770,
+    3771,
+    3772,
+    3773,
+    3774,
+    3775,
+    3776,
+    3777,
+    3778,
+    3779,
+    3780,
+    3781,
+    3782,
+    3783
+   ],
+   "material": "the Troll's own material, instance tint (0.62, 0.45, 0.22)",
+   "frame": "root at origin, root->tip +z, bulge +y (computed from the island, deterministic)"
+  },
+  "ttooth6": {
+   "prefab": "Troll",
+   "renderer": "Body",
+   "mesh": "Troll Body island (ttooth): 18 triangles",
+   "triangles": [
+    4388,
+    4389,
+    4390,
+    4391,
+    4392,
+    4393,
+    4394,
+    4395,
+    4396,
+    4397,
+    4398,
+    4399,
+    4400,
+    4401,
+    4402,
+    4403,
+    4404,
+    4405
+   ],
+   "material": "the Troll's own material, instance tint (0.62, 0.45, 0.22)",
+   "frame": "root at origin, root->tip +z, bulge +y (computed from the island, deterministic)"
+  },
+  "ttooth7": {
+   "prefab": "Troll",
+   "renderer": "Body",
+   "mesh": "Troll Body island (ttooth): 18 triangles",
+   "triangles": [
+    4406,
+    4407,
+    4408,
+    4409,
+    4410,
+    4411,
+    4412,
+    4413,
+    4414,
+    4415,
+    4416,
+    4417,
+    4418,
+    4419,
+    4420,
+    4421,
+    4422,
+    4423
+   ],
+   "material": "the Troll's own material, instance tint (0.62, 0.45, 0.22)",
+   "frame": "root at origin, root->tip +z, bulge +y (computed from the island, deterministic)"
+  },
+  "ttooth8": {
+   "prefab": "Troll",
+   "renderer": "Body",
+   "mesh": "Troll Body island (ttooth): 18 triangles",
+   "triangles": [
+    4444,
+    4445,
+    4446,
+    4447,
+    4448,
+    4449,
+    4450,
+    4451,
+    4452,
+    4453,
+    4454,
+    4455,
+    4456,
+    4457,
+    4458,
+    4459,
+    4460,
+    4461
+   ],
+   "material": "the Troll's own material, instance tint (0.62, 0.45, 0.22)",
+   "frame": "root at origin, root->tip +z, bulge +y (computed from the island, deterministic)"
+  },
+  "ttooth9": {
+   "prefab": "Troll",
+   "renderer": "Body",
+   "mesh": "Troll Body island (ttooth): 18 triangles",
+   "triangles": [
+    4462,
+    4463,
+    4464,
+    4465,
+    4466,
+    4467,
+    4468,
+    4469,
+    4470,
+    4471,
+    4472,
+    4473,
+    4474,
+    4475,
+    4476,
+    4477,
+    4478,
+    4479
+   ],
+   "material": "the Troll's own material, instance tint (0.62, 0.45, 0.22)",
+   "frame": "root at origin, root->tip +z, bulge +y (computed from the island, deterministic)"
+  },
+  "claw0": {
+   "prefab": "Troll",
+   "renderer": "Body",
+   "mesh": "Troll Body island (claw): 56 triangles",
+   "triangles": [
+    1680,
+    1681,
+    1682,
+    1683,
+    1684,
+    1685,
+    1686,
+    1687,
+    1688,
+    1689,
+    1690,
+    1691,
+    1692,
+    1693,
+    1694,
+    1695,
+    1696,
+    1697,
+    1698,
+    1699,
+    1700,
+    1701,
+    1702,
+    1703,
+    1704,
+    1705,
+    1706,
+    1707,
+    1708,
+    1709,
+    1710,
+    1711,
+    1712,
+    1713,
+    1714,
+    1715,
+    1716,
+    1717,
+    1718,
+    1719,
+    1720,
+    1721,
+    1722,
+    1723,
+    1724,
+    1725,
+    1726,
+    1727,
+    1728,
+    1729,
+    1730,
+    1731,
+    1732,
+    1733,
+    1734,
+    1735
+   ],
+   "material": "the Troll's own material, instance tint (0.62, 0.45, 0.22)",
+   "frame": "root at origin, root->tip +z, bulge +y (computed from the island, deterministic)"
+  },
+  "claw1": {
+   "prefab": "Troll",
+   "renderer": "Body",
+   "mesh": "Troll Body island (claw): 56 triangles",
+   "triangles": [
+    1736,
+    1737,
+    1738,
+    1739,
+    1740,
+    1741,
+    1742,
+    1743,
+    1744,
+    1745,
+    1746,
+    1747,
+    1748,
+    1749,
+    1750,
+    1751,
+    1752,
+    1753,
+    1754,
+    1755,
+    1756,
+    1757,
+    1758,
+    1759,
+    1760,
+    1761,
+    1762,
+    1763,
+    1764,
+    1765,
+    1766,
+    1767,
+    1768,
+    1769,
+    1770,
+    1771,
+    1772,
+    1773,
+    1774,
+    1775,
+    1776,
+    1777,
+    1778,
+    1779,
+    1780,
+    1781,
+    1782,
+    1783,
+    1784,
+    1785,
+    1786,
+    1787,
+    1788,
+    1789,
+    1790,
+    1791
+   ],
+   "material": "the Troll's own material, instance tint (0.62, 0.45, 0.22)",
+   "frame": "root at origin, root->tip +z, bulge +y (computed from the island, deterministic)"
+  },
+  "claw2": {
+   "prefab": "Troll",
+   "renderer": "Body",
+   "mesh": "Troll Body island (claw): 56 triangles",
+   "triangles": [
+    1792,
+    1793,
+    1794,
+    1795,
+    1796,
+    1797,
+    1798,
+    1799,
+    1800,
+    1801,
+    1802,
+    1803,
+    1804,
+    1805,
+    1806,
+    1807,
+    1808,
+    1809,
+    1810,
+    1811,
+    1812,
+    1813,
+    1814,
+    1815,
+    1816,
+    1817,
+    1818,
+    1819,
+    1820,
+    1821,
+    1822,
+    1823,
+    1824,
+    1825,
+    1826,
+    1827,
+    1828,
+    1829,
+    1830,
+    1831,
+    1832,
+    1833,
+    1834,
+    1835,
+    1836,
+    1837,
+    1838,
+    1839,
+    1840,
+    1841,
+    1842,
+    1843,
+    1844,
+    1845,
+    1846,
+    1847
+   ],
+   "material": "the Troll's own material, instance tint (0.62, 0.45, 0.22)",
+   "frame": "root at origin, root->tip +z, bulge +y (computed from the island, deterministic)"
+  },
+  "claw3": {
+   "prefab": "Troll",
+   "renderer": "Body",
+   "mesh": "Troll Body island (claw): 56 triangles",
+   "triangles": [
+    1848,
+    1849,
+    1850,
+    1851,
+    1852,
+    1853,
+    1854,
+    1855,
+    1856,
+    1857,
+    1858,
+    1859,
+    1860,
+    1861,
+    1862,
+    1863,
+    1864,
+    1865,
+    1866,
+    1867,
+    1868,
+    1869,
+    1870,
+    1871,
+    1872,
+    1873,
+    1874,
+    1875,
+    1876,
+    1877,
+    1878,
+    1879,
+    1880,
+    1881,
+    1882,
+    1883,
+    1884,
+    1885,
+    1886,
+    1887,
+    1888,
+    1889,
+    1890,
+    1891,
+    1892,
+    1893,
+    1894,
+    1895,
+    1896,
+    1897,
+    1898,
+    1899,
+    1900,
+    1901,
+    1902,
+    1903
+   ],
+   "material": "the Troll's own material, instance tint (0.62, 0.45, 0.22)",
+   "frame": "root at origin, root->tip +z, bulge +y (computed from the island, deterministic)"
+  },
+  "claw4": {
+   "prefab": "Troll",
+   "renderer": "Body",
+   "mesh": "Troll Body island (claw): 56 triangles",
+   "triangles": [
+    3808,
+    3809,
+    3810,
+    3811,
+    3812,
+    3813,
+    3814,
+    3815,
+    3816,
+    3817,
+    3818,
+    3819,
+    3820,
+    3821,
+    3822,
+    3823,
+    3824,
+    3825,
+    3826,
+    3827,
+    3828,
+    3829,
+    3830,
+    3831,
+    3832,
+    3833,
+    3834,
+    3835,
+    3836,
+    3837,
+    3838,
+    3839,
+    3840,
+    3841,
+    3842,
+    3843,
+    3844,
+    3845,
+    3846,
+    3847,
+    3848,
+    3849,
+    3850,
+    3851,
+    3852,
+    3853,
+    3854,
+    3855,
+    3856,
+    3857,
+    3858,
+    3859,
+    3860,
+    3861,
+    3862,
+    3863
+   ],
+   "material": "the Troll's own material, instance tint (0.62, 0.45, 0.22)",
+   "frame": "root at origin, root->tip +z, bulge +y (computed from the island, deterministic)"
+  },
+  "claw5": {
+   "prefab": "Troll",
+   "renderer": "Body",
+   "mesh": "Troll Body island (claw): 56 triangles",
+   "triangles": [
+    3864,
+    3865,
+    3866,
+    3867,
+    3868,
+    3869,
+    3870,
+    3871,
+    3872,
+    3873,
+    3874,
+    3875,
+    3876,
+    3877,
+    3878,
+    3879,
+    3880,
+    3881,
+    3882,
+    3883,
+    3884,
+    3885,
+    3886,
+    3887,
+    3888,
+    3889,
+    3890,
+    3891,
+    3892,
+    3893,
+    3894,
+    3895,
+    3896,
+    3897,
+    3898,
+    3899,
+    3900,
+    3901,
+    3902,
+    3903,
+    3904,
+    3905,
+    3906,
+    3907,
+    3908,
+    3909,
+    3910,
+    3911,
+    3912,
+    3913,
+    3914,
+    3915,
+    3916,
+    3917,
+    3918,
+    3919
+   ],
+   "material": "the Troll's own material, instance tint (0.62, 0.45, 0.22)",
+   "frame": "root at origin, root->tip +z, bulge +y (computed from the island, deterministic)"
+  },
+  "claw6": {
+   "prefab": "Troll",
+   "renderer": "Body",
+   "mesh": "Troll Body island (claw): 56 triangles",
+   "triangles": [
+    3920,
+    3921,
+    3922,
+    3923,
+    3924,
+    3925,
+    3926,
+    3927,
+    3928,
+    3929,
+    3930,
+    3931,
+    3932,
+    3933,
+    3934,
+    3935,
+    3936,
+    3937,
+    3938,
+    3939,
+    3940,
+    3941,
+    3942,
+    3943,
+    3944,
+    3945,
+    3946,
+    3947,
+    3948,
+    3949,
+    3950,
+    3951,
+    3952,
+    3953,
+    3954,
+    3955,
+    3956,
+    3957,
+    3958,
+    3959,
+    3960,
+    3961,
+    3962,
+    3963,
+    3964,
+    3965,
+    3966,
+    3967,
+    3968,
+    3969,
+    3970,
+    3971,
+    3972,
+    3973,
+    3974,
+    3975
+   ],
+   "material": "the Troll's own material, instance tint (0.62, 0.45, 0.22)",
+   "frame": "root at origin, root->tip +z, bulge +y (computed from the island, deterministic)"
+  },
+  "claw7": {
+   "prefab": "Troll",
+   "renderer": "Body",
+   "mesh": "Troll Body island (claw): 56 triangles",
+   "triangles": [
+    3976,
+    3977,
+    3978,
+    3979,
+    3980,
+    3981,
+    3982,
+    3983,
+    3984,
+    3985,
+    3986,
+    3987,
+    3988,
+    3989,
+    3990,
+    3991,
+    3992,
+    3993,
+    3994,
+    3995,
+    3996,
+    3997,
+    3998,
+    3999,
+    4000,
+    4001,
+    4002,
+    4003,
+    4004,
+    4005,
+    4006,
+    4007,
+    4008,
+    4009,
+    4010,
+    4011,
+    4012,
+    4013,
+    4014,
+    4015,
+    4016,
+    4017,
+    4018,
+    4019,
+    4020,
+    4021,
+    4022,
+    4023,
+    4024,
+    4025,
+    4026,
+    4027,
+    4028,
+    4029,
+    4030,
+    4031
+   ],
+   "material": "the Troll's own material, instance tint (0.62, 0.45, 0.22)",
+   "frame": "root at origin, root->tip +z, bulge +y (computed from the island, deterministic)"
+  },
+  "lump": {
+   "prefab": "TheHive",
+   "renderer": "/TheHive/Visual/low",
+   "mesh": "default",
+   "mesh_path_id": -4928479748442465903,
+   "material": "TheHive_Mat"
+  },
+  "eye": {
+   "prefab": "eye_globe",
+   "renderer": "/eye_globe/default",
+   "mesh": "default",
+   "mesh_path_id": 7188158992250963423,
+   "material": "TheHive_Eye (from TheHive /Visual/EYE)"
+  },
+  "sack": {
+   "prefab": "GuckSack",
+   "renderer": "/GuckSack/sack",
+   "mesh": "Cancer",
+   "mesh_path_id": 8918963702117525708,
+   "material": "gucksack"
+  },
+  "root": {
+   "prefab": "HugeRoot1",
+   "renderer": "/HugeRoot1/root1_low",
+   "mesh": "root1_low",
+   "mesh_path_id": -7232008768112309544,
+   "material": "hugeroot"
+  },
+  "jaw": {
+   "prefab": "hugeskull",
+   "renderer": "/hugeskull/jaw",
+   "mesh": "jaw",
+   "mesh_path_id": -315376845249174344,
+   "material": "jawMat"
+  },
+  "vineh": {
+   "prefab": "vines",
+   "renderer": "/vines/New/high",
+   "mesh": "default",
+   "mesh_path_id": -2340816738040686200,
+   "material": "VinesBranch_mat, Vines_Mat"
+  },
+  "vinel": {
+   "prefab": "vines",
+   "renderer": "/vines/New/low",
+   "mesh": "default",
+   "mesh_path_id": 4601915540024804275,
+   "material": "Vines_Mat"
+  },
+  "thorn": {
+   "prefab": "ThornRoots",
+   "renderer": "/ThornRoots/Cube",
+   "mesh": "Cube",
+   "mesh_path_id": 5815167062159252271,
+   "material": "Thornroot_mat"
+  },
+  "tenta": {
+   "prefab": "Tentaroots",
+   "renderer": "/Tentaroots/Cube",
+   "mesh": "Cube",
+   "mesh_path_id": -3684905309386502404,
+   "material": "Tentaroot_mat"
+  },
+  "writhan": {
+   "prefab": "writhanroots",
+   "renderer": "/writhanroots/default",
+   "mesh": "default",
+   "mesh_path_id": 9218356082234241707,
+   "material": "Writhan_mat"
+  },
+  "root07": {
+   "prefab": "root07",
+   "renderer": "/root07/root07",
+   "mesh": "Mesh",
+   "mesh_path_id": 3405720765841288038,
+   "material": "fi_village_catacombs_roots"
+  },
+  "sphere": {
+   "prefab": "TheHive",
+   "renderer": "/TheHive/Visual/EYE",
+   "mesh": "built-in Sphere (unity default resources, 768 tris)",
+   "material": "TheHive_Eye"
+  },
+  "cube": {
+   "prefab": "TheHive",
+   "renderer": "/TheHive/Visual/Cube (4)",
+   "mesh": "built-in Cube (unity default resources)",
+   "material": "TheHive_Mat_legs"
+  }
+ },
+ "HB_hump_lump_1": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Spine2",
+  "localPosition": [
+   0.004543,
+   0.000767,
+   0.009201
+  ],
+  "localRotation": [
+   -0.0,
+   -0.975782,
+   -0.218744,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   -0.12795,
+   0.827802,
+   -0.520258,
+   0.166447
+  ],
+  "part_localScale": [
+   0.8,
+   0.56,
+   0.8
+  ],
+  "rest_world_position": [
+   -0.5905,
+   5.7837,
+   -0.762
+  ],
+  "tris": 238,
+  "pairs_body": 132,
+  "seated_by_m": 0.6773,
+  "sunk_frac": 0.25,
+  "vertex_offsets": "deform/lump_offsets.json#HB_hump_lump_1",
+  "mode": "rigid"
+ },
+ "HB_hump_lump_2": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Spine2",
+  "localPosition": [
+   -0.004378,
+   -0.00026,
+   0.00923
+  ],
+  "localRotation": [
+   -0.0,
+   -0.975782,
+   -0.218744,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   -0.202805,
+   0.764104,
+   -0.506445,
+   0.344281
+  ],
+  "part_localScale": [
+   0.78,
+   0.546,
+   0.78
+  ],
+  "rest_world_position": [
+   0.5691,
+   5.6646,
+   -0.8224
+  ],
+  "tris": 238,
+  "pairs_body": 136,
+  "seated_by_m": 0.6545,
+  "sunk_frac": 0.25,
+  "vertex_offsets": "deform/lump_offsets.json#HB_hump_lump_2",
+  "mode": "rigid"
+ },
+ "HB_hump_lump_3": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Spine2",
+  "localPosition": [
+   -0.000286,
+   0.006119,
+   0.007938
+  ],
+  "localRotation": [
+   -0.0,
+   -0.975782,
+   -0.218744,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   -0.264473,
+   0.693636,
+   -0.270968,
+   0.61278
+  ],
+  "part_localScale": [
+   0.62,
+   0.434,
+   0.62
+  ],
+  "rest_world_position": [
+   0.0372,
+   6.3428,
+   -0.3164
+  ],
+  "tris": 238,
+  "pairs_body": 109,
+  "seated_by_m": 0.5996,
+  "sunk_frac": 0.25,
+  "vertex_offsets": "deform/lump_offsets.json#HB_hump_lump_3",
+  "mode": "rigid"
+ },
+ "HB_eye_hump_0": {
+  "source": "eye",
+  "material": "V_TheHive_Eye_core_biome_biome_biome_biome_biome_biome_biome_biome.001_biome_biome_biome_biome_biome_biome",
+  "parent": "Spine2",
+  "localPosition": [
+   0.004248,
+   -0.000638,
+   0.010571
+  ],
+  "localRotation": [
+   -0.0,
+   -0.975782,
+   -0.218744,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   -0.513522,
+   0.08144,
+   0.04904,
+   0.852794
+  ],
+  "part_localScale": [
+   0.33444,
+   0.30099,
+   0.33444
+  ],
+  "rest_world_position": [
+   -0.5523,
+   5.6947,
+   -1.0009
+  ],
+  "tris": 50,
+  "pairs_body": 0,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "HB_hump_lump_4": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Spine1",
+  "localPosition": [
+   0.004207,
+   0.003066,
+   0.006176
+  ],
+  "localRotation": [
+   -0.0,
+   -0.991998,
+   -0.126252,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   -0.196028,
+   0.690822,
+   -0.689457,
+   0.094803
+  ],
+  "part_localScale": [
+   0.44,
+   0.2728,
+   0.44
+  ],
+  "rest_world_position": [
+   -0.5469,
+   4.6988,
+   -0.6774
+  ],
+  "tris": 238,
+  "pairs_body": 91,
+  "seated_by_m": 0.3398,
+  "sunk_frac": 0.35,
+  "vertex_offsets": "deform/lump_offsets.json#HB_hump_lump_4",
+  "mode": "rigid"
+ },
+ "HB_hump_lump_5": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Spine1",
+  "localPosition": [
+   -0.004607,
+   -0.000895,
+   0.00437
+  ],
+  "localRotation": [
+   -0.0,
+   -0.991998,
+   -0.126252,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   -0.684378,
+   -0.355668,
+   0.158141,
+   0.616537
+  ],
+  "part_localScale": [
+   0.34,
+   0.2108,
+   0.34
+  ],
+  "rest_world_position": [
+   0.5989,
+   4.1415,
+   -0.5792
+  ],
+  "tris": 238,
+  "pairs_body": 77,
+  "seated_by_m": 0.2837,
+  "sunk_frac": 0.35,
+  "vertex_offsets": "deform/lump_offsets.json#HB_hump_lump_5",
+  "mode": "rigid"
+ },
+ "HB_crust_lump_01": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Spine2",
+  "localPosition": [
+   0.009974,
+   0.010346,
+   -0.001534
+  ],
+  "localRotation": [
+   -0.0,
+   -0.975782,
+   -0.218744,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   0.091695,
+   0.7559,
+   0.414642,
+   0.498276
+  ],
+  "part_localScale": [
+   0.616,
+   0.3472,
+   0.532
+  ],
+  "rest_world_position": [
+   -1.2966,
+   6.3141,
+   1.0317
+  ],
+  "tris": 238,
+  "pairs_body": 147,
+  "seated_by_m": 0.6798,
+  "sunk_frac": 0.09,
+  "vertex_offsets": "deform/lump_offsets.json#HB_crust_lump_01",
+  "mode": "rigid"
+ },
+ "HB_crust_lump_02": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Spine1",
+  "localPosition": [
+   0.00401,
+   -0.004324,
+   -0.011189
+  ],
+  "localRotation": [
+   -0.0,
+   -0.991998,
+   -0.126252,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   0.763998,
+   -0.262825,
+   -0.02787,
+   0.588603
+  ],
+  "part_localScale": [
+   0.288,
+   0.1488,
+   0.216
+  ],
+  "rest_world_position": [
+   -0.5213,
+   3.2033,
+   1.2673
+  ],
+  "tris": 238,
+  "pairs_body": 58,
+  "seated_by_m": 0.2105,
+  "sunk_frac": 0.3,
+  "vertex_offsets": "deform/lump_offsets.json#HB_crust_lump_02",
+  "mode": "rigid"
+ },
+ "HB_crust_lump_03": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Spine1",
+  "localPosition": [
+   0.007084,
+   0.006646,
+   -0.009205
+  ],
+  "localRotation": [
+   -0.0,
+   -0.991998,
+   -0.126252,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   0.723365,
+   -0.146115,
+   -0.03104,
+   0.674114
+  ],
+  "part_localScale": [
+   0.58,
+   0.3596,
+   0.609
+  ],
+  "rest_world_position": [
+   -0.9209,
+   4.6486,
+   1.3749
+  ],
+  "tris": 238,
+  "pairs_body": 136,
+  "seated_by_m": 0.471,
+  "sunk_frac": 0.3,
+  "vertex_offsets": "deform/lump_offsets.json#HB_crust_lump_03",
+  "mode": "rigid"
+ },
+ "HB_crust_lump_04": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Spine1",
+  "localPosition": [
+   0.006544,
+   -0.000562,
+   -0.008014
+  ],
+  "localRotation": [
+   -0.0,
+   -0.991998,
+   -0.126252,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   0.665925,
+   -0.092637,
+   0.250437,
+   0.696594
+  ],
+  "part_localScale": [
+   0.44,
+   0.2728,
+   0.44
+  ],
+  "rest_world_position": [
+   -0.8507,
+   3.7801,
+   0.9903
+  ],
+  "tris": 238,
+  "pairs_body": 170,
+  "seated_by_m": 0.3601,
+  "sunk_frac": 0.3,
+  "vertex_offsets": "deform/lump_offsets.json#HB_crust_lump_04",
+  "mode": "rigid"
+ },
+ "HB_crust_lump_05": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Spine2",
+  "localPosition": [
+   0.005264,
+   0.004877,
+   -0.006147
+  ],
+  "localRotation": [
+   -0.0,
+   -0.975782,
+   -0.218744,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   0.444496,
+   -0.500496,
+   -0.297989,
+   0.680536
+  ],
+  "part_localScale": [
+   0.34,
+   0.2108,
+   0.34
+  ],
+  "rest_world_position": [
+   -0.6843,
+   5.4152,
+   1.2705
+  ],
+  "tris": 238,
+  "pairs_body": 138,
+  "seated_by_m": 0.2951,
+  "sunk_frac": 0.3,
+  "vertex_offsets": "deform/lump_offsets.json#HB_crust_lump_05",
+  "mode": "rigid"
+ },
+ "HB_crust_lump_06": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Spine2",
+  "localPosition": [
+   -0.008923,
+   0.008602,
+   -0.002603
+  ],
+  "localRotation": [
+   -0.0,
+   -0.975782,
+   -0.218744,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   0.312314,
+   0.8044,
+   0.325686,
+   0.386431
+  ],
+  "part_localScale": [
+   0.55,
+   0.31,
+   0.475
+  ],
+  "rest_world_position": [
+   1.16,
+   6.0498,
+   1.0605
+  ],
+  "tris": 238,
+  "pairs_body": 146,
+  "seated_by_m": 0.6359,
+  "sunk_frac": 0.3,
+  "vertex_offsets": "deform/lump_offsets.json#HB_crust_lump_06",
+  "mode": "rigid"
+ },
+ "HB_crust_lump_07": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Spine1",
+  "localPosition": [
+   -0.008051,
+   0.004792,
+   -0.007981
+  ],
+  "localRotation": [
+   -0.0,
+   -0.991998,
+   -0.126252,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   0.791169,
+   0.317594,
+   0.087149,
+   0.515355
+  ],
+  "part_localScale": [
+   0.38,
+   0.2356,
+   0.38
+  ],
+  "rest_world_position": [
+   1.0466,
+   4.4551,
+   1.1604
+  ],
+  "tris": 238,
+  "pairs_body": 81,
+  "seated_by_m": 0.3273,
+  "sunk_frac": 0.3,
+  "vertex_offsets": "deform/lump_offsets.json#HB_crust_lump_07",
+  "mode": "rigid"
+ },
+ "HB_crust_lump_08": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Spine2",
+  "localPosition": [
+   -0.004656,
+   0.005084,
+   -0.006095
+  ],
+  "localRotation": [
+   -0.0,
+   -0.975782,
+   -0.218744,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   0.08229,
+   0.821505,
+   0.548719,
+   0.131398
+  ],
+  "part_localScale": [
+   0.28,
+   0.1736,
+   0.28
+  ],
+  "rest_world_position": [
+   0.6053,
+   5.4424,
+   1.2758
+  ],
+  "tris": 238,
+  "pairs_body": 109,
+  "seated_by_m": 0.2754,
+  "sunk_frac": 0.3,
+  "vertex_offsets": "deform/lump_offsets.json#HB_crust_lump_08",
+  "mode": "rigid"
+ },
+ "HB_crust_lump_09": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Spine1",
+  "localPosition": [
+   0.010373,
+   0.000946,
+   -0.00505
+  ],
+  "localRotation": [
+   -0.0,
+   -0.991998,
+   -0.126252,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   0.756361,
+   -0.544098,
+   -0.24828,
+   0.265013
+  ],
+  "part_localScale": [
+   0.36,
+   0.2232,
+   0.36
+  ],
+  "rest_world_position": [
+   -1.3485,
+   4.0665,
+   0.6664
+  ],
+  "tris": 238,
+  "pairs_body": 105,
+  "seated_by_m": 0.3733,
+  "sunk_frac": 0.3,
+  "vertex_offsets": "deform/lump_offsets.json#HB_crust_lump_09",
+  "mode": "rigid"
+ },
+ "HB_crust_lump_10": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Spine1",
+  "localPosition": [
+   0.006064,
+   0.004316,
+   -0.008258
+  ],
+  "localRotation": [
+   -0.0,
+   -0.991998,
+   -0.126252,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   0.272064,
+   -0.587345,
+   -0.73844,
+   0.188979
+  ],
+  "part_localScale": [
+   0.22,
+   0.1364,
+   0.22
+  ],
+  "rest_world_position": [
+   -0.7884,
+   4.3862,
+   1.1798
+  ],
+  "tris": 238,
+  "pairs_body": 59,
+  "seated_by_m": 0.1837,
+  "sunk_frac": 0.3,
+  "vertex_offsets": "deform/lump_offsets.json#HB_crust_lump_10",
+  "mode": "rigid"
+ },
+ "HB_crust_lump_11": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Spine1",
+  "localPosition": [
+   -0.005958,
+   0.00676,
+   -0.008105
+  ],
+  "localRotation": [
+   -0.0,
+   -0.991998,
+   -0.126252,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   0.715421,
+   -0.042137,
+   -0.066642,
+   0.69423
+  ],
+  "part_localScale": [
+   0.2,
+   0.124,
+   0.2
+  ],
+  "rest_world_position": [
+   0.7746,
+   4.6987,
+   1.2401
+  ],
+  "tris": 238,
+  "pairs_body": 61,
+  "seated_by_m": 0.1529,
+  "sunk_frac": 0.3,
+  "vertex_offsets": "deform/lump_offsets.json#HB_crust_lump_11",
+  "mode": "rigid"
+ },
+ "HB_crust_lump_12": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Spine2",
+  "localPosition": [
+   0.011546,
+   0.00384,
+   -0.007097
+  ],
+  "localRotation": [
+   -0.0,
+   -0.975782,
+   -0.218744,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   0.607064,
+   -0.335783,
+   0.014066,
+   0.720087
+  ],
+  "part_localScale": [
+   0.4,
+   0.248,
+   0.4
+  ],
+  "rest_world_position": [
+   -1.501,
+   5.2405,
+   1.3245
+  ],
+  "tris": 238,
+  "pairs_body": 91,
+  "seated_by_m": 0.3345,
+  "sunk_frac": 0.3,
+  "vertex_offsets": "deform/lump_offsets.json#HB_crust_lump_12",
+  "mode": "rigid"
+ },
+ "HB_crust_lump_13": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Spine2",
+  "localPosition": [
+   -0.009751,
+   0.000585,
+   -0.007805
+  ],
+  "localRotation": [
+   -0.0,
+   -0.975782,
+   -0.218744,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   0.705514,
+   0.051435,
+   -0.339478,
+   0.619967
+  ],
+  "part_localScale": [
+   0.32,
+   0.1984,
+   0.32
+  ],
+  "rest_world_position": [
+   1.2676,
+   4.8186,
+   1.2271
+  ],
+  "tris": 238,
+  "pairs_body": 75,
+  "seated_by_m": 0.2787,
+  "sunk_frac": 0.3,
+  "vertex_offsets": "deform/lump_offsets.json#HB_crust_lump_13",
+  "mode": "rigid"
+ },
+ "HB_crust_lump_14": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Spine1",
+  "localPosition": [
+   -0.004833,
+   -0.001187,
+   -0.009174
+  ],
+  "localRotation": [
+   -0.0,
+   -0.991998,
+   -0.126252,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   0.551145,
+   0.604788,
+   0.454816,
+   0.351586
+  ],
+  "part_localScale": [
+   0.264,
+   0.1364,
+   0.198
+  ],
+  "rest_world_position": [
+   0.6283,
+   3.6637,
+   1.1159
+  ],
+  "tris": 238,
+  "pairs_body": 63,
+  "seated_by_m": 0.2103,
+  "sunk_frac": 0.3,
+  "vertex_offsets": "deform/lump_offsets.json#HB_crust_lump_14",
+  "mode": "rigid"
+ },
+ "HB_maw_lip_l": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496_biome_biome.001",
+  "parent": "Spine1",
+  "localPosition": [
+   0.002567,
+   0.006502,
+   -0.008601
+  ],
+  "localRotation": [
+   -0.0,
+   -0.991998,
+   -0.126252,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   -0.043507,
+   0.712488,
+   0.698928,
+   0.044351
+  ],
+  "part_localScale": [
+   0.187,
+   0.2108,
+   0.544
+  ],
+  "rest_world_position": [
+   -0.3337,
+   4.6501,
+   1.2942
+  ],
+  "tris": 238,
+  "pairs_body": 51,
+  "seated_by_m": 0.2594,
+  "sunk_frac": 0.18,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "HB_maw_lip_r": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496_biome_biome.001",
+  "parent": "Spine1",
+  "localPosition": [
+   -0.002373,
+   0.006572,
+   -0.008855
+  ],
+  "localRotation": [
+   -0.0,
+   -0.991998,
+   -0.126252,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   -0.043507,
+   -0.712488,
+   -0.698928,
+   0.044351
+  ],
+  "part_localScale": [
+   0.187,
+   0.2108,
+   0.544
+  ],
+  "rest_world_position": [
+   0.3085,
+   4.6507,
+   1.3285
+  ],
+  "tris": 238,
+  "pairs_body": 40,
+  "seated_by_m": 0.2902,
+  "sunk_frac": 0.18,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "HB_maw_gullet_sack": {
+  "source": "sack",
+  "material": "V_gucksack_252228",
+  "parent": "Spine1",
+  "localPosition": [
+   4.3e-05,
+   0.005594,
+   -0.007194
+  ],
+  "localRotation": [
+   -0.0,
+   -0.991998,
+   -0.126252,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   0.0,
+   1.0,
+   -0.0,
+   0.0
+  ],
+  "part_localScale": [
+   0.09,
+   0.18,
+   0.09
+  ],
+  "rest_world_position": [
+   -0.0056,
+   4.5816,
+   1.0875
+  ],
+  "tris": 162,
+  "pairs_body": 49,
+  "seated_by_m": 0.1119,
+  "sunk_frac": 0.6,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "HB_maw_fang_00": {
+  "source": "ttooth0",
+  "material": "TrollFang_dirtyyellow",
+  "parent": "Spine1",
+  "localPosition": [
+   0.001402,
+   0.004884,
+   -0.009543
+  ],
+  "localRotation": [
+   -0.0,
+   -0.991998,
+   -0.126252,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   -0.364844,
+   -0.402683,
+   -0.758727,
+   0.359262
+  ],
+  "part_localScale": [
+   2.99082,
+   2.99082,
+   2.99082
+  ],
+  "rest_world_position": [
+   -0.1822,
+   4.4158,
+   1.3601
+  ],
+  "tris": 18,
+  "pairs_body": 0,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "HB_maw_fang_01": {
+  "source": "claw1",
+  "material": "TrollFang_dirtyyellow_biome_biome.001",
+  "parent": "Spine1",
+  "localPosition": [
+   0.001757,
+   0.006118,
+   -0.009376
+  ],
+  "localRotation": [
+   -0.0,
+   -0.991998,
+   -0.126252,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   0.117305,
+   0.051952,
+   -0.556139,
+   0.821127
+  ],
+  "part_localScale": [
+   1.6312,
+   1.6312,
+   1.6312
+  ],
+  "rest_world_position": [
+   -0.2284,
+   4.5765,
+   1.3792
+  ],
+  "tris": 56,
+  "pairs_body": 0,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "HB_maw_fang_02": {
+  "source": "claw2",
+  "material": "TrollFang_dirtyyellow",
+  "parent": "Spine1",
+  "localPosition": [
+   0.001676,
+   0.007487,
+   -0.008796
+  ],
+  "localRotation": [
+   -0.0,
+   -0.991998,
+   -0.126252,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   0.185317,
+   -0.094136,
+   -0.619,
+   0.757386
+  ],
+  "part_localScale": [
+   1.53068,
+   1.53068,
+   1.53068
+  ],
+  "rest_world_position": [
+   -0.2179,
+   4.7678,
+   1.3508
+  ],
+  "tris": 56,
+  "pairs_body": 0,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "HB_maw_fang_03": {
+  "source": "ttooth3",
+  "material": "TrollFang_dirtyyellow",
+  "parent": "Spine1",
+  "localPosition": [
+   0.001285,
+   0.008099,
+   -0.008799
+  ],
+  "localRotation": [
+   -0.0,
+   -0.991998,
+   -0.126252,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   0.735461,
+   0.308124,
+   -0.446007,
+   0.406491
+  ],
+  "part_localScale": [
+   2.91548,
+   2.91548,
+   2.91548
+  ],
+  "rest_world_position": [
+   -0.167,
+   4.8446,
+   1.3712
+  ],
+  "tris": 18,
+  "pairs_body": 0,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "HB_maw_fang_04": {
+  "source": "claw4",
+  "material": "TrollFang_dirtyyellow",
+  "parent": "Spine1",
+  "localPosition": [
+   0.001751,
+   0.008517,
+   -0.008489
+  ],
+  "localRotation": [
+   -0.0,
+   -0.991998,
+   -0.126252,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   0.508129,
+   0.295566,
+   -0.545671,
+   0.597234
+  ],
+  "part_localScale": [
+   1.42653,
+   1.42653,
+   1.42653
+  ],
+  "rest_world_position": [
+   -0.2276,
+   4.9074,
+   1.3457
+  ],
+  "tris": 56,
+  "pairs_body": 0,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "HB_maw_fang_05": {
+  "source": "ttooth5",
+  "material": "TrollFang_dirtyyellow",
+  "parent": "Spine1",
+  "localPosition": [
+   -0.001494,
+   0.004348,
+   -0.009902
+  ],
+  "localRotation": [
+   -0.0,
+   -0.991998,
+   -0.126252,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   0.035845,
+   0.169017,
+   0.561763,
+   0.809055
+  ],
+  "part_localScale": [
+   2.90652,
+   2.90652,
+   2.90652
+  ],
+  "rest_world_position": [
+   0.1942,
+   4.3366,
+   1.3878
+  ],
+  "tris": 18,
+  "pairs_body": 0,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "HB_maw_fang_06": {
+  "source": "claw6",
+  "material": "TrollFang_dirtyyellow",
+  "parent": "Spine1",
+  "localPosition": [
+   -0.001721,
+   0.0057,
+   -0.009436
+  ],
+  "localRotation": [
+   -0.0,
+   -0.991998,
+   -0.126252,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   0.063499,
+   0.223626,
+   0.762091,
+   0.604298
+  ],
+  "part_localScale": [
+   1.40705,
+   1.40705,
+   1.40705
+  ],
+  "rest_world_position": [
+   0.2238,
+   4.522,
+   1.3732
+  ],
+  "tris": 56,
+  "pairs_body": 0,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "HB_maw_fang_07": {
+  "source": "claw7",
+  "material": "TrollFang_dirtyyellow",
+  "parent": "Spine1",
+  "localPosition": [
+   -0.001633,
+   0.006525,
+   -0.009446
+  ],
+  "localRotation": [
+   -0.0,
+   -0.991998,
+   -0.126252,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   -0.614691,
+   0.441987,
+   0.588098,
+   0.284506
+  ],
+  "part_localScale": [
+   1.29023,
+   1.29023,
+   1.29023
+  ],
+  "rest_world_position": [
+   0.2123,
+   4.6255,
+   1.4013
+  ],
+  "tris": 56,
+  "pairs_body": 0,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "HB_maw_fang_08": {
+  "source": "ttooth8",
+  "material": "TrollFang_dirtyyellow",
+  "parent": "Spine1",
+  "localPosition": [
+   -0.00145,
+   0.007513,
+   -0.009262
+  ],
+  "localRotation": [
+   -0.0,
+   -0.991998,
+   -0.126252,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   0.074907,
+   0.035765,
+   0.746226,
+   0.660497
+  ],
+  "part_localScale": [
+   3.39015,
+   3.39015,
+   3.39015
+  ],
+  "rest_world_position": [
+   0.1884,
+   4.7558,
+   1.4103
+  ],
+  "tris": 18,
+  "pairs_body": 0,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "HB_maw_fang_09": {
+  "source": "claw1",
+  "material": "TrollFang_dirtyyellow_biome_biome.001",
+  "parent": "Spine1",
+  "localPosition": [
+   -0.00182,
+   0.008143,
+   -0.008969
+  ],
+  "localRotation": [
+   -0.0,
+   -0.991998,
+   -0.126252,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   0.176287,
+   -0.020456,
+   0.713264,
+   0.678056
+  ],
+  "part_localScale": [
+   1.58202,
+   1.58202,
+   1.58202
+  ],
+  "rest_world_position": [
+   0.2366,
+   4.8446,
+   1.3939
+  ],
+  "tris": 56,
+  "pairs_body": 0,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "HB_eye_c1_dominant": {
+  "source": "eye",
+  "material": "V_TheHive_Eye_core_biome_biome_biome_biome_biome_biome_biome_biome.001_biome_biome_biome_biome_biome_biome",
+  "parent": "Spine2",
+  "localPosition": [
+   0.009163,
+   0.00652,
+   -0.005522
+  ],
+  "localRotation": [
+   -0.0,
+   -0.975782,
+   -0.218744,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   -0.010128,
+   0.624323,
+   0.781059,
+   0.008096
+  ],
+  "part_localScale": [
+   0.43734,
+   0.3936,
+   0.43734
+  ],
+  "rest_world_position": [
+   -1.1911,
+   5.643,
+   1.2881
+  ],
+  "tris": 50,
+  "pairs_body": 0,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "HB_eye_c1_b": {
+  "source": "eye",
+  "material": "V_TheHive_Eye_core_biome_biome_biome_biome_biome_biome_biome_biome.001_biome_biome_biome_biome_biome_biome",
+  "parent": "Spine2",
+  "localPosition": [
+   0.010989,
+   0.008741,
+   -0.003844
+  ],
+  "localRotation": [
+   -0.0,
+   -0.975782,
+   -0.218744,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   -0.035403,
+   -0.908893,
+   -0.40797,
+   0.078873
+  ],
+  "part_localScale": [
+   0.28298,
+   0.25469,
+   0.28298
+  ],
+  "rest_world_position": [
+   -1.4285,
+   5.9973,
+   1.2142
+  ],
+  "tris": 50,
+  "pairs_body": 0,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "HB_eye_c1_c": {
+  "source": "eye",
+  "material": "V_TheHive_Eye_core_biome_biome_biome_biome_biome_biome_biome_biome.001_biome_biome_biome_biome_biome_biome",
+  "parent": "Spine2",
+  "localPosition": [
+   0.011221,
+   0.007814,
+   -0.004793
+  ],
+  "localRotation": [
+   -0.0,
+   -0.975782,
+   -0.218744,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   -0.059365,
+   0.786737,
+   0.609633,
+   0.076611
+  ],
+  "part_localScale": [
+   0.23153,
+   0.20838,
+   0.23153
+  ],
+  "rest_world_position": [
+   -1.4588,
+   5.8356,
+   1.2743
+  ],
+  "tris": 50,
+  "pairs_body": 0,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "HB_eye_c1_slit": {
+  "source": "eye",
+  "material": "V_TheHive_Eye_core_biome_biome_biome_biome_biome_biome_biome_biome.001_biome_biome_biome_biome_biome_biome",
+  "parent": "Spine2",
+  "localPosition": [
+   0.009162,
+   -0.002494,
+   -0.008686
+  ],
+  "localRotation": [
+   -0.0,
+   -0.975782,
+   -0.218744,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   -0.357206,
+   0.418862,
+   0.814373,
+   0.183724
+  ],
+  "part_localScale": [
+   0.28298,
+   0.25469,
+   0.09904
+  ],
+  "rest_world_position": [
+   -1.1911,
+   4.4078,
+   1.1599
+  ],
+  "tris": 50,
+  "pairs_body": 0,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "HB_eye_c2_a": {
+  "source": "eye",
+  "material": "V_TheHive_Eye_core_biome_biome_biome_biome_biome_biome_biome_biome.001_biome_biome_biome_biome_biome_biome",
+  "parent": "Spine2",
+  "localPosition": [
+   -0.008789,
+   0.004008,
+   -0.006645
+  ],
+  "localRotation": [
+   -0.0,
+   -0.975782,
+   -0.218744,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   -0.103595,
+   -0.638699,
+   -0.75743,
+   0.087356
+  ],
+  "part_localScale": [
+   0.30871,
+   0.27784,
+   0.30871
+  ],
+  "rest_world_position": [
+   1.1426,
+   5.2854,
+   1.2807
+  ],
+  "tris": 50,
+  "pairs_body": 0,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "HB_eye_c2_b": {
+  "source": "eye",
+  "material": "V_TheHive_Eye_core_biome_biome_biome_biome_biome_biome_biome_biome.001_biome_biome_biome_biome_biome_biome",
+  "parent": "Spine2",
+  "localPosition": [
+   -0.006804,
+   0.006927,
+   -0.004714
+  ],
+  "localRotation": [
+   -0.0,
+   -0.975782,
+   -0.218744,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   -0.059717,
+   -0.796275,
+   -0.596682,
+   0.079693
+  ],
+  "part_localScale": [
+   0.21867,
+   0.1968,
+   0.21867
+  ],
+  "rest_world_position": [
+   0.8845,
+   5.7357,
+   1.2158
+  ],
+  "tris": 50,
+  "pairs_body": 0,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "HB_eye_c3_low": {
+  "source": "eye",
+  "material": "V_TheHive_Eye_core_biome_biome_biome_biome_biome_biome_biome_biome.001_biome_biome_biome_biome_biome_biome",
+  "parent": "Spine1",
+  "localPosition": [
+   0.007406,
+   0.003755,
+   -0.009344
+  ],
+  "localRotation": [
+   -0.0,
+   -0.991998,
+   -0.126252,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   -0.149663,
+   0.441672,
+   0.881421,
+   0.074995
+  ],
+  "part_localScale": [
+   0.20581,
+   0.18523,
+   0.20581
+  ],
+  "rest_world_position": [
+   -0.9628,
+   4.2802,
+   1.2983
+  ],
+  "tris": 50,
+  "pairs_body": 0,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "HB_web_root07_00": {
+  "source": "root07",
+  "material": "V_fi_village_catacombs_roots_853734_dark_biome_biome_biome_biome_biome_biome.001_biome_biome_biome_biome",
+  "parent": "Spine1",
+  "localPosition": [
+   0.005141,
+   -0.000148,
+   -0.007607
+  ],
+  "localRotation": [
+   -0.0,
+   -0.991998,
+   -0.126252,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   0.283421,
+   -0.142319,
+   -0.934025,
+   0.164363
+  ],
+  "part_localScale": [
+   0.10811,
+   0.43162,
+   0.13699
+  ],
+  "rest_world_position": [
+   -0.6683,
+   3.8455,
+   0.9526
+  ],
+  "tris": 90,
+  "pairs_body": 24,
+  "seated_by_m": 0.0551,
+  "sunk_frac": 0.45,
+  "vertex_offsets": null,
+  "mode": "skinned",
+  "skin": "weights transferred at runtime from the 4 nearest Troll Body vertices (inverse distance), rest pose, then blended 0.25 per-vertex + 0.75 the part's average",
+  "weight_own_share": 0.25,
+  "head_bones_masked": false
+ },
+ "HB_web_root07_02": {
+  "source": "root07",
+  "material": "V_fi_village_catacombs_roots_853734_dark_biome_biome_biome_biome_biome_biome.001_biome_biome_biome_biome",
+  "parent": "Spine1",
+  "localPosition": [
+   -0.00888,
+   0.00265,
+   -0.005366
+  ],
+  "localRotation": [
+   -0.0,
+   -0.991998,
+   -0.126252,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   0.379732,
+   -0.056227,
+   0.922333,
+   0.044085
+  ],
+  "part_localScale": [
+   0.0991,
+   0.59228,
+   0.12557
+  ],
+  "rest_world_position": [
+   1.1544,
+   4.2706,
+   0.7617
+  ],
+  "tris": 90,
+  "pairs_body": 23,
+  "seated_by_m": 0.0212,
+  "sunk_frac": 0.45,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "HB_web_root07_05": {
+  "source": "root07",
+  "material": "V_fi_village_catacombs_roots_853734_dark_biome_biome_biome_biome_biome_biome.001_biome_biome_biome_biome",
+  "parent": "Spine2",
+  "localPosition": [
+   -0.003985,
+   0.008776,
+   -0.004967
+  ],
+  "localRotation": [
+   -0.0,
+   -0.975782,
+   -0.218744,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   0.197884,
+   0.421554,
+   0.214788,
+   0.858487
+  ],
+  "part_localScale": [
+   0.08108,
+   0.48381,
+   0.10274
+  ],
+  "rest_world_position": [
+   0.518,
+   5.9391,
+   1.3481
+  ],
+  "tris": 90,
+  "pairs_body": 22,
+  "seated_by_m": 0.0714,
+  "sunk_frac": 0.45,
+  "vertex_offsets": null,
+  "mode": "skinned",
+  "skin": "weights transferred at runtime from the 4 nearest Troll Body vertices (inverse distance), rest pose, then blended 0.25 per-vertex + 0.75 the part's average",
+  "weight_own_share": 0.25,
+  "head_bones_masked": false
+ },
+ "HB_web_root07_06": {
+  "source": "root07",
+  "material": "V_fi_village_catacombs_roots_853734_dark_biome_biome_biome_biome_biome_biome.001_biome_biome_biome_biome",
+  "parent": "LeftArm",
+  "localPosition": [
+   -0.004979,
+   0.00289,
+   0.000803
+  ],
+  "localRotation": [
+   0.609817,
+   -0.336663,
+   -0.596345,
+   0.398941
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   -0.261264,
+   0.059992,
+   0.772151,
+   0.576129
+  ],
+  "part_localScale": [
+   0.10811,
+   0.49503,
+   0.13699
+  ],
+  "rest_world_position": [
+   -1.972,
+   5.1027,
+   1.0021
+  ],
+  "tris": 90,
+  "pairs_body": 29,
+  "seated_by_m": 0.0346,
+  "sunk_frac": 0.45,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "HB_web_root07_08": {
+  "source": "root07",
+  "material": "V_fi_village_catacombs_roots_853734_dark_biome_biome_biome_biome_biome_biome.001_biome_biome_biome_biome",
+  "parent": "RightArm",
+  "localPosition": [
+   -0.000636,
+   -0.003302,
+   0.005385
+  ],
+  "localRotation": [
+   0.609817,
+   0.336663,
+   0.596345,
+   0.398941
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   -0.637142,
+   -0.375199,
+   -0.579027,
+   0.343517
+  ],
+  "part_localScale": [
+   0.0991,
+   0.48336,
+   0.12557
+  ],
+  "rest_world_position": [
+   1.4865,
+   6.0456,
+   0.3612
+  ],
+  "tris": 90,
+  "pairs_body": 20,
+  "seated_by_m": 0.1402,
+  "sunk_frac": 0.45,
+  "vertex_offsets": null,
+  "mode": "skinned",
+  "skin": "weights transferred at runtime from the 4 nearest Troll Body vertices (inverse distance), rest pose, then blended 0.75 per-vertex + 0.25 the part's average",
+  "weight_own_share": 0.75,
+  "head_bones_masked": false
+ },
+ "HB_web_root07_09": {
+  "source": "root07",
+  "material": "V_fi_village_catacombs_roots_853734_dark_biome_biome_biome_biome_biome_biome.001_biome_biome_biome_biome",
+  "parent": "Spine1",
+  "localPosition": [
+   0.008953,
+   0.001897,
+   -0.004966
+  ],
+  "localRotation": [
+   -0.0,
+   -0.991998,
+   -0.126252,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   -0.449153,
+   -0.1444,
+   0.863408,
+   0.17871
+  ],
+  "part_localScale": [
+   0.09009,
+   0.36413,
+   0.11416
+  ],
+  "rest_world_position": [
+   -1.1639,
+   4.1889,
+   0.6868
+  ],
+  "tris": 90,
+  "pairs_body": 21,
+  "seated_by_m": 0.017,
+  "sunk_frac": 0.45,
+  "vertex_offsets": null,
+  "mode": "skinned",
+  "skin": "weights transferred at runtime from the 4 nearest Troll Body vertices (inverse distance), rest pose, then blended 0.25 per-vertex + 0.75 the part's average",
+  "weight_own_share": 0.25,
+  "head_bones_masked": false
+ },
+ "HB_branch_back_l": {
+  "source": "branch0",
+  "material": "V_Elder_branch_darkened",
+  "parent": "Spine2",
+  "localPosition": [
+   0.005177,
+   0.001773,
+   0.008673
+  ],
+  "localRotation": [
+   -0.0,
+   -0.975782,
+   -0.218744,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   -0.283649,
+   -0.085903,
+   0.207819,
+   0.932189
+  ],
+  "part_localScale": [
+   1.06936,
+   0.56282,
+   1.06936
+  ],
+  "rest_world_position": [
+   -0.673,
+   5.8728,
+   -0.6441
+  ],
+  "tris": 136,
+  "pairs_body": 0,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "HB_branch_back_r": {
+  "source": "branch1",
+  "material": "V_Elder_branch_darkened.001",
+  "parent": "Spine2",
+  "localPosition": [
+   -0.005338,
+   0.000104,
+   0.009429
+  ],
+  "localRotation": [
+   -0.0,
+   -0.975782,
+   -0.218744,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   -0.39896,
+   0.129946,
+   -0.347861,
+   0.838414
+  ],
+  "part_localScale": [
+   1.33953,
+   0.70501,
+   1.33953
+  ],
+  "rest_world_position": [
+   0.6939,
+   5.7185,
+   -0.8256
+  ],
+  "tris": 136,
+  "pairs_body": 0,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "HB_branch_neck": {
+  "source": "branch3",
+  "material": "V_Elder_branch_darkened.003",
+  "parent": "Spine2",
+  "localPosition": [
+   -0.000181,
+   0.005794,
+   0.006944
+  ],
+  "localRotation": [
+   -0.0,
+   -0.975782,
+   -0.218744,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   -0.262718,
+   -0.586486,
+   0.150769,
+   0.751187
+  ],
+  "part_localScale": [
+   1.45484,
+   0.7657,
+   1.45484
+  ],
+  "rest_world_position": [
+   0.0235,
+   6.2496,
+   -0.2176
+  ],
+  "tris": 136,
+  "pairs_body": 0,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "HB_branch_shoulder_l": {
+  "source": "branch2",
+  "material": "V_Elder_branch_darkened.002",
+  "parent": "Spine2",
+  "localPosition": [
+   0.009158,
+   0.008223,
+   -0.001443
+  ],
+  "localRotation": [
+   -0.0,
+   -0.975782,
+   -0.218744,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   0.152108,
+   -0.800346,
+   0.273138,
+   0.511571
+  ],
+  "part_localScale": [
+   1.32484,
+   0.69729,
+   1.32484
+  ],
+  "rest_world_position": [
+   -1.1906,
+   6.0697,
+   0.9032
+  ],
+  "tris": 136,
+  "pairs_body": 0,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "HB_crust_lump_hip": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Spine0",
+  "localPosition": [
+   0.008587,
+   0.003606,
+   -0.006222
+  ],
+  "localRotation": [
+   -0.0,
+   -1.0,
+   0.0,
+   0.0
+  ],
+  "localScale": [
+   0.0076923,
+   0.0076923,
+   0.0076923
+  ],
+  "part_localRotation": [
+   0.67118,
+   -0.390393,
+   -0.28737,
+   0.560829
+  ],
+  "part_localScale": [
+   0.3,
+   0.18,
+   0.3
+  ],
+  "rest_world_position": [
+   -1.1164,
+   3.11,
+   0.8089
+  ],
+  "tris": 238,
+  "pairs_body": 109,
+  "seated_by_m": 0.3811,
+  "sunk_frac": 0.4,
+  "vertex_offsets": "deform/lump_offsets.json#HB_crust_lump_hip",
+  "mode": "skinned",
+  "skin": "weights transferred at runtime from the 4 nearest Troll Body vertices (inverse distance), rest pose, then blended 0.50 per-vertex + 0.50 the part's average",
+  "weight_own_share": 0.5,
+  "head_bones_masked": false
+ }
+}

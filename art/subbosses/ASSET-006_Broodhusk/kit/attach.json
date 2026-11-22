@@ -1,0 +1,1137 @@
+{
+ "_about": "ASSET-006 Broodhusk kitbash v1: vanilla parts on the vanilla Seeker. Rigid parts: the vanilla mesh under a child of the named bone with the given local transform (Unity, bind pose); conformed lumps add deform/lump_offsets.json; laid roots are their vanilla mesh with per-vertex positions (identity transform). The pose test (pose_test.py) marks the pieces it skins.",
+ "base": {
+  "prefab": "Seeker",
+  "renderer": "Visual/Plane.004",
+  "mesh": "Plane.004",
+  "material": "seeker",
+  "tris": 5353
+ },
+ "rear_lump_0": {
+  "source": {
+   "prefab": "TheHive",
+   "renderer": "Visual/low",
+   "mesh": "default (low) + vertex offsets (deform/lump_offsets.json)",
+   "material": "TheHive_Mat"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 238,
+  "fit": {
+   "base_pairs": 79,
+   "verts_inside_base": 21,
+   "nearest_to_base_mm": 0.4,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "thorax1",
+  "localPosition": [
+   0.000561,
+   0.007269,
+   0.004474
+  ],
+  "localRotation": [
+   0.690539,
+   -0.000961,
+   -0.156452,
+   0.706171
+  ],
+  "localScale": [
+   0.001736,
+   0.001042,
+   0.002344
+  ],
+  "vertex_offsets": "deform/lump_offsets.json#rear_lump_0"
+ },
+ "rear_lump_1": {
+  "source": {
+   "prefab": "TheHive",
+   "renderer": "Visual/low",
+   "mesh": "default (low) + vertex offsets (deform/lump_offsets.json)",
+   "material": "TheHive_Mat"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 238,
+  "fit": {
+   "base_pairs": 122,
+   "verts_inside_base": 16,
+   "nearest_to_base_mm": 0.0,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "thorax2",
+  "localPosition": [
+   -0.001061,
+   0.006316,
+   0.003386
+  ],
+  "localRotation": [
+   0.640583,
+   -0.510409,
+   -0.280084,
+   0.500688
+  ],
+  "localScale": [
+   0.001302,
+   0.000781,
+   0.001562
+  ],
+  "vertex_offsets": "deform/lump_offsets.json#rear_lump_1"
+ },
+ "rear_lump_2": {
+  "source": {
+   "prefab": "TheHive",
+   "renderer": "Visual/low",
+   "mesh": "default (low) + vertex offsets (deform/lump_offsets.json)",
+   "material": "TheHive_Mat"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 238,
+  "fit": {
+   "base_pairs": 113,
+   "verts_inside_base": 31,
+   "nearest_to_base_mm": 0.4,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "thorax2",
+  "localPosition": [
+   0.002546,
+   0.002186,
+   0.00305
+  ],
+  "localRotation": [
+   -0.346605,
+   -0.678721,
+   -0.624771,
+   0.169894
+  ],
+  "localScale": [
+   0.001128,
+   0.000677,
+   0.001354
+  ],
+  "vertex_offsets": "deform/lump_offsets.json#rear_lump_2"
+ },
+ "ridge_lump_0": {
+  "source": {
+   "prefab": "TheHive",
+   "renderer": "Visual/low",
+   "mesh": "default (low) + vertex offsets (deform/lump_offsets.json)",
+   "material": "TheHive_Mat"
+  },
+  "mode": "rigid",
+  "tris": 238,
+  "fit": {
+   "base_pairs": 71,
+   "verts_inside_base": 31,
+   "nearest_to_base_mm": 0.1,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "thorax1",
+  "localPosition": [
+   0.000239,
+   0.001673,
+   0.004533
+  ],
+  "localRotation": [
+   0.794815,
+   0.090508,
+   -0.061032,
+   0.596953
+  ],
+  "localScale": [
+   0.001172,
+   0.000716,
+   0.001953
+  ],
+  "vertex_offsets": "deform/lump_offsets.json#ridge_lump_0"
+ },
+ "ridge_lump_1": {
+  "source": {
+   "prefab": "TheHive",
+   "renderer": "Visual/low",
+   "mesh": "default (low) + vertex offsets (deform/lump_offsets.json)",
+   "material": "TheHive_Mat"
+  },
+  "mode": "rigid",
+  "tris": 238,
+  "fit": {
+   "base_pairs": 52,
+   "verts_inside_base": 31,
+   "nearest_to_base_mm": 0.2,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "abdomen",
+  "localPosition": [
+   -0.000223,
+   0.002594,
+   -0.004055
+  ],
+  "localRotation": [
+   -0.734024,
+   -0.012608,
+   0.112691,
+   0.66959
+  ],
+  "localScale": [
+   0.000937,
+   0.000573,
+   0.001458
+  ],
+  "vertex_offsets": "deform/lump_offsets.json#ridge_lump_1"
+ },
+ "brood_cell_00": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (texture)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye texture, brood emission (our eye mask's core)"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 19,
+   "verts_inside_base": 3,
+   "nearest_to_base_mm": 0.6,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "thorax2",
+  "localPosition": [
+   0.002442,
+   0.003439,
+   0.002273
+  ],
+  "localRotation": [
+   0.419312,
+   0.043404,
+   -0.320255,
+   0.848369
+  ],
+  "localScale": [
+   0.003537,
+   0.003184,
+   0.003537
+  ]
+ },
+ "brood_eye_00": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (material)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye + eye/eye_globe_core_pupil_mask.png"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 30.6,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "thorax2",
+  "localPosition": [
+   -0.000786,
+   0.006437,
+   0.003618
+  ],
+  "localRotation": [
+   0.754253,
+   0.016456,
+   0.061102,
+   0.653527
+  ],
+  "localScale": [
+   0.003216,
+   0.002894,
+   0.003216
+  ]
+ },
+ "brood_cell_01": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (texture)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye texture, brood emission (our eye mask's core)"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 27,
+   "verts_inside_base": 5,
+   "nearest_to_base_mm": 0.1,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "thorax1",
+  "localPosition": [
+   0.00219,
+   0.008178,
+   0.002764
+  ],
+  "localRotation": [
+   0.516042,
+   -0.180446,
+   -0.520862,
+   0.655624
+  ],
+  "localScale": [
+   0.003055,
+   0.002749,
+   0.003055
+  ]
+ },
+ "brood_cell_02": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (texture)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye texture, brood emission (our eye mask's core)"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 5,
+   "verts_inside_base": 1,
+   "nearest_to_base_mm": 0.7,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "thorax1",
+  "localPosition": [
+   -0.000457,
+   0.006299,
+   0.004333
+  ],
+  "localRotation": [
+   0.479629,
+   0.255538,
+   0.633667,
+   0.550565
+  ],
+  "localScale": [
+   0.002894,
+   0.002605,
+   0.002894
+  ]
+ },
+ "brood_eye_01": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (material)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye + eye/eye_globe_core_pupil_mask.png"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 11,
+   "verts_inside_base": 2,
+   "nearest_to_base_mm": 0.2,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "thorax2",
+  "localPosition": [
+   0.000656,
+   0.006707,
+   0.002431
+  ],
+  "localRotation": [
+   0.384507,
+   0.063931,
+   -0.393203,
+   0.832742
+  ],
+  "localScale": [
+   0.002733,
+   0.00246,
+   0.002733
+  ]
+ },
+ "brood_cell_03": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (texture)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye texture, brood emission (our eye mask's core)"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 16,
+   "verts_inside_base": 9,
+   "nearest_to_base_mm": 3.1,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "thorax2",
+  "localPosition": [
+   0.001873,
+   -0.00162,
+   0.00334
+  ],
+  "localRotation": [
+   0.196842,
+   0.159237,
+   -0.854545,
+   0.453487
+  ],
+  "localScale": [
+   0.002573,
+   0.002315,
+   0.002573
+  ]
+ },
+ "brood_cell_04": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (texture)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye texture, brood emission (our eye mask's core)"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 6,
+   "verts_inside_base": 2,
+   "nearest_to_base_mm": 1.6,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "thorax1",
+  "localPosition": [
+   0.000277,
+   0.009887,
+   0.003219
+  ],
+  "localRotation": [
+   0.32151,
+   -4.4e-05,
+   0.007383,
+   0.946877
+  ],
+  "localScale": [
+   0.002508,
+   0.002257,
+   0.002508
+  ]
+ },
+ "brood_eye_02": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (material)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye + eye/eye_globe_core_pupil_mask.png"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 22,
+   "verts_inside_base": 6,
+   "nearest_to_base_mm": 1.0,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "thorax2",
+  "localPosition": [
+   -0.002223,
+   0.005344,
+   0.001787
+  ],
+  "localRotation": [
+   0.272468,
+   -0.049406,
+   0.152087,
+   0.948783
+  ],
+  "localScale": [
+   0.002412,
+   0.002171,
+   0.002412
+  ]
+ },
+ "brood_cell_05": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (texture)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye texture, brood emission (our eye mask's core)"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 74.5,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "thorax2",
+  "localPosition": [
+   -0.000141,
+   0.000238,
+   0.005173
+  ],
+  "localRotation": [
+   0.694409,
+   0.041004,
+   0.206326,
+   0.688146
+  ],
+  "localScale": [
+   0.002315,
+   0.002084,
+   0.002315
+  ]
+ },
+ "brood_cell_06": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (texture)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye texture, brood emission (our eye mask's core)"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 16,
+   "verts_inside_base": 15,
+   "nearest_to_base_mm": 5.1,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "thorax1",
+  "localPosition": [
+   0.000554,
+   0.004511,
+   0.004074
+  ],
+  "localRotation": [
+   0.181113,
+   -0.200227,
+   -0.91611,
+   0.296395
+  ],
+  "localScale": [
+   0.002251,
+   0.002026,
+   0.002251
+  ]
+ },
+ "brood_eye_03": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (material)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye + eye/eye_globe_core_pupil_mask.png"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 87.4,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "thorax1",
+  "localPosition": [
+   0.001017,
+   0.006979,
+   0.00503
+  ],
+  "localRotation": [
+   0.493304,
+   -0.228433,
+   -0.598689,
+   0.588253
+  ],
+  "localScale": [
+   0.002122,
+   0.00191,
+   0.002122
+  ]
+ },
+ "brood_cell_07": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (texture)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye texture, brood emission (our eye mask's core)"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 15,
+   "verts_inside_base": 10,
+   "nearest_to_base_mm": 1.6,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "thorax2",
+  "localPosition": [
+   0.000604,
+   0.005153,
+   0.002897
+  ],
+  "localRotation": [
+   0.529921,
+   -0.158121,
+   -0.673689,
+   0.490229
+  ],
+  "localScale": [
+   0.002058,
+   0.001852,
+   0.002058
+  ]
+ },
+ "brood_cell_08": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (texture)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye texture, brood emission (our eye mask's core)"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 27.9,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "thorax2",
+  "localPosition": [
+   -0.001424,
+   0.006959,
+   0.002547
+  ],
+  "localRotation": [
+   0.238714,
+   -0.147548,
+   0.445138,
+   0.850351
+  ],
+  "localScale": [
+   0.001929,
+   0.001736,
+   0.001929
+  ]
+ },
+ "brood_eye_04": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (material)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye + eye/eye_globe_core_pupil_mask.png"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 13,
+   "verts_inside_base": 5,
+   "nearest_to_base_mm": 1.8,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "thorax2",
+  "localPosition": [
+   0.003262,
+   0.002012,
+   0.00195
+  ],
+  "localRotation": [
+   0.275335,
+   0.141166,
+   -0.663508,
+   0.68119
+  ],
+  "localScale": [
+   0.001865,
+   0.001679,
+   0.001865
+  ]
+ },
+ "brood_cell_09": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (texture)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye texture, brood emission (our eye mask's core)"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 45.4,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "thorax1",
+  "localPosition": [
+   0.001259,
+   0.008482,
+   0.004498
+  ],
+  "localRotation": [
+   0.385266,
+   -0.024825,
+   -0.299994,
+   0.872329
+  ],
+  "localScale": [
+   0.001769,
+   0.001592,
+   0.001769
+  ]
+ },
+ "brood_cell_10": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (texture)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye texture, brood emission (our eye mask's core)"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 40.6,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "thorax2",
+  "localPosition": [
+   -0.001572,
+   -0.000174,
+   0.004261
+  ],
+  "localRotation": [
+   0.568439,
+   0.081228,
+   0.537222,
+   0.617796
+  ],
+  "localScale": [
+   0.001672,
+   0.001505,
+   0.001672
+  ]
+ },
+ "brood_eye_05": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (material)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye + eye/eye_globe_core_pupil_mask.png"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 8,
+   "nearest_to_base_mm": 1.9,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "thorax2",
+  "localPosition": [
+   -0.001033,
+   0.00254,
+   0.003854
+  ],
+  "localRotation": [
+   0.206216,
+   -0.127756,
+   0.3278,
+   0.913072
+  ],
+  "localScale": [
+   0.001608,
+   0.001447,
+   0.001608
+  ]
+ },
+ "brood_cell_11": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (texture)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye texture, brood emission (our eye mask's core)"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 4,
+   "verts_inside_base": 1,
+   "nearest_to_base_mm": 0.1,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "thorax2",
+  "localPosition": [
+   0.001925,
+   0.00646,
+   0.00151
+  ],
+  "localRotation": [
+   0.270642,
+   0.044944,
+   -0.849534,
+   0.450583
+  ],
+  "localScale": [
+   0.001544,
+   0.001389,
+   0.001544
+  ]
+ },
+ "brood_cell_12": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (texture)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye texture, brood emission (our eye mask's core)"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 4,
+   "verts_inside_base": 2,
+   "nearest_to_base_mm": 0.7,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "thorax1",
+  "localPosition": [
+   -0.001676,
+   0.008919,
+   0.003297
+  ],
+  "localRotation": [
+   0.200674,
+   -0.048007,
+   0.449347,
+   0.869202
+  ],
+  "localScale": [
+   0.001479,
+   0.001331,
+   0.001479
+  ]
+ },
+ "brood_eye_06": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (material)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye + eye/eye_globe_core_pupil_mask.png"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 5,
+   "nearest_to_base_mm": 24.7,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "thorax1",
+  "localPosition": [
+   0.001599,
+   0.009809,
+   0.00301
+  ],
+  "localRotation": [
+   0.307487,
+   -0.000432,
+   -0.350803,
+   0.884528
+  ],
+  "localScale": [
+   0.001415,
+   0.001273,
+   0.001415
+  ]
+ },
+ "brood_cell_13": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (texture)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye texture, brood emission (our eye mask's core)"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 13,
+   "verts_inside_base": 8,
+   "nearest_to_base_mm": 0.8,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "thorax1",
+  "localPosition": [
+   -0.001038,
+   0.004262,
+   0.003984
+  ],
+  "localRotation": [
+   0.441103,
+   0.214011,
+   0.651236,
+   0.57924
+  ],
+  "localScale": [
+   0.001351,
+   0.001216,
+   0.001351
+  ]
+ },
+ "brood_cell_14": {
+  "source": {
+   "prefab": "eye_globe (mesh) + TheHive (texture)",
+   "renderer": "eye_globe/default",
+   "mesh": "default (eye_globe, 50 tris)",
+   "material": "TheHive_Eye texture, brood emission (our eye mask's core)"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 50,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 25.2,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "thorax1",
+  "localPosition": [
+   0.000744,
+   0.005524,
+   0.004554
+  ],
+  "localRotation": [
+   0.395584,
+   -0.341751,
+   -0.745446,
+   0.413558
+  ],
+  "localScale": [
+   0.001286,
+   0.001158,
+   0.001286
+  ]
+ },
+ "root_flank_L": {
+  "source": {
+   "prefab": "fi_vil_combs_root07",
+   "renderer": "fi_vil_combs_root07",
+   "mesh": "Mesh",
+   "material": "fi_village_catacombs"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 90,
+  "fit": {
+   "base_pairs": 114,
+   "verts_inside_base": 52,
+   "nearest_to_base_mm": 0.6,
+   "touches_other_piece": false,
+   "floating": false
+  },
+  "parent": "thorax1",
+  "localPosition": [
+   0.0,
+   0.003823,
+   -0.010933
+  ],
+  "localRotation": [
+   0.814613,
+   0.0,
+   0.0,
+   0.580004
+  ],
+  "localScale": [
+   0.0125,
+   0.0125,
+   0.0125
+  ]
+ },
+ "root_flank_R": {
+  "source": {
+   "prefab": "fi_vil_combs_root07",
+   "renderer": "fi_vil_combs_root07",
+   "mesh": "Mesh",
+   "material": "fi_village_catacombs"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 90,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 6.0,
+   "touches_other_piece": false,
+   "floating": false
+  },
+  "parent": "thorax2",
+  "localPosition": [
+   0.0,
+   0.000217,
+   -0.011257
+  ],
+  "localRotation": [
+   0.883027,
+   0.0,
+   0.0,
+   0.469322
+  ],
+  "localScale": [
+   0.0125,
+   0.0125,
+   0.0125
+  ]
+ },
+ "root_rear_0": {
+  "source": {
+   "prefab": "fi_vil_combs_root07",
+   "renderer": "fi_vil_combs_root07",
+   "mesh": "Mesh",
+   "material": "fi_village_catacombs"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 90,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 37,
+   "nearest_to_base_mm": 6.0,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "thorax3",
+  "localPosition": [
+   0.0,
+   -0.001319,
+   -0.011999
+  ],
+  "localRotation": [
+   0.936422,
+   0.0,
+   0.0,
+   0.350875
+  ],
+  "localScale": [
+   0.0125,
+   0.0125,
+   0.0125
+  ]
+ },
+ "root_ridge_0": {
+  "source": {
+   "prefab": "fi_vil_combs_root07",
+   "renderer": "fi_vil_combs_root07",
+   "mesh": "Mesh",
+   "material": "fi_village_catacombs"
+  },
+  "mode": "skinned (weights from the skin under it: transfer_weights.json)",
+  "tris": 90,
+  "fit": {
+   "base_pairs": 28,
+   "verts_inside_base": 2,
+   "nearest_to_base_mm": 6.0,
+   "touches_other_piece": false,
+   "floating": false
+  },
+  "parent": "abdomen",
+  "localPosition": [
+   0.0,
+   0.002459,
+   0.011318
+  ],
+  "localRotation": [
+   -0.779504,
+   -0.0,
+   -0.0,
+   0.626398
+  ],
+  "localScale": [
+   0.0125,
+   0.0125,
+   0.0125
+  ]
+ },
+ "branch_ridge_0": {
+  "source": {
+   "prefab": "AshlandsBranch2",
+   "renderer": "stub",
+   "mesh": "default (200 tris)",
+   "material": "TheHive_Mat bark (olivetree_trunk01), tint 0.42/0.36/0.3"
+  },
+  "mode": "rigid",
+  "tris": 200,
+  "fit": {
+   "base_pairs": 6,
+   "verts_inside_base": 4,
+   "nearest_to_base_mm": 3.1,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "thorax1",
+  "localPosition": [
+   0.001741,
+   0.004361,
+   0.009108
+  ],
+  "localRotation": [
+   0.538414,
+   0.078082,
+   -0.804508,
+   0.238285
+  ],
+  "localScale": [
+   0.002439,
+   0.003412,
+   0.003413
+  ]
+ },
+ "branch_ridge_1": {
+  "source": {
+   "prefab": "AshlandsBranch2",
+   "renderer": "stub",
+   "mesh": "default (200 tris)",
+   "material": "TheHive_Mat bark (olivetree_trunk01), tint 0.42/0.36/0.3"
+  },
+  "mode": "rigid",
+  "tris": 200,
+  "fit": {
+   "base_pairs": 0,
+   "verts_inside_base": 0,
+   "nearest_to_base_mm": 43.7,
+   "touches_other_piece": true,
+   "floating": false
+  },
+  "parent": "abdomen",
+  "localPosition": [
+   -0.001399,
+   2.8e-05,
+   -0.007068
+  ],
+  "localRotation": [
+   0.08141,
+   -0.405852,
+   0.346747,
+   0.841923
+  ],
+  "localScale": [
+   0.001762,
+   0.002464,
+   0.002465
+  ]
+ }
+}

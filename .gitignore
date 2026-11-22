@@ -7,3 +7,36 @@
 *.user
 *.suo
 *.pdb
+
+# Vanilla game data exported for art reference (never commit or ship)
+art/**/_ref/
+art/**/ref/
+art/**/vanilla_ref/
+art/subbosses/reference/tex_*.png
+art/**/*DO_NOT_SHIP*
+*.blend1
+art/subbosses/runtime_src/
+
+# in-game test driver build output
+tools/**/bin/
+tools/**/obj/
+
+# Sub-Boss art (1.2.0): only OUR data and scripts are public. The working scenes (*.blend hold vanilla meshes and textures),
+# donor mesh exports, renders and part sheets stay local (the owner backs them up). Whitelist:
+art/subbosses/**
+!art/subbosses/**/
+!art/subbosses/runtime/**
+!art/subbosses/kit_tools/*.py
+!art/subbosses/kit_tools_b/*.py
+!art/subbosses/tools_001-003/*.py
+!art/subbosses/donor_tools_004-006/*.py
+!art/subbosses/ASSET-00*/kit/*.py
+!art/subbosses/ASSET-00*/kit/attach.json
+!art/subbosses/ASSET-00*/kit/materials_recipe.json
+!art/subbosses/ASSET-00*/kit/transfer_weights.json
+!art/subbosses/ASSET-00*/kit/repaint/repaint.json
+art/subbosses/**/__pycache__/
+# the shipped PDB is part of the release package (PDB rule, 2026-11-20)
+!HexiumDistrib/plugins/*.pdb
+__pycache__/
+*.bak

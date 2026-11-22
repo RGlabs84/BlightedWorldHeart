@@ -46,7 +46,7 @@ Per biome (only present if that biome has ever had a Heart): `active`, `current_
    dedicated server, which is the one topology nobody tests first. The export reads biome from
    `Heightmap.FindBiome(transform.position)` instead, which is correct regardless of topology.
 2. **`Character.OnDeath`-style hooks don't fire server-side for this boss either**, for the same
-   underlying reason cataloged in `PAUSED/TheRavensCall/KILL_TRACKING_FINDINGS.md`: whichever peer
+   underlying reason cataloged in `PAUSED/TheRavensCall-OLD-1.2.1/KILL_TRACKING_FINDINGS.md`: whichever peer
    currently owns the ZDO runs local simulation methods, and during an active fight that's normally
    the fighting player's client, not the dedicated server. `times_defeated` instead subscribes to
    `ZDOMan.instance.m_onZDODestroyed`, which is broadcast to every peer including the server once a

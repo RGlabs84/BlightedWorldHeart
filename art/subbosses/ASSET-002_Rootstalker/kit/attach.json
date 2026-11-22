@@ -1,0 +1,3037 @@
+{
+ "_about": "ASSET-002 Rootstalker kitbash: every add-on is a vanilla mesh (Hive lumps with our per-vertex offsets) on one Wolf bone (or skinned, see mode). For each part: create an ANCHOR as a child of `parent` with localPosition/localRotation/localScale (Runic armor_attach convention: localScale 1/BSCALE cancels the Wolf's bone-chain scale, localRotation undoes the bone's REST rotation, so the anchor is world-aligned in the rest pose), then a child carrying the vanilla mesh with `part_localRotation` / `part_localScale` (Unity axes) at position 0. Units: Unity, the Wolf prefab's REST pose.",
+ "_donor": "Wolf (1.0.21, bundle c4210710)",
+ "_bone_chain_scale": 1.500000089408959,
+ "_base_tris": {
+  "M": 1962
+ },
+ "_sources": {
+  "branch0": {
+   "prefab": "gd_king",
+   "renderer": "/gd_king/Visual/gd_king",
+   "mesh": "gd_king.001 island (sheet cell 5)",
+   "triangles": [
+    8631,
+    8632,
+    8633,
+    8634,
+    8635,
+    8636,
+    8637,
+    8638,
+    8639,
+    8640,
+    8641,
+    8642,
+    8643,
+    8644,
+    8645,
+    8646,
+    8647,
+    8648,
+    8649,
+    8650,
+    8651,
+    8652,
+    8653,
+    8654,
+    8655,
+    8656,
+    8657,
+    8658,
+    8659,
+    8660,
+    8661,
+    8662,
+    8663,
+    8664,
+    8665,
+    8666,
+    8667,
+    8668,
+    8669,
+    8670,
+    8671,
+    8672,
+    8673,
+    8674,
+    8675,
+    8676,
+    8677,
+    8678,
+    8679,
+    8680,
+    8681,
+    8682,
+    8683,
+    8684,
+    8685,
+    8686,
+    8687,
+    8688,
+    8689,
+    8690,
+    8691,
+    8692,
+    8693,
+    8694,
+    8695,
+    8696,
+    8697,
+    8698,
+    8699,
+    8700,
+    8701,
+    8702,
+    8703,
+    8704,
+    8705,
+    8706,
+    8707,
+    8708,
+    8709,
+    8710,
+    8711,
+    8712,
+    8713,
+    8714,
+    8715,
+    8716,
+    8717,
+    8718,
+    8719,
+    8720,
+    8721,
+    8722,
+    8723,
+    8724,
+    8725,
+    8726,
+    8727,
+    8728,
+    8729,
+    8730,
+    8731,
+    8732,
+    8733,
+    8734,
+    8735,
+    8736,
+    8737,
+    8738,
+    8739,
+    8740,
+    8741,
+    8742,
+    8743,
+    8744,
+    8745,
+    8746,
+    8747,
+    8748,
+    8749,
+    8750,
+    8751,
+    8752,
+    8753,
+    8754,
+    8755,
+    8756,
+    8757,
+    8758,
+    8759,
+    8760,
+    8761,
+    8762,
+    8763,
+    8764,
+    8765,
+    8766
+   ],
+   "material": "Elder_mat; recolour recipe: saturation x0.2, then x(0.17, 0.145, 0.115) - weathered grey-brown, the pink pulled out; emission off",
+   "scale_note": "placed with x/y scale 2.4x the length scale (thick limbs)",
+   "frame": "root at origin, root->tip +z (computed from the island)",
+   "length_m_in_elder": 2.438
+  },
+  "branch1": {
+   "prefab": "gd_king",
+   "renderer": "/gd_king/Visual/gd_king",
+   "mesh": "gd_king.001 island (sheet cell 6)",
+   "triangles": [
+    521,
+    522,
+    523,
+    524,
+    525,
+    526,
+    527,
+    528,
+    529,
+    530,
+    531,
+    532,
+    533,
+    534,
+    535,
+    536,
+    537,
+    538,
+    539,
+    540,
+    541,
+    542,
+    543,
+    544,
+    545,
+    546,
+    547,
+    548,
+    549,
+    550,
+    551,
+    552,
+    553,
+    554,
+    555,
+    556,
+    557,
+    558,
+    559,
+    560,
+    561,
+    562,
+    563,
+    564,
+    565,
+    566,
+    567,
+    568,
+    569,
+    570,
+    571,
+    572,
+    573,
+    574,
+    575,
+    576,
+    577,
+    578,
+    579,
+    580,
+    581,
+    582,
+    583,
+    584,
+    585,
+    586,
+    587,
+    588,
+    589,
+    590,
+    591,
+    592,
+    593,
+    594,
+    595,
+    596,
+    597,
+    598,
+    599,
+    600,
+    601,
+    602,
+    603,
+    604,
+    605,
+    606,
+    607,
+    608,
+    609,
+    610,
+    611,
+    612,
+    613,
+    614,
+    615,
+    616,
+    617,
+    618,
+    619,
+    620,
+    621,
+    622,
+    623,
+    624,
+    625,
+    626,
+    627,
+    628,
+    629,
+    630,
+    631,
+    632,
+    633,
+    634,
+    635,
+    636,
+    637,
+    638,
+    639,
+    640,
+    641,
+    642,
+    643,
+    644,
+    645,
+    646,
+    647,
+    648,
+    649,
+    650,
+    651,
+    652,
+    653,
+    654,
+    655,
+    656
+   ],
+   "material": "Elder_mat; recolour recipe: saturation x0.2, then x(0.17, 0.145, 0.115) - weathered grey-brown, the pink pulled out; emission off",
+   "scale_note": "placed with x/y scale 2.4x the length scale (thick limbs)",
+   "frame": "root at origin, root->tip +z (computed from the island)",
+   "length_m_in_elder": 1.959
+  },
+  "branch2": {
+   "prefab": "gd_king",
+   "renderer": "/gd_king/Visual/gd_king",
+   "mesh": "gd_king.001 island (sheet cell 7)",
+   "triangles": [
+    385,
+    386,
+    387,
+    388,
+    389,
+    390,
+    391,
+    392,
+    393,
+    394,
+    395,
+    396,
+    397,
+    398,
+    399,
+    400,
+    401,
+    402,
+    403,
+    404,
+    405,
+    406,
+    407,
+    408,
+    409,
+    410,
+    411,
+    412,
+    413,
+    414,
+    415,
+    416,
+    417,
+    418,
+    419,
+    420,
+    421,
+    422,
+    423,
+    424,
+    425,
+    426,
+    427,
+    428,
+    429,
+    430,
+    431,
+    432,
+    433,
+    434,
+    435,
+    436,
+    437,
+    438,
+    439,
+    440,
+    441,
+    442,
+    443,
+    444,
+    445,
+    446,
+    447,
+    448,
+    449,
+    450,
+    451,
+    452,
+    453,
+    454,
+    455,
+    456,
+    457,
+    458,
+    459,
+    460,
+    461,
+    462,
+    463,
+    464,
+    465,
+    466,
+    467,
+    468,
+    469,
+    470,
+    471,
+    472,
+    473,
+    474,
+    475,
+    476,
+    477,
+    478,
+    479,
+    480,
+    481,
+    482,
+    483,
+    484,
+    485,
+    486,
+    487,
+    488,
+    489,
+    490,
+    491,
+    492,
+    493,
+    494,
+    495,
+    496,
+    497,
+    498,
+    499,
+    500,
+    501,
+    502,
+    503,
+    504,
+    505,
+    506,
+    507,
+    508,
+    509,
+    510,
+    511,
+    512,
+    513,
+    514,
+    515,
+    516,
+    517,
+    518,
+    519,
+    520
+   ],
+   "material": "Elder_mat; recolour recipe: saturation x0.2, then x(0.17, 0.145, 0.115) - weathered grey-brown, the pink pulled out; emission off",
+   "scale_note": "placed with x/y scale 2.4x the length scale (thick limbs)",
+   "frame": "root at origin, root->tip +z (computed from the island)",
+   "length_m_in_elder": 1.522
+  },
+  "wrow0": {
+   "prefab": "Wolf",
+   "renderer": "M",
+   "mesh": "Wolf M island (wrow): 42 triangles",
+   "triangles": [
+    729,
+    730,
+    731,
+    732,
+    733,
+    734,
+    735,
+    736,
+    737,
+    738,
+    739,
+    740,
+    741,
+    742,
+    743,
+    744,
+    745,
+    746,
+    747,
+    748,
+    749,
+    750,
+    751,
+    752,
+    753,
+    754,
+    755,
+    756,
+    757,
+    758,
+    759,
+    760,
+    761,
+    762,
+    763,
+    764,
+    765,
+    766,
+    767,
+    768,
+    769,
+    770
+   ],
+   "material": "the Wolf's own material, instance tint (0.85, 0.74, 0.52)",
+   "frame": "root at origin, root->tip +z, bulge +y (computed from the island, deterministic)"
+  },
+  "wrow1": {
+   "prefab": "Wolf",
+   "renderer": "M",
+   "mesh": "Wolf M island (wrow): 42 triangles",
+   "triangles": [
+    1546,
+    1547,
+    1548,
+    1549,
+    1550,
+    1551,
+    1552,
+    1553,
+    1554,
+    1555,
+    1556,
+    1557,
+    1558,
+    1559,
+    1560,
+    1561,
+    1562,
+    1563,
+    1564,
+    1565,
+    1566,
+    1567,
+    1568,
+    1569,
+    1570,
+    1571,
+    1572,
+    1573,
+    1574,
+    1575,
+    1576,
+    1577,
+    1578,
+    1579,
+    1580,
+    1581,
+    1582,
+    1583,
+    1584,
+    1585,
+    1586,
+    1587
+   ],
+   "material": "the Wolf's own material, instance tint (0.85, 0.74, 0.52)",
+   "frame": "root at origin, root->tip +z, bulge +y (computed from the island, deterministic)"
+  },
+  "wrow2": {
+   "prefab": "Wolf",
+   "renderer": "M",
+   "mesh": "Wolf M island (wrow): 35 triangles",
+   "triangles": [
+    1780,
+    1781,
+    1782,
+    1783,
+    1784,
+    1785,
+    1786,
+    1787,
+    1788,
+    1789,
+    1790,
+    1791,
+    1792,
+    1793,
+    1794,
+    1795,
+    1796,
+    1797,
+    1798,
+    1799,
+    1800,
+    1801,
+    1802,
+    1803,
+    1804,
+    1805,
+    1806,
+    1807,
+    1808,
+    1809,
+    1810,
+    1811,
+    1812,
+    1813,
+    1814
+   ],
+   "material": "the Wolf's own material, instance tint (0.85, 0.74, 0.52)",
+   "frame": "root at origin, root->tip +z, bulge +y (computed from the island, deterministic)"
+  },
+  "wrow3": {
+   "prefab": "Wolf",
+   "renderer": "M",
+   "mesh": "Wolf M island (wrow): 35 triangles",
+   "triangles": [
+    1887,
+    1888,
+    1889,
+    1890,
+    1891,
+    1892,
+    1893,
+    1894,
+    1895,
+    1896,
+    1897,
+    1898,
+    1899,
+    1900,
+    1901,
+    1902,
+    1903,
+    1904,
+    1905,
+    1906,
+    1907,
+    1908,
+    1909,
+    1910,
+    1911,
+    1912,
+    1913,
+    1914,
+    1915,
+    1916,
+    1917,
+    1918,
+    1919,
+    1920,
+    1921
+   ],
+   "material": "the Wolf's own material, instance tint (0.85, 0.74, 0.52)",
+   "frame": "root at origin, root->tip +z, bulge +y (computed from the island, deterministic)"
+  },
+  "wcanine0": {
+   "prefab": "Wolf",
+   "renderer": "M",
+   "mesh": "Wolf M island (wcanine): 21 triangles",
+   "triangles": [
+    672,
+    673,
+    674,
+    675,
+    676,
+    677,
+    678,
+    679,
+    680,
+    681,
+    682,
+    683,
+    684,
+    685,
+    686,
+    687,
+    688,
+    689,
+    690,
+    691,
+    692
+   ],
+   "material": "the Wolf's own material, instance tint (0.85, 0.74, 0.52)",
+   "frame": "root at origin, root->tip +z, bulge +y (computed from the island, deterministic)"
+  },
+  "wcanine1": {
+   "prefab": "Wolf",
+   "renderer": "M",
+   "mesh": "Wolf M island (wcanine): 12 triangles",
+   "triangles": [
+    717,
+    718,
+    719,
+    720,
+    721,
+    722,
+    723,
+    724,
+    725,
+    726,
+    727,
+    728
+   ],
+   "material": "the Wolf's own material, instance tint (0.85, 0.74, 0.52)",
+   "frame": "root at origin, root->tip +z, bulge +y (computed from the island, deterministic)"
+  },
+  "wcanine2": {
+   "prefab": "Wolf",
+   "renderer": "M",
+   "mesh": "Wolf M island (wcanine): 21 triangles",
+   "triangles": [
+    1513,
+    1514,
+    1515,
+    1516,
+    1517,
+    1518,
+    1519,
+    1520,
+    1521,
+    1522,
+    1523,
+    1524,
+    1525,
+    1526,
+    1527,
+    1528,
+    1529,
+    1530,
+    1531,
+    1532,
+    1533
+   ],
+   "material": "the Wolf's own material, instance tint (0.85, 0.74, 0.52)",
+   "frame": "root at origin, root->tip +z, bulge +y (computed from the island, deterministic)"
+  },
+  "wcanine3": {
+   "prefab": "Wolf",
+   "renderer": "M",
+   "mesh": "Wolf M island (wcanine): 12 triangles",
+   "triangles": [
+    1534,
+    1535,
+    1536,
+    1537,
+    1538,
+    1539,
+    1540,
+    1541,
+    1542,
+    1543,
+    1544,
+    1545
+   ],
+   "material": "the Wolf's own material, instance tint (0.85, 0.74, 0.52)",
+   "frame": "root at origin, root->tip +z, bulge +y (computed from the island, deterministic)"
+  },
+  "lump": {
+   "prefab": "TheHive",
+   "renderer": "/TheHive/Visual/low",
+   "mesh": "default",
+   "mesh_path_id": -4928479748442465903,
+   "material": "TheHive_Mat"
+  },
+  "eye": {
+   "prefab": "eye_globe",
+   "renderer": "/eye_globe/default",
+   "mesh": "default",
+   "mesh_path_id": 7188158992250963423,
+   "material": "TheHive_Eye (from TheHive /Visual/EYE)"
+  },
+  "sack": {
+   "prefab": "GuckSack",
+   "renderer": "/GuckSack/sack",
+   "mesh": "Cancer",
+   "mesh_path_id": 8918963702117525708,
+   "material": "gucksack"
+  },
+  "root": {
+   "prefab": "HugeRoot1",
+   "renderer": "/HugeRoot1/root1_low",
+   "mesh": "root1_low",
+   "mesh_path_id": -7232008768112309544,
+   "material": "hugeroot"
+  },
+  "jaw": {
+   "prefab": "hugeskull",
+   "renderer": "/hugeskull/jaw",
+   "mesh": "jaw",
+   "mesh_path_id": -315376845249174344,
+   "material": "jawMat"
+  },
+  "vineh": {
+   "prefab": "vines",
+   "renderer": "/vines/New/high",
+   "mesh": "default",
+   "mesh_path_id": -2340816738040686200,
+   "material": "VinesBranch_mat, Vines_Mat"
+  },
+  "vinel": {
+   "prefab": "vines",
+   "renderer": "/vines/New/low",
+   "mesh": "default",
+   "mesh_path_id": 4601915540024804275,
+   "material": "Vines_Mat"
+  },
+  "thorn": {
+   "prefab": "ThornRoots",
+   "renderer": "/ThornRoots/Cube",
+   "mesh": "Cube",
+   "mesh_path_id": 5815167062159252271,
+   "material": "Thornroot_mat"
+  },
+  "tenta": {
+   "prefab": "Tentaroots",
+   "renderer": "/Tentaroots/Cube",
+   "mesh": "Cube",
+   "mesh_path_id": -3684905309386502404,
+   "material": "Tentaroot_mat"
+  },
+  "writhan": {
+   "prefab": "writhanroots",
+   "renderer": "/writhanroots/default",
+   "mesh": "default",
+   "mesh_path_id": 9218356082234241707,
+   "material": "Writhan_mat"
+  },
+  "root07": {
+   "prefab": "root07",
+   "renderer": "/root07/root07",
+   "mesh": "Mesh",
+   "mesh_path_id": 3405720765841288038,
+   "material": "fi_village_catacombs_roots"
+  },
+  "sphere": {
+   "prefab": "TheHive",
+   "renderer": "/TheHive/Visual/EYE",
+   "mesh": "built-in Sphere (unity default resources, 768 tris)",
+   "material": "TheHive_Eye"
+  },
+  "cube": {
+   "prefab": "TheHive",
+   "renderer": "/TheHive/Visual/Cube (4)",
+   "mesh": "built-in Cube (unity default resources)",
+   "material": "TheHive_Mat_legs"
+  }
+ },
+ "RS_crust_withers_l": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Spine2",
+  "localPosition": [
+   -0.11475,
+   -0.158901,
+   0.050486
+  ],
+  "localRotation": [
+   -0.703658,
+   0.06976,
+   0.703657,
+   0.069763
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   -0.033178,
+   0.973952,
+   -0.049399,
+   0.218808
+  ],
+  "part_localScale": [
+   0.136,
+   0.08432,
+   0.17
+  ],
+  "rest_world_position": [
+   -0.0757,
+   1.2446,
+   0.216
+  ],
+  "tris": 238,
+  "pairs_body": 102,
+  "seated_by_m": 0.1237,
+  "sunk_frac": 0.3,
+  "vertex_offsets": "deform/lump_offsets.json#RS_crust_withers_l",
+  "mode": "rigid"
+ },
+ "RS_crust_withers_r": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Spine2",
+  "localPosition": [
+   -0.037462,
+   -0.143821,
+   -0.061617
+  ],
+  "localRotation": [
+   -0.703658,
+   0.06976,
+   0.703657,
+   0.069763
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   0.088493,
+   0.910231,
+   -0.169746,
+   0.367199
+  ],
+  "part_localScale": [
+   0.1105,
+   0.06851,
+   0.12155
+  ],
+  "rest_world_position": [
+   0.0924,
+   1.1996,
+   0.1067
+  ],
+  "tris": 238,
+  "pairs_body": 79,
+  "seated_by_m": 0.0959,
+  "sunk_frac": 0.3,
+  "vertex_offsets": "deform/lump_offsets.json#RS_crust_withers_r",
+  "mode": "rigid"
+ },
+ "RS_crust_shoulder_l": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Spine2",
+  "localPosition": [
+   -0.110565,
+   -0.010372,
+   0.195386
+  ],
+  "localRotation": [
+   -0.703658,
+   0.06976,
+   0.703657,
+   0.069763
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   -0.401906,
+   0.612636,
+   0.411376,
+   0.542142
+  ],
+  "part_localScale": [
+   0.102,
+   0.06324,
+   0.102
+  ],
+  "rest_world_position": [
+   -0.2931,
+   1.0249,
+   0.2536
+  ],
+  "tris": 238,
+  "pairs_body": 66,
+  "seated_by_m": 0.0816,
+  "sunk_frac": 0.3,
+  "vertex_offsets": "deform/lump_offsets.json#RS_crust_shoulder_l",
+  "mode": "rigid"
+ },
+ "RS_crust_shoulder_r": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Spine2",
+  "localPosition": [
+   -0.061393,
+   0.004148,
+   -0.185688
+  ],
+  "localRotation": [
+   -0.703658,
+   0.06976,
+   0.703657,
+   0.069763
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   0.546821,
+   0.804295,
+   -0.209684,
+   0.100642
+  ],
+  "part_localScale": [
+   0.0765,
+   0.04743,
+   0.0765
+  ],
+  "rest_world_position": [
+   0.2785,
+   0.9891,
+   0.1855
+  ],
+  "tris": 238,
+  "pairs_body": 52,
+  "seated_by_m": 0.0651,
+  "sunk_frac": 0.3,
+  "vertex_offsets": "deform/lump_offsets.json#RS_crust_shoulder_r",
+  "mode": "rigid"
+ },
+ "RS_crust_neck": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Neck",
+  "localPosition": [
+   -0.077845,
+   -0.14436,
+   0.021498
+  ],
+  "localRotation": [
+   -0.705147,
+   0.052611,
+   0.705147,
+   0.052615
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   0.071722,
+   -0.35975,
+   0.127938,
+   0.921449
+  ],
+  "part_localScale": [
+   0.0935,
+   0.05797,
+   0.1122
+  ],
+  "rest_world_position": [
+   -0.0322,
+   1.2594,
+   0.4636
+  ],
+  "tris": 238,
+  "pairs_body": 95,
+  "seated_by_m": 0.0848,
+  "sunk_frac": 0.3,
+  "vertex_offsets": "deform/lump_offsets.json#RS_crust_neck",
+  "mode": "rigid"
+ },
+ "RS_crust_spine_a": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Spine1",
+  "localPosition": [
+   -0.115092,
+   -0.127574,
+   0.033102
+  ],
+  "localRotation": [
+   -0.705779,
+   0.043313,
+   0.705778,
+   0.043316
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   0.020617,
+   -0.389466,
+   0.101996,
+   0.915144
+  ],
+  "part_localScale": [
+   0.1105,
+   0.06851,
+   0.14365
+  ],
+  "rest_world_position": [
+   -0.0497,
+   1.1573,
+   -0.0065
+  ],
+  "tris": 238,
+  "pairs_body": 77,
+  "seated_by_m": 0.0873,
+  "sunk_frac": 0.3,
+  "vertex_offsets": "deform/lump_offsets.json#RS_crust_spine_a",
+  "mode": "rigid"
+ },
+ "RS_crust_spine_b": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Spine1",
+  "localPosition": [
+   0.036532,
+   -0.129058,
+   -0.035442
+  ],
+  "localRotation": [
+   -0.705779,
+   0.043313,
+   0.705778,
+   0.043316
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   0.094659,
+   0.96941,
+   -0.032825,
+   0.224067
+  ],
+  "part_localScale": [
+   0.0935,
+   0.05797,
+   0.1122
+  ],
+  "rest_world_position": [
+   0.0532,
+   1.1317,
+   -0.2325
+  ],
+  "tris": 238,
+  "pairs_body": 53,
+  "seated_by_m": 0.0735,
+  "sunk_frac": 0.3,
+  "vertex_offsets": "deform/lump_offsets.json#RS_crust_spine_b",
+  "mode": "rigid"
+ },
+ "RS_crust_spine_c": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Spine",
+  "localPosition": [
+   0.002843,
+   -0.130258,
+   0.027466
+  ],
+  "localRotation": [
+   -0.706908,
+   0.016805,
+   0.706906,
+   0.016808
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   -0.099498,
+   0.984258,
+   -0.059362,
+   0.133465
+  ],
+  "part_localScale": [
+   0.1105,
+   0.06851,
+   0.1326
+  ],
+  "rest_world_position": [
+   -0.0412,
+   1.1291,
+   -0.4181
+  ],
+  "tris": 238,
+  "pairs_body": 51,
+  "seated_by_m": 0.0886,
+  "sunk_frac": 0.3,
+  "vertex_offsets": "deform/lump_offsets.json#RS_crust_spine_c",
+  "mode": "rigid"
+ },
+ "RS_crust_haunch_l": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Pelvis",
+  "localPosition": [
+   -0.082927,
+   -0.061852,
+   0.100439
+  ],
+  "localRotation": [
+   -0.500001,
+   0.5,
+   0.5,
+   0.499999
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   0.245563,
+   -0.944616,
+   0.210319,
+   0.05625
+  ],
+  "part_localScale": [
+   0.136,
+   0.08432,
+   0.136
+  ],
+  "rest_world_position": [
+   -0.1507,
+   1.0188,
+   -0.6246
+  ],
+  "tris": 238,
+  "pairs_body": 66,
+  "seated_by_m": 0.1106,
+  "sunk_frac": 0.3,
+  "vertex_offsets": "deform/lump_offsets.json#RS_crust_haunch_l",
+  "mode": "rigid"
+ },
+ "RS_crust_haunch_r": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Pelvis",
+  "localPosition": [
+   -0.058784,
+   -0.088313,
+   -0.094588
+  ],
+  "localRotation": [
+   -0.500001,
+   0.5,
+   0.5,
+   0.499999
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   0.115093,
+   0.802713,
+   -0.302141,
+   0.501114
+  ],
+  "part_localScale": [
+   0.102,
+   0.06324,
+   0.102
+  ],
+  "rest_world_position": [
+   0.1419,
+   0.9826,
+   -0.6643
+  ],
+  "tris": 238,
+  "pairs_body": 76,
+  "seated_by_m": 0.0894,
+  "sunk_frac": 0.3,
+  "vertex_offsets": "deform/lump_offsets.json#RS_crust_haunch_r",
+  "mode": "rigid"
+ },
+ "RS_crust_thigh_l": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "L Thigh",
+  "localPosition": [
+   -0.041573,
+   -0.017459,
+   -0.042149
+  ],
+  "localRotation": [
+   -0.568028,
+   -0.478065,
+   -0.499434,
+   0.446502
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   0.261914,
+   -0.51647,
+   0.609,
+   0.542014
+  ],
+  "part_localScale": [
+   0.0935,
+   0.05797,
+   0.0935
+  ],
+  "rest_world_position": [
+   -0.2441,
+   0.8384,
+   -0.5599
+  ],
+  "tris": 238,
+  "pairs_body": 56,
+  "seated_by_m": 0.072,
+  "sunk_frac": 0.3,
+  "vertex_offsets": "deform/lump_offsets.json#RS_crust_thigh_l",
+  "mode": "rigid"
+ },
+ "RS_crust_tailbase": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Tail",
+  "localPosition": [
+   -0.020084,
+   0.030744,
+   -0.001461
+  ],
+  "localRotation": [
+   0.06316,
+   0.70428,
+   -0.063156,
+   0.704281
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   -0.257502,
+   -0.901376,
+   0.056294,
+   0.343575
+  ],
+  "part_localScale": [
+   0.068,
+   0.04216,
+   0.0816
+  ],
+  "rest_world_position": [
+   0.0022,
+   0.9644,
+   -0.8088
+  ],
+  "tris": 238,
+  "pairs_body": 77,
+  "seated_by_m": 0.0572,
+  "sunk_frac": 0.3,
+  "vertex_offsets": "deform/lump_offsets.json#RS_crust_tailbase",
+  "mode": "rigid"
+ },
+ "RS_crust_skull": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Head",
+  "localPosition": [
+   -0.126735,
+   0.058194,
+   -0.002362
+  ],
+  "localRotation": [
+   -0.502032,
+   0.497959,
+   0.502032,
+   0.49796
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   -0.005927,
+   -0.153021,
+   -0.027159,
+   0.987832
+  ],
+  "part_localScale": [
+   0.0595,
+   0.03689,
+   0.07735
+  ],
+  "rest_world_position": [
+   0.0035,
+   1.3066,
+   0.7677
+  ],
+  "tris": 238,
+  "pairs_body": 73,
+  "seated_by_m": 0.0496,
+  "sunk_frac": 0.3,
+  "vertex_offsets": "deform/lump_offsets.json#RS_crust_skull",
+  "mode": "rigid"
+ },
+ "RS_hem_shoulder_l": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Spine2",
+  "localPosition": [
+   -0.003451,
+   0.032017,
+   0.189475
+  ],
+  "localRotation": [
+   -0.703658,
+   0.06976,
+   0.703657,
+   0.069763
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   -0.511826,
+   0.55291,
+   0.41311,
+   0.511531
+  ],
+  "part_localScale": [
+   0.09,
+   0.0465,
+   0.075
+  ],
+  "rest_world_position": [
+   -0.2842,
+   0.931,
+   0.1085
+  ],
+  "tris": 238,
+  "pairs_body": 64,
+  "seated_by_m": 0.0777,
+  "sunk_frac": 0.18,
+  "vertex_offsets": "deform/lump_offsets.json#RS_hem_shoulder_l",
+  "mode": "skinned",
+  "skin": "weights transferred at runtime from the 4 nearest Wolf M vertices (inverse distance), rest pose, then blended 0.25 per-vertex + 0.75 the part's average",
+  "weight_own_share": 0.25,
+  "head_bones_masked": false
+ },
+ "RS_hem_shoulder_r": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Spine2",
+  "localPosition": [
+   0.038742,
+   0.037537,
+   -0.159555
+  ],
+  "localRotation": [
+   -0.703658,
+   0.06976,
+   0.703657,
+   0.069763
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   0.167662,
+   0.283984,
+   -0.617247,
+   0.714317
+  ],
+  "part_localScale": [
+   0.084,
+   0.0434,
+   0.07
+  ],
+  "rest_world_position": [
+   0.2393,
+   0.9105,
+   0.0481
+  ],
+  "tris": 238,
+  "pairs_body": 70,
+  "seated_by_m": 0.0582,
+  "sunk_frac": 0.3,
+  "vertex_offsets": "deform/lump_offsets.json#RS_hem_shoulder_r",
+  "mode": "skinned",
+  "skin": "weights transferred at runtime from the 4 nearest Wolf M vertices (inverse distance), rest pose, then blended 0.25 per-vertex + 0.75 the part's average",
+  "weight_own_share": 0.25,
+  "head_bones_masked": false
+ },
+ "RS_hem_ribs_l": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Spine1",
+  "localPosition": [
+   0.022121,
+   0.003711,
+   0.120198
+  ],
+  "localRotation": [
+   -0.705779,
+   0.043313,
+   0.705778,
+   0.043316
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   -0.619608,
+   0.781138,
+   0.051987,
+   0.056629
+  ],
+  "part_localScale": [
+   0.084,
+   0.0434,
+   0.07
+  ],
+  "rest_world_position": [
+   -0.1803,
+   0.9366,
+   -0.1867
+  ],
+  "tris": 238,
+  "pairs_body": 53,
+  "seated_by_m": 0.0594,
+  "sunk_frac": 0.3,
+  "vertex_offsets": "deform/lump_offsets.json#RS_hem_ribs_l",
+  "mode": "rigid"
+ },
+ "RS_hem_ribs_r": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Spine1",
+  "localPosition": [
+   0.129807,
+   -0.011666,
+   -0.138256
+  ],
+  "localRotation": [
+   -0.705779,
+   0.043313,
+   0.705778,
+   0.043316
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   0.674245,
+   0.703649,
+   -0.209757,
+   0.079208
+  ],
+  "part_localScale": [
+   0.078,
+   0.0403,
+   0.065
+  ],
+  "rest_world_position": [
+   0.2074,
+   0.9398,
+   -0.3499
+  ],
+  "tris": 238,
+  "pairs_body": 62,
+  "seated_by_m": 0.0977,
+  "sunk_frac": 0.3,
+  "vertex_offsets": "deform/lump_offsets.json#RS_hem_ribs_r",
+  "mode": "skinned",
+  "skin": "weights transferred at runtime from the 4 nearest Wolf M vertices (inverse distance), rest pose, then blended 0.25 per-vertex + 0.75 the part's average",
+  "weight_own_share": 0.25,
+  "head_bones_masked": false
+ },
+ "RS_hem_haunch_l": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Pelvis",
+  "localPosition": [
+   0.027984,
+   -0.106949,
+   0.114314
+  ],
+  "localRotation": [
+   -0.500001,
+   0.5,
+   0.5,
+   0.499999
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   -0.666875,
+   0.669092,
+   -0.090895,
+   0.315171
+  ],
+  "part_localScale": [
+   0.084,
+   0.0434,
+   0.07
+  ],
+  "rest_world_position": [
+   -0.1715,
+   0.8524,
+   -0.6922
+  ],
+  "tris": 238,
+  "pairs_body": 88,
+  "seated_by_m": 0.0593,
+  "sunk_frac": 0.3,
+  "vertex_offsets": "deform/lump_offsets.json#RS_hem_haunch_l",
+  "mode": "rigid"
+ },
+ "RS_hem_haunch_r": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Pelvis",
+  "localPosition": [
+   0.065382,
+   -0.046316,
+   -0.14622
+  ],
+  "localRotation": [
+   -0.500001,
+   0.5,
+   0.5,
+   0.499999
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   -0.488439,
+   -0.427995,
+   -0.411878,
+   0.639222
+  ],
+  "part_localScale": [
+   0.078,
+   0.0403,
+   0.065
+  ],
+  "rest_world_position": [
+   0.2193,
+   0.7963,
+   -0.6013
+  ],
+  "tris": 238,
+  "pairs_body": 58,
+  "seated_by_m": 0.0612,
+  "sunk_frac": 0.3,
+  "vertex_offsets": "deform/lump_offsets.json#RS_hem_haunch_r",
+  "mode": "rigid"
+ },
+ "RS_hem_neck_r": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Neck",
+  "localPosition": [
+   -0.118482,
+   0.004732,
+   -0.13258
+  ],
+  "localRotation": [
+   -0.705147,
+   0.052611,
+   0.705147,
+   0.052615
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   -0.157081,
+   -0.413091,
+   -0.565726,
+   0.696158
+  ],
+  "part_localScale": [
+   0.072,
+   0.0372,
+   0.06
+  ],
+  "rest_world_position": [
+   0.1989,
+   1.0472,
+   0.5571
+  ],
+  "tris": 238,
+  "pairs_body": 74,
+  "seated_by_m": 0.0499,
+  "sunk_frac": 0.3,
+  "vertex_offsets": "deform/lump_offsets.json#RS_hem_neck_r",
+  "mode": "rigid"
+ },
+ "RS_hem_neck_l": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Neck",
+  "localPosition": [
+   -0.042467,
+   -0.012135,
+   0.158907
+  ],
+  "localRotation": [
+   -0.705147,
+   0.052611,
+   0.705147,
+   0.052615
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   0.569907,
+   -0.810361,
+   -0.134885,
+   0.018091
+  ],
+  "part_localScale": [
+   0.072,
+   0.0372,
+   0.06
+  ],
+  "rest_world_position": [
+   -0.2384,
+   1.0553,
+   0.4406
+  ],
+  "tris": 238,
+  "pairs_body": 54,
+  "seated_by_m": 0.0513,
+  "sunk_frac": 0.3,
+  "vertex_offsets": "deform/lump_offsets.json#RS_hem_neck_l",
+  "mode": "rigid"
+ },
+ "RS_hem_tail": {
+  "source": "lump",
+  "material": "V_TheHive_Mat_614496",
+  "parent": "Tail",
+  "localPosition": [
+   -0.094228,
+   0.014676,
+   -0.036255
+  ],
+  "localRotation": [
+   0.06316,
+   0.70428,
+   -0.063156,
+   0.704281
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   0.02311,
+   0.008428,
+   -0.149207,
+   0.9885
+  ],
+  "part_localScale": [
+   0.066,
+   0.0341,
+   0.055
+  ],
+  "rest_world_position": [
+   0.0544,
+   0.9209,
+   -0.914
+  ],
+  "tris": 238,
+  "pairs_body": 64,
+  "seated_by_m": 0.0588,
+  "sunk_frac": 0.3,
+  "vertex_offsets": "deform/lump_offsets.json#RS_hem_tail",
+  "mode": "rigid"
+ },
+ "RS_maw_lip_l": {
+  "source": "lump",
+  "material": "V_TheHive_lip_vc",
+  "parent": "Neck",
+  "localPosition": [
+   -0.115865,
+   0.182559,
+   0.082796
+  ],
+  "localRotation": [
+   -0.705147,
+   0.052611,
+   0.705147,
+   0.052615
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   -0.260898,
+   0.528958,
+   0.788347,
+   0.175055
+  ],
+  "part_localScale": [
+   0.03025,
+   0.0341,
+   0.099
+  ],
+  "rest_world_position": [
+   -0.1242,
+   0.7829,
+   0.5928
+  ],
+  "tris": 238,
+  "pairs_body": 33,
+  "seated_by_m": 0.048,
+  "sunk_frac": 0.22,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "RS_maw_lip_r": {
+  "source": "lump",
+  "material": "V_TheHive_lip_vc",
+  "parent": "Neck",
+  "localPosition": [
+   -0.115442,
+   0.182223,
+   -0.080286
+  ],
+  "localRotation": [
+   -0.705147,
+   0.052611,
+   0.705147,
+   0.052615
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   -0.260892,
+   -0.528964,
+   -0.788346,
+   0.175053
+  ],
+  "part_localScale": [
+   0.03025,
+   0.0341,
+   0.099
+  ],
+  "rest_world_position": [
+   0.1204,
+   0.7833,
+   0.5921
+  ],
+  "tris": 238,
+  "pairs_body": 36,
+  "seated_by_m": 0.0481,
+  "sunk_frac": 0.22,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "RS_maw_gullet_sack": {
+  "source": "sack",
+  "material": "V_gucksack_252228",
+  "parent": "Neck",
+  "localPosition": [
+   -0.106757,
+   0.168242,
+   0.010476
+  ],
+  "localRotation": [
+   -0.705147,
+   0.052611,
+   0.705147,
+   0.052615
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   -0.059464,
+   -0.921464,
+   -0.35064,
+   0.156269
+  ],
+  "part_localScale": [
+   0.045,
+   0.1,
+   0.045
+  ],
+  "rest_world_position": [
+   -0.0157,
+   0.8021,
+   0.5761
+  ],
+  "tris": 162,
+  "pairs_body": 36,
+  "seated_by_m": 0.0635,
+  "sunk_frac": 0.85,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "RS_maw_row_l0": {
+  "source": "wrow0",
+  "material": "WolfGum_depth_vc",
+  "parent": "Neck",
+  "localPosition": [
+   -0.033523,
+   0.275214,
+   0.074906
+  ],
+  "localRotation": [
+   -0.705147,
+   0.052611,
+   0.705147,
+   0.052615
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   0.340223,
+   0.037743,
+   -0.103599,
+   0.933858
+  ],
+  "part_localScale": [
+   2.04612,
+   2.04612,
+   2.04612
+  ],
+  "rest_world_position": [
+   -0.1124,
+   0.6271,
+   0.4913
+  ],
+  "tris": 42,
+  "pairs_body": 29,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "RS_maw_row_l1": {
+  "source": "wrow1",
+  "material": "WolfGum_depth_vc",
+  "parent": "Neck",
+  "localPosition": [
+   -0.043277,
+   0.266606,
+   0.07865
+  ],
+  "localRotation": [
+   -0.705147,
+   0.052611,
+   0.705147,
+   0.052615
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   -0.103599,
+   -0.933858,
+   -0.340223,
+   0.037743
+  ],
+  "part_localScale": [
+   1.61532,
+   1.61532,
+   1.61532
+  ],
+  "rest_world_position": [
+   -0.118,
+   0.642,
+   0.5038
+  ],
+  "tris": 42,
+  "pairs_body": 22,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "RS_maw_canine_l0": {
+  "source": "wcanine0",
+  "material": "V_canine_bone_vc_biome_biome.001",
+  "parent": "Neck",
+  "localPosition": [
+   -0.204883,
+   0.121129,
+   0.039229
+  ],
+  "localRotation": [
+   -0.705147,
+   0.052611,
+   0.705147,
+   0.052615
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   -0.300866,
+   -0.320579,
+   -0.749842,
+   0.494415
+  ],
+  "part_localScale": [
+   3.66339,
+   3.50411,
+   3.66339
+  ],
+  "rest_world_position": [
+   -0.0588,
+   0.8938,
+   0.7112
+  ],
+  "tris": 21,
+  "pairs_body": 13,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "RS_maw_canine_l1": {
+  "source": "wcanine1",
+  "material": "V_canine_bone_vc_biome_biome.001",
+  "parent": "Neck",
+  "localPosition": [
+   -0.154226,
+   0.167672,
+   0.050757
+  ],
+  "localRotation": [
+   -0.705147,
+   0.052611,
+   0.705147,
+   0.052615
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   -0.284115,
+   -0.345546,
+   -0.738669,
+   0.504227
+  ],
+  "part_localScale": [
+   2.47487,
+   2.36727,
+   2.47487
+  ],
+  "rest_world_position": [
+   -0.0761,
+   0.8135,
+   0.6464
+  ],
+  "tris": 12,
+  "pairs_body": 0,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "RS_maw_canine_l2": {
+  "source": "wcanine2",
+  "material": "V_canine_bone_vc_biome_biome.001",
+  "parent": "Neck",
+  "localPosition": [
+   -0.102584,
+   0.212427,
+   0.067868
+  ],
+  "localRotation": [
+   -0.705147,
+   0.052611,
+   0.705147,
+   0.052615
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   -0.267407,
+   -0.369611,
+   -0.726926,
+   0.513283
+  ],
+  "part_localScale": [
+   3.1401,
+   3.00357,
+   3.1401
+  ],
+  "rest_world_position": [
+   -0.1018,
+   0.7356,
+   0.5798
+  ],
+  "tris": 21,
+  "pairs_body": 0,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "RS_maw_canine_l3": {
+  "source": "wcanine3",
+  "material": "V_canine_bone_vc_biome_biome.001",
+  "parent": "Neck",
+  "localPosition": [
+   -0.05609,
+   0.25484,
+   0.079054
+  ],
+  "localRotation": [
+   -0.705147,
+   0.052611,
+   0.705147,
+   0.052615
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   -0.252167,
+   -0.39087,
+   -0.71572,
+   0.520939
+  ],
+  "part_localScale": [
+   2.22732,
+   2.13048,
+   2.22732
+  ],
+  "rest_world_position": [
+   -0.1186,
+   0.6623,
+   0.5202
+  ],
+  "tris": 12,
+  "pairs_body": 0,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "RS_maw_row_r0": {
+  "source": "wrow2",
+  "material": "WolfGum_depth_vc",
+  "parent": "Neck",
+  "localPosition": [
+   -0.033523,
+   0.275215,
+   -0.018428
+  ],
+  "localRotation": [
+   -0.705147,
+   0.052611,
+   0.705147,
+   0.052615
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   -0.103599,
+   -0.933858,
+   -0.340223,
+   0.037743
+  ],
+  "part_localScale": [
+   2.26065,
+   2.26065,
+   2.26065
+  ],
+  "rest_world_position": [
+   0.0276,
+   0.6271,
+   0.4913
+  ],
+  "tris": 35,
+  "pairs_body": 14,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "RS_maw_row_r1": {
+  "source": "wrow3",
+  "material": "WolfGum_depth_vc",
+  "parent": "Neck",
+  "localPosition": [
+   -0.043277,
+   0.266606,
+   -0.028017
+  ],
+  "localRotation": [
+   -0.705147,
+   0.052611,
+   0.705147,
+   0.052615
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   0.340223,
+   0.037743,
+   -0.103599,
+   0.933858
+  ],
+  "part_localScale": [
+   1.78474,
+   1.78474,
+   1.78474
+  ],
+  "rest_world_position": [
+   0.042,
+   0.642,
+   0.5038
+  ],
+  "tris": 35,
+  "pairs_body": 0,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "RS_maw_canine_r0": {
+  "source": "wcanine0",
+  "material": "V_canine_bone_vc_biome_biome.001",
+  "parent": "Neck",
+  "localPosition": [
+   -0.204628,
+   0.120511,
+   -0.086658
+  ],
+  "localRotation": [
+   -0.705147,
+   0.052611,
+   0.705147,
+   0.052615
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   -0.231731,
+   0.278917,
+   0.787151,
+   0.498899
+  ],
+  "part_localScale": [
+   3.66339,
+   3.50411,
+   3.66339
+  ],
+  "rest_world_position": [
+   0.13,
+   0.8947,
+   0.7107
+  ],
+  "tris": 21,
+  "pairs_body": 11,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "RS_maw_canine_r1": {
+  "source": "wcanine1",
+  "material": "V_canine_bone_vc_biome_biome.001",
+  "parent": "Neck",
+  "localPosition": [
+   -0.153913,
+   0.16719,
+   -0.067841
+  ],
+  "localRotation": [
+   -0.705147,
+   0.052611,
+   0.705147,
+   0.052615
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   -0.212997,
+   0.308028,
+   0.776221,
+   0.50718
+  ],
+  "part_localScale": [
+   2.47487,
+   2.36727,
+   2.47487
+  ],
+  "rest_world_position": [
+   0.1018,
+   0.8141,
+   0.6458
+  ],
+  "tris": 12,
+  "pairs_body": 0,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "RS_maw_canine_r2": {
+  "source": "wcanine2",
+  "material": "V_canine_bone_vc_biome_biome.001",
+  "parent": "Neck",
+  "localPosition": [
+   -0.102013,
+   0.211842,
+   -0.054466
+  ],
+  "localRotation": [
+   -0.705147,
+   0.052611,
+   0.705147,
+   0.052615
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   -0.193176,
+   0.337887,
+   0.763697,
+   0.515055
+  ],
+  "part_localScale": [
+   3.1401,
+   3.00357,
+   3.1401
+  ],
+  "rest_world_position": [
+   0.0817,
+   0.7363,
+   0.5788
+  ],
+  "tris": 21,
+  "pairs_body": 0,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "RS_maw_canine_r3": {
+  "source": "wcanine3",
+  "material": "V_canine_bone_vc_biome_biome.001",
+  "parent": "Neck",
+  "localPosition": [
+   -0.055509,
+   0.254424,
+   -0.037629
+  ],
+  "localRotation": [
+   -0.705147,
+   0.052611,
+   0.705147,
+   0.052615
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   -0.174086,
+   0.36577,
+   0.750742,
+   0.521817
+  ],
+  "part_localScale": [
+   2.22732,
+   2.13048,
+   2.22732
+  ],
+  "rest_world_position": [
+   0.0564,
+   0.6628,
+   0.5193
+  ],
+  "tris": 12,
+  "pairs_body": 0,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "RS_eye_snout_l0": {
+  "source": "eye",
+  "material": "V_TheHive_Eye_core_biome_biome_biome_biome_biome_biome_biome_biome.001_biome_biome_biome_biome_biome_biome",
+  "parent": "Head",
+  "localPosition": [
+   -0.021692,
+   0.169363,
+   0.078172
+  ],
+  "localRotation": [
+   -0.502032,
+   0.497959,
+   0.502032,
+   0.49796
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   -0.315691,
+   0.630076,
+   0.637071,
+   0.312224
+  ],
+  "part_localScale": [
+   0.07718,
+   0.06946,
+   0.07718
+  ],
+  "rest_world_position": [
+   -0.1173,
+   1.1477,
+   0.9332
+  ],
+  "tris": 50,
+  "pairs_body": 26,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "RS_eye_snout_l1": {
+  "source": "eye",
+  "material": "V_TheHive_Eye_core_biome_biome_biome_biome_biome_biome_biome_biome.001_biome_biome_biome_biome_biome_biome",
+  "parent": "Head",
+  "localPosition": [
+   -0.010547,
+   0.211592,
+   0.027264
+  ],
+  "localRotation": [
+   -0.502032,
+   0.497959,
+   0.502032,
+   0.49796
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   -0.321561,
+   0.672003,
+   0.524927,
+   0.411658
+  ],
+  "part_localScale": [
+   0.0566,
+   0.05094,
+   0.0566
+  ],
+  "rest_world_position": [
+   -0.0409,
+   1.1304,
+   0.9964
+  ],
+  "tris": 50,
+  "pairs_body": 38,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "RS_eye_snout_l2": {
+  "source": "eye",
+  "material": "V_TheHive_Eye_core_biome_biome_biome_biome_biome_biome_biome_biome.001_biome_biome_biome_biome_biome_biome",
+  "parent": "Head",
+  "localPosition": [
+   0.034453,
+   0.257572,
+   0.033303
+  ],
+  "localRotation": [
+   -0.502032,
+   0.497959,
+   0.502032,
+   0.49796
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   -0.437917,
+   0.551453,
+   0.424059,
+   0.569475
+  ],
+  "part_localScale": [
+   0.04631,
+   0.04168,
+   0.04631
+  ],
+  "rest_world_position": [
+   -0.05,
+   1.0624,
+   1.0648
+  ],
+  "tris": 50,
+  "pairs_body": 28,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "RS_eye_snout_r0": {
+  "source": "eye",
+  "material": "V_TheHive_Eye_core_biome_biome_biome_biome_biome_biome_biome_biome.001_biome_biome_biome_biome_biome_biome",
+  "parent": "Head",
+  "localPosition": [
+   -0.009783,
+   0.186776,
+   -0.062409
+  ],
+  "localRotation": [
+   -0.502032,
+   0.497959,
+   0.502032,
+   0.49796
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   -0.283435,
+   -0.618416,
+   -0.687136,
+   0.255089
+  ],
+  "part_localScale": [
+   0.06689,
+   0.0602,
+   0.06689
+  ],
+  "rest_world_position": [
+   0.0936,
+   1.1296,
+   0.9592
+  ],
+  "tris": 50,
+  "pairs_body": 48,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "RS_eye_snout_r1": {
+  "source": "eye",
+  "material": "V_TheHive_Eye_core_biome_biome_biome_biome_biome_biome_biome_biome.001_biome_biome_biome_biome_biome_biome",
+  "parent": "Head",
+  "localPosition": [
+   0.030075,
+   0.242387,
+   -0.028356
+  ],
+  "localRotation": [
+   -0.502032,
+   0.497959,
+   0.502032,
+   0.49796
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   -0.369819,
+   -0.603284,
+   -0.370998,
+   0.601367
+  ],
+  "part_localScale": [
+   0.04888,
+   0.04399,
+   0.04888
+  ],
+  "rest_world_position": [
+   0.0425,
+   1.0691,
+   1.0421
+  ],
+  "tris": 50,
+  "pairs_body": 27,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "RS_eye_withers_a": {
+  "source": "eye",
+  "material": "V_TheHive_Eye_core_biome_biome_biome_biome_biome_biome_biome_biome.001_biome_biome_biome_biome_biome_biome",
+  "parent": "Spine2",
+  "localPosition": [
+   -0.125578,
+   -0.105485,
+   0.140097
+  ],
+  "localRotation": [
+   -0.703658,
+   0.06976,
+   0.703657,
+   0.069763
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   -0.25096,
+   0.624618,
+   0.222245,
+   0.705321
+  ],
+  "part_localScale": [
+   0.08747,
+   0.07872,
+   0.08747
+  ],
+  "rest_world_position": [
+   -0.2101,
+   1.1692,
+   0.2476
+  ],
+  "tris": 50,
+  "pairs_body": 0,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "RS_eye_withers_b": {
+  "source": "eye",
+  "material": "V_TheHive_Eye_core_biome_biome_biome_biome_biome_biome_biome_biome.001_biome_biome_biome_biome_biome_biome",
+  "parent": "Spine2",
+  "localPosition": [
+   -0.201639,
+   -0.140969,
+   0.03355
+  ],
+  "localRotation": [
+   -0.703658,
+   0.06976,
+   0.703657,
+   0.069763
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   -0.007205,
+   -0.98319,
+   -0.178052,
+   0.039788
+  ],
+  "part_localScale": [
+   0.06174,
+   0.05557,
+   0.06174
+  ],
+  "rest_world_position": [
+   -0.0503,
+   1.2438,
+   0.349
+  ],
+  "tris": 50,
+  "pairs_body": 0,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "RS_eye_withers_slit": {
+  "source": "eye",
+  "material": "V_TheHive_Eye_core_biome_biome_biome_biome_biome_biome_biome_biome.001_biome_biome_biome_biome_biome_biome",
+  "parent": "Spine2",
+  "localPosition": [
+   -0.127403,
+   -0.140278,
+   0.099828
+  ],
+  "localRotation": [
+   -0.703658,
+   0.06976,
+   0.703657,
+   0.069763
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   -0.240117,
+   0.638051,
+   0.219531,
+   0.697883
+  ],
+  "part_localScale": [
+   0.06689,
+   0.0602,
+   0.02675
+  ],
+  "rest_world_position": [
+   -0.1497,
+   1.2209,
+   0.2401
+  ],
+  "tris": 50,
+  "pairs_body": 0,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "RS_web_root07_00": {
+  "source": "root07",
+  "material": "V_fi_village_catacombs_roots_853734_dark_biome_biome_biome.001_biome",
+  "parent": "Spine2",
+  "localPosition": [
+   -0.142691,
+   0.090722,
+   0.191422
+  ],
+  "localRotation": [
+   -0.703658,
+   0.06976,
+   0.703657,
+   0.069763
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   0.568724,
+   0.016018,
+   -0.816207,
+   0.100509
+  ],
+  "part_localScale": [
+   0.02523,
+   0.14633,
+   0.03196
+  ],
+  "rest_world_position": [
+   -0.2871,
+   0.8857,
+   0.3306
+  ],
+  "tris": 90,
+  "pairs_body": 26,
+  "seated_by_m": 0.021,
+  "sunk_frac": 0.45,
+  "vertex_offsets": null,
+  "mode": "skinned",
+  "skin": "weights transferred at runtime from the 4 nearest Wolf M vertices (inverse distance), rest pose, then blended 0.50 per-vertex + 0.50 the part's average",
+  "weight_own_share": 0.5,
+  "head_bones_masked": false
+ },
+ "RS_web_root07_01": {
+  "source": "root07",
+  "material": "V_fi_village_catacombs_roots_853734_dark_biome_biome_biome.001_biome",
+  "parent": "L Thigh",
+  "localPosition": [
+   -0.053808,
+   -0.042461,
+   -0.001803
+  ],
+  "localRotation": [
+   -0.568028,
+   -0.478065,
+   -0.499434,
+   0.446502
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   -0.85606,
+   -0.000404,
+   0.506372,
+   0.103673
+  ],
+  "part_localScale": [
+   0.02523,
+   0.14645,
+   0.03196
+  ],
+  "rest_world_position": [
+   -0.1884,
+   0.8239,
+   -0.6056
+  ],
+  "tris": 90,
+  "pairs_body": 21,
+  "seated_by_m": 0.0061,
+  "sunk_frac": 0.45,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "RS_web_root07_02": {
+  "source": "root07",
+  "material": "V_fi_village_catacombs_roots_853734_dark_biome_biome_biome.001_biome",
+  "parent": "Neck",
+  "localPosition": [
+   -0.086383,
+   0.023939,
+   -0.135608
+  ],
+  "localRotation": [
+   -0.705147,
+   0.052611,
+   0.705147,
+   0.052615
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   0.561739,
+   0.270622,
+   0.675942,
+   0.392831
+  ],
+  "part_localScale": [
+   0.02162,
+   0.09153,
+   0.0274
+  ],
+  "rest_world_position": [
+   0.2034,
+   1.0116,
+   0.5138
+  ],
+  "tris": 90,
+  "pairs_body": 18,
+  "seated_by_m": 0.0158,
+  "sunk_frac": 0.45,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "RS_branch_spine": {
+  "source": "branch0",
+  "material": "V_Elder_branch_weathered",
+  "parent": "Spine1",
+  "localPosition": [
+   -0.099719,
+   -0.126973,
+   0.033639
+  ],
+  "localRotation": [
+   -0.705779,
+   0.043313,
+   0.705778,
+   0.043316
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   -0.472782,
+   -0.105668,
+   0.20841,
+   0.849633
+  ],
+  "part_localScale": [
+   0.4922,
+   0.20508,
+   0.4922
+  ],
+  "rest_world_position": [
+   -0.0505,
+   1.1535,
+   -0.0293
+  ],
+  "tris": 136,
+  "pairs_body": 10,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "RS_branch_haunch": {
+  "source": "branch1",
+  "material": "V_Elder_branch_weathered.001",
+  "parent": "Pelvis",
+  "localPosition": [
+   -0.072436,
+   -0.060363,
+   0.087938
+  ],
+  "localRotation": [
+   -0.500001,
+   0.5,
+   0.5,
+   0.499999
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   -0.556126,
+   0.381191,
+   -0.030044,
+   0.737912
+  ],
+  "part_localScale": [
+   0.51455,
+   0.2144,
+   0.51455
+  ],
+  "rest_world_position": [
+   -0.1319,
+   1.0031,
+   -0.6224
+  ],
+  "tris": 136,
+  "pairs_body": 0,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ },
+ "RS_branch_withers": {
+  "source": "branch2",
+  "material": "V_Elder_branch_weathered.002",
+  "parent": "Spine2",
+  "localPosition": [
+   -0.036012,
+   -0.130418,
+   -0.05668
+  ],
+  "localRotation": [
+   -0.703658,
+   0.06976,
+   0.703657,
+   0.069763
+  ],
+  "localScale": [
+   0.6666666,
+   0.6666666,
+   0.6666666
+  ],
+  "part_localRotation": [
+   -0.384266,
+   -0.66548,
+   0.267281,
+   0.581409
+  ],
+  "part_localScale": [
+   0.56773,
+   0.23655,
+   0.56773
+  ],
+  "rest_world_position": [
+   0.085,
+   1.1795,
+   0.1085
+  ],
+  "tris": 136,
+  "pairs_body": 0,
+  "seated_by_m": 0.0,
+  "sunk_frac": null,
+  "vertex_offsets": null,
+  "mode": "rigid"
+ }
+}
