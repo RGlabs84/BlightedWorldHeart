@@ -1,19 +1,18 @@
 <!-- CHECKPOINT -->
 Updated: 2026-11-22
-Current task: 1.2.0 RELEASE GATE run (mod-release). Verdict NOT ASSESSED: 7 PASS, 0 FAIL, 4 NOT ASSESSED of 11 steps.
-  PASS: 1 build 0 err / 0 warn (CS0436 publicizer suppressed by name) | 2 refcheck client + server OK | 3 server smoke
-  (tools/server-smoke.sh, fake HOME, prefs untouched, 6 of 6 prefabs, 0 errors; note: no 'World saved' line seen) | 4 autotest
-  97 of 97 on DLL md5 d6246458 | 6 leftovers none in 16 .cs | 7 credits | 8 fold (tools/fold.py) 0 failed of 20, 26 badges
-  checked, PDB match, zip HexiumDistrib/BlightedWorldHeart-v1.2.0.zip (7 entries, DLL = the tested md5).
-  NOT ASSESSED: 5 design check (no DESIGN.md) | 9 clean Gale install | 10 1.1.3 saves | 11 multiplayer (second client).
-Next step: owner: Gale pass with the zip (clean install, a 1.1.3 world/character, a two-player Heart fight), then upload the SAME
-  zip to Hexium AND Thunderstore (plain X.Y.Z). Commit/tag/upload only when the owner asks. The zip is not frozen until uploaded.
-Blocked on: the owner's Gale pass / upload decision.
-Files changed (uncommitted): *.cs (faction, sub-bosses, kit, materials, repaint), BlightedHeart.csproj (PDB, embeds, tools/**
-  excluded), art/subbosses/{runtime,kit_tools}, tools/{bh-autotest,fold.py,server-smoke.sh}, README.src.md, readme_gen.py,
-  HexiumDistrib/{README.md,CHANGELOG.md,plugins/*.dll+pdb,BlightedWorldHeart-v1.2.0.zip}, art/ASSETS.md, STATUS.md.
-Owner decisions 2026-11-22: biome mapping (BlightedSubBosses.ByBiome); tint multiplied ("they look fine"); Husk Root armour left off.
-NO SUBAGENTS ("just you"). Batch heavy runs, light work in parallel. Repaint dumps: ~/valheim-testbed/bh-repaint-mirror.
+RELEASED 1.2.0 (owner: "publish to hexium ts and gh"), FROZEN: HexiumDistrib/BlightedWorldHeart-v1.2.0.zip (md5 2a64161a, DLL d6246458)
+  - Thunderstore Wubarrk-BlightedWorldHeart-1.2.0 (download back 7 of 7 files identical); Hexium upload 522 (6 of 7: manifest
+    rewritten as usual); store APIs still showed latest 1.1.4 / 1.1.3 right after upload (cache / review) - poll was running.
+  - GitHub (public RGlabs84/BlightedWorldHeart): release v1.2.0 with the same zip (md5 checked), branch release/1.2.0 (4790d72),
+    PR #1 to main OPEN (not merged: owner's call).
+  - Carried forward from TS-only 1.1.4: website https://ravenirongames.com/ + its CHANGELOG entry.
+  - Gate: 7 PASS, 0 FAIL, 4 NOT ASSESSED (design check: no DESIGN.md; clean Gale install; 1.1.3 saves; multiplayer).
+Next step: confirm both listings show 1.2.0; owner: merge PR #1, Gale pass (clean install, old saves, two players). Any change
+  now = 1.2.1 (1.2.0 is frozen). Later: Husk Root armour route, vertex colours (not possible with the game's shaders).
+Public repo: art/subbosses is WHITELISTED in .gitignore (our runtime data + scripts + recipes/weights only; .blend, donor
+  meshes, renders stay local - the owner backs them up).
+Owner decisions 2026-11-22: biome mapping; tint multiplied ("they look fine"); Husk Root armour left off.
+NO SUBAGENTS ("just you"). Batch heavy runs, light work in parallel.
 <!-- /CHECKPOINT -->
 
 # BlightedHeart status
