@@ -6,7 +6,8 @@
 // DwarvenDefender's DDPlaytest (no engine setting touched from Awake, reflection screenshots, kill as the last resort).
 // Facts: libs-Tools/VALHEIM-CLIENT-TEST-DRIVER-FACTS.md.
 //
-// Phases (README.md): A boot, W world, S the six Sub-Bosses' art, F faction, H the Heart end to end.
+// Phases (README.md): A boot, W world, S the six Sub-Bosses' art, F faction, H the Heart end to end, D damage and drops,
+// R the Heart resumes after a reload.
 // Every phase logs PASS / FAIL / WARN / SKIP / INFO lines to <out>/results.tsv + results.txt (and the BepInEx log),
 // runs inside Flat (an exception fails that phase, never the run), and a hard overall timeout quits the game.
 using System;
@@ -271,6 +272,8 @@ namespace BHAutoTest
                 ("S", "the six Hive Sub-Bosses: parts on their bones, materials, tint, screenshots", PhaseS),
                 ("F", "the Blighted faction: IsEnemy matrix and a live mixed-faction watch", PhaseF),
                 ("H", "the Heart end to end: wave, both Sub-Bosses through SpawnSubBoss, death and loot", PhaseH),
+                ("D", "1.2.1 Sub-Boss damage (donor's vanilla hit, capped to the biome) and what summons drop", PhaseD),
+                ("R", "1.2.1 the Heart resumes after its zone unloads and reloads", PhaseR),
             };
             // BH_AUTOTEST_ONLY=GI (phase letters) runs only those phases after A and W.
             string only = Environment.GetEnvironmentVariable("BH_AUTOTEST_ONLY");

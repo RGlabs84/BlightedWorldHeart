@@ -7,6 +7,21 @@
 
 ---
 
+## 🟢 [1.2.1]
+
+### 🛠️ Fixed
+- **Sub-Bosses hit far too hard.** Their star level added +50% on top of the creature they grew from, so the Gorgemaw bit for nearly 200 and the Broodhusk clawed for 180. A Sub-Boss now hits exactly as hard as its vanilla creature, and never harder than the hardest-hitting vanilla creature of its altar's biome. That cap brings the Meadows Rootstalker, a Wolf at heart, down from 70 to an Eikthyr-sized 20.
+- **Sub-Bosses dropped vanilla loot.** Vanilla drops were removed only from the summoning player's copy of a creature, so a Sub-Boss or wave creature killed on another player's machine, or after its area reloaded, still dropped vanilla loot. Nothing the Heart summons drops vanilla loot now. Instead, each Sub-Boss has a 25% chance to drop one Blighted weapon or armour piece from its altar's biome.
+- **The Heart stopped for good when every player died.** The Heart kept its biome only in memory. Once everyone died and respawned elsewhere, its area unloaded, and the Heart came back without a biome: no waves, no Sub-Bosses, and no loot when killed. A relog or a hand-over to another player did the same. The Heart now saves its biome and which Sub-Bosses it has called, so it picks up where it left off. Hearts summoned before 1.2.1 recover their biome from the ground they stand on. Every player now also sees the Heart in its biome colour.
+
+### ⚙️ Added
+- `General > Sub-Boss Damage Multiplier` (admin-only, default 1): Sub-Boss damage as a multiple of the vanilla creature's hit. The biome cap still applies.
+- `General > Sub-Boss Gear Drop Chance` (admin-only, default 0.25). Set it to 0 and Sub-Bosses drop nothing.
+- `General > Sub-Boss Level` now sets only the stars shown; it no longer adds damage.
+
+### 🔁 Compatibility
+- Everyone must update together: server and every client need 1.2.1.
+
 ## 🟢 [1.2.0]
 
 ### ✨ New

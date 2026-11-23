@@ -37,6 +37,13 @@ namespace BlightedHeart
         private static readonly int ZDO_MaxHealth = "blighted_max_health".GetStableHashCode();
         private static readonly string ZDO_SubBoss1 = "blighted_subboss1";
         private static readonly string ZDO_SubBoss2 = "blighted_subboss2";
+        // 1.2.1: the biome is saved with the Heart. Before, it lived only in this instance (set by Initialize on the
+        // summoner's machine), so a Heart rebuilt from its save - everyone died and respawned away, a relog, a zone
+        // reload, another player taking ownership - came back with CurrentBiome = None: no waves, no Sub-Bosses,
+        // no loot when killed.
+        private static readonly int ZDO_Biome = "blighted_biome".GetStableHashCode();
+        // Marks a wave creature or Sub-Boss the Heart summoned; read by BlightedHeartLoot on every machine.
+        public static readonly int ZDO_Summoned = "blighted_summoned".GetStableHashCode();
 
         public void Awake()
         {
@@ -128,6 +135,8 @@ namespace BlightedHeart
                 }
             }
             
+            RestoreSavedState();
+
             // Route ALL remaining child colliders to us via BlightedDamageForwarder
             foreach (var col in GetComponentsInChildren<Collider>(true))
             {
@@ -154,6 +163,30 @@ namespace BlightedHeart
             }
             
             Jotunn.Logger.LogInfo("[BlightedHeart] Runtime cleanup complete. Custom IDestructible active.");
+        }
+
+        // A Heart rebuilt from its save (any machine, any time after the summon) picks up where it left off: its biome
+        // (and so its waves, Sub-Bosses, colour and loot), and which Sub-Bosses it has already called.
+        private void RestoreSavedState()
+        {
+            ZDO zdo = m_nview != null ? m_nview.GetZDO() : null;
+            if (zdo == null) return;
+
+            int biome = zdo.GetInt(ZDO_Biome, 0);
+            if (biome == 0 && WorldGenerator.instance != null)
+            {
+                // A Heart summoned by 1.2.0 or older never saved it: read the ground under it, as the altar did.
+                biome = (int)WorldGenerator.instance.GetBiome(transform.position);
+                if (biome != 0 && m_nview.IsOwner()) zdo.Set(ZDO_Biome, biome);
+            }
+            if (biome != 0)
+            {
+                CurrentBiome = (Heightmap.Biome)biome;
+                ApplyBiomeVisuals(CurrentBiome);
+            }
+
+            _subBoss1Spawned = zdo.GetZDOID(ZDO_SubBoss1) != ZDOID.None;
+            _subBoss2Spawned = zdo.GetZDOID(ZDO_SubBoss2) != ZDOID.None;
         }
 
         // ============================================================
@@ -316,6 +349,10 @@ namespace BlightedHeart
         public void Initialize(Heightmap.Biome biome)
         {
             CurrentBiome = biome;
+            if (m_nview != null && m_nview.GetZDO() != null)
+            {
+                m_nview.GetZDO().Set(ZDO_Biome, (int)biome);
+            }
             // Force first wave to spawn exactly 1 second after initialization
             if (BlightedConfigManager.BiomeConfigs.TryGetValue(biome, out var c))
             {
@@ -383,37 +420,34 @@ namespace BlightedHeart
             if (m_nview == null || m_isDead)
                 return;
 
+            ZDO zdo = m_nview.GetZDO();
+            if (zdo == null) return;
+            FindSubBoss(zdo, ZDO_SubBoss1, ref m_subBoss1);
+            FindSubBoss(zdo, ZDO_SubBoss2, ref m_subBoss2);
+
             if (!m_nview.IsOwner())
             {
-                if (m_nview.GetZDO() != null)
-                {
-                    m_health = m_nview.GetZDO().GetFloat(ZDO_Health, m_health);
-                    m_maxHealth = m_nview.GetZDO().GetFloat(ZDO_MaxHealth, m_maxHealth);
-
-                    if (m_subBoss1 == null)
-                    {
-                        ZDOID sb1_id = m_nview.GetZDO().GetZDOID(ZDO_SubBoss1);
-                        if (sb1_id != ZDOID.None)
-                        {
-                            GameObject go = ZNetScene.instance.FindInstance(sb1_id);
-                            if (go) m_subBoss1 = go.GetComponent<Character>();
-                        }
-                    }
-                    if (m_subBoss2 == null)
-                    {
-                        ZDOID sb2_id = m_nview.GetZDO().GetZDOID(ZDO_SubBoss2);
-                        if (sb2_id != ZDOID.None)
-                        {
-                            GameObject go = ZNetScene.instance.FindInstance(sb2_id);
-                            if (go) m_subBoss2 = go.GetComponent<Character>();
-                        }
-                    }
-                }
+                m_health = zdo.GetFloat(ZDO_Health, m_health);
+                m_maxHealth = zdo.GetFloat(ZDO_MaxHealth, m_maxHealth);
                 return;
             }
-                
+
+            // Ownership can move to a machine whose copy was built before a Sub-Boss was called: the save decides.
+            if (!_subBoss1Spawned && zdo.GetZDOID(ZDO_SubBoss1) != ZDOID.None) _subBoss1Spawned = true;
+            if (!_subBoss2Spawned && zdo.GetZDOID(ZDO_SubBoss2) != ZDOID.None) _subBoss2Spawned = true;
+
             CheckSubBossThresholds();
             HandleWaveSpawning();
+        }
+
+        // On every machine (the owner too, after a reload): the live Sub-Boss the save points at, if it is loaded here.
+        private static void FindSubBoss(ZDO zdo, string key, ref Character slot)
+        {
+            if (slot != null) return;
+            ZDOID id = zdo.GetZDOID(key);
+            if (id == ZDOID.None || ZNetScene.instance == null) return;
+            GameObject go = ZNetScene.instance.FindInstance(id);
+            if (go) slot = go.GetComponent<Character>();
         }
 
         private void HandleWaveSpawning()
@@ -462,6 +496,7 @@ namespace BlightedHeart
 
                     // Join the Heart's faction so mixed-faction waves fight the players, not each other
                     BlightedFaction.Join(spawnedEnemy);
+                    MarkSummoned(spawnedEnemy);
                     
                     // Remove standard vanilla loot from summoned wave enemies
                     var charDrops = spawnedEnemy.GetComponentsInChildren<CharacterDrop>(true);
@@ -496,6 +531,13 @@ namespace BlightedHeart
             {
                 Player.MessageAllInRange(transform.position, 100f, BlightedConfigManager.WaveAnnouncementLocation.Value, "The Blighted World Heart cries out for the fallen...");
             }
+        }
+
+        // Saved on the creature, so the "no vanilla loot" rule holds on whichever machine owns it when it dies.
+        private static void MarkSummoned(GameObject go)
+        {
+            ZNetView nv = go != null ? go.GetComponent<ZNetView>() : null;
+            if (nv != null && nv.GetZDO() != null) nv.GetZDO().Set(ZDO_Summoned, 1);
         }
 
         private void CheckSubBossThresholds()
@@ -603,6 +645,7 @@ namespace BlightedHeart
                 if (subBossView != null && subBossView.GetZDO() != null)
                 {
                     subBossView.GetZDO().Set("SoMStealthExempt", 1);
+                    subBossView.GetZDO().Set(ZDO_Summoned, 1);   // no vanilla loot on any machine (BlightedHeartLoot)
                     // Every peer tints the Sub-Boss to the biome it was summoned in (BlightedSubBossLook reads this).
                     subBossView.GetZDO().Set(BlightedSubBosses.ZdoBiome, (int)CurrentBiome);
                 }

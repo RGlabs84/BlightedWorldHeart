@@ -3,7 +3,7 @@
 # 🫀 The Blighted World Heart
 
 ![ᚺ THE BLIGHTED WORLD HEART · A RAID AT EVERY ALTAR](https://img.shields.io/badge/THE_BLIGHTED_WORLD_HEART-A_RAID_AT_EVERY_ALTAR-5b2a6e?style=for-the-badge&labelColor=1b1b1b&logo=data:image/svg%2Bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xIC0xIDEyIDE2Ij48cGF0aCBkPSJNMiAxVjEzTTggMVYxM00yIDVMOCA5IiBmaWxsPSJub25lIiBzdHJva2U9IiNhNDg5YWYiIHN0cm9rZS13aWR0aD0iMi40IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4%3D)
-![VERSION · 1.2.0](https://img.shields.io/badge/VERSION-1.2.0-8b1e1e?style=for-the-badge&labelColor=1b1b1b)
+![VERSION · 1.2.1](https://img.shields.io/badge/VERSION-1.2.1-8b1e1e?style=for-the-badge&labelColor=1b1b1b)
 ![CLIENT + SERVER · EVERYONE NEEDS IT](https://img.shields.io/badge/CLIENT_%2B_SERVER-EVERYONE_NEEDS_IT-1f4e79?style=for-the-badge&labelColor=1b1b1b)
 
 | 🫀 **8 altars** | 👹 **6 Hive Sub-Bosses** | 🗡️ **367 items** | ☠️ **One faction** |
@@ -20,7 +20,7 @@ As it bleeds it summons Sub-Bosses. When it dies it scatters Blighted gear, stro
 
 ---
 
-![ᛞ NEW IN 1.2.0 · THE HIVE'S OWN · ONE FACTION](https://img.shields.io/badge/NEW_IN_1.2.0-THE_HIVE%27S_OWN_%C2%B7_ONE_FACTION-8b1e1e?style=for-the-badge&labelColor=1b1b1b&logo=data:image/svg%2Bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xIC0xIDEyIDE2Ij48cGF0aCBkPSJNMSAyVjEyTDkgMlYxMkwxIDIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2JmODM4MyIgc3Ryb2tlLXdpZHRoPSIyLjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg%3D%3D)
+![ᛞ NEW IN 1.2.1 · THE HIVE'S OWN · ONE FACTION](https://img.shields.io/badge/NEW_IN_1.2.1-THE_HIVE%27S_OWN_%C2%B7_ONE_FACTION-8b1e1e?style=for-the-badge&labelColor=1b1b1b&logo=data:image/svg%2Bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xIC0xIDEyIDE2Ij48cGF0aCBkPSJNMSAyVjEyTDkgMlYxMkwxIDIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2JmODM4MyIgc3Ryb2tlLXdpZHRoPSIyLjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg%3D%3D)
 
 **The Heart no longer borrows its Sub-Bosses. Six of its own crawl out of the Hive, and everything it calls now fights on one side.**
 
@@ -70,9 +70,9 @@ A health bar tracks the Heart and both Sub-Bosses on screen.
 | Wave | |
 |---|---|
 | 🧟 **The creatures** | drawn from the biome: Greydwarfs and Skeletons in the Black Forest, Draugr and Blobs in the Swamp, Fulings in the Plains |
-| 💰 **Their loot** | none: summoned creatures drop nothing, so the fight cannot be farmed |
+| 💰 **Their loot** | the waves drop nothing, so the fight cannot be farmed; each Sub-Boss has a `Sub-Boss Gear Drop Chance` (25%) to drop one Blighted piece of its altar's biome |
 | 👹 **The Sub-Bosses** | the Hive's own six, half again the size of the creature they grew from, starred, with their own health set per altar |
-| ⭐ **Sub-Boss stars** | `Sub-Boss Level`: each level above 1 adds +50% to all their damage |
+| ⚔️ **Sub-Boss damage** | the creature they grew from hits just as hard, no more, and never harder than the hardest-hitting vanilla creature of the altar's biome; `Sub-Boss Damage Multiplier` scales it (1) |
 
 | Sub-Boss | Grown from | Calls at |
 |---|---|---|
@@ -187,7 +187,9 @@ Every setting is 🔒 **server-only**: the admin sets it and it syncs to everyon
 | Setting | |
 |---|---|
 | `Blighted Faction` | the horde is one faction, hostile to everything (on) |
-| `Sub-Boss Level` | Sub-Boss star level, 1–5 (2) |
+| `Sub-Boss Level` | Sub-Boss star level, 1–5 (2); since 1.2.1 the stars add no damage |
+| `Sub-Boss Damage Multiplier` | Sub-Boss damage as a multiple of the vanilla creature's hit, 0.1–3 (1) |
+| `Sub-Boss Gear Drop Chance` | chance a slain Sub-Boss drops one Blighted piece of its biome, 0–1 (0.25) |
 | `Magic Damage Multiplier` | how much elemental and magic damage the Heart and Sub-Bosses take (0.25) |
 | `Allow Refinement Forge Upgrades` | Blighted items can also be upgraded at the Refinement Forge (off) |
 | `Enable Wave Announcement` · `Wave Announcement Location` | the wave message and where it shows |

@@ -29,6 +29,8 @@ namespace BlightedHeart
         public static ConfigEntry<float> MagicDamageMultiplier;
         public static ConfigEntry<bool> AllowRefinementForgeUpgrades;
         public static ConfigEntry<int> SubBossLevel;
+        public static ConfigEntry<float> SubBossDamageMultiplier;
+        public static ConfigEntry<float> SubBossGearDropChance;
         public static ConfigEntry<bool> UseBlightedFaction;
         public static ConfigEntry<bool> EnableBarrkBotExport;
         public static ConfigEntry<float> BarrkBotExportIntervalSeconds;
@@ -44,7 +46,10 @@ namespace BlightedHeart
             MagicDamageMultiplier = plugin.Config.Bind("General", "Magic Damage Multiplier", 0.25f, new ConfigDescription("Damage multiplier for elemental/magic damage (Fire, Frost, Lightning, Poison, Spirit, Pure) against the Blighted Heart.", null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
             AllowRefinementForgeUpgrades = plugin.Config.Bind("General", "Allow Refinement Forge Upgrades", false, new ConfigDescription("Valheim 1.0 only. Also let Blighted items be upgraded at the Refinement Forge (Upgrade Station) with the same Upgrader item as their base item - including past max quality, with vanilla's chance to FAIL or DESTROY the item. Off: Blighted items upgrade only at the normal station with trophies + materials, exactly as before 1.0.", null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
 
-            SubBossLevel = plugin.Config.Bind("General", "Sub-Boss Level", 2, new ConfigDescription("Star level of the Sub-Bosses the Heart summons. Every level above 1 adds +50% to all of a Sub-Boss's damage: 1 = no stars (x1.0), 2 = one star (x1.5), 3 = two stars (x2.0). Their HP is set separately per biome. This was fixed at 3 before 1.1.1.", new AcceptableValueRange<int>(1, 5), new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            SubBossLevel = plugin.Config.Bind("General", "Sub-Boss Level", 2, new ConfigDescription("Star level of the Sub-Bosses the Heart summons (the stars shown over them). Since 1.2.1 stars no longer add damage: use Sub-Boss Damage Multiplier. Their HP is set separately per biome. This was fixed at 3 before 1.1.1.", new AcceptableValueRange<int>(1, 5), new ConfigurationManagerAttributes { IsAdminOnly = true }));
+
+            SubBossDamageMultiplier = plugin.Config.Bind("General", "Sub-Boss Damage Multiplier", 1f, new ConfigDescription("Sub-Boss damage as a multiple of the vanilla creature it is cloned from (1 = exactly the vanilla creature's hit, no star bonus). Whatever the multiplier, a Sub-Boss never hits harder than the hardest-hitting vanilla creature of the biome it was summoned in (Meadows: Eikthyr's 20).", new AcceptableValueRange<float>(0.1f, 3f), new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            SubBossGearDropChance = plugin.Config.Bind("General", "Sub-Boss Gear Drop Chance", 0.25f, new ConfigDescription("Chance that a slain Sub-Boss drops one random Blighted weapon or armour piece of the biome it was summoned in. 0 = Sub-Bosses drop nothing. They never drop vanilla loot.", new AcceptableValueRange<float>(0f, 1f), new ConfigurationManagerAttributes { IsAdminOnly = true }));
 
             UseBlightedFaction = plugin.Config.Bind("General", "Blighted Faction", true, new ConfigDescription("Everything the Heart summons (waves and Sub-Bosses) joins the Heart's own faction: allied with each other, hostile to players, tames and every other creature. Off: summons keep their vanilla factions, so mixed waves (e.g. Greydwarfs and Skeletons) can fight each other, as before 1.2.0.", null, new ConfigurationManagerAttributes { IsAdminOnly = true }));
 

@@ -3,7 +3,7 @@
     <TargetFramework>net48</TargetFramework>
     <AssemblyName>BlightedHeart</AssemblyName>
     <Description>A Valheim mod that adds the Blighted World Heart boss.</Description>
-    <Version>1.2.0</Version>
+    <Version>1.2.1</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
     <!-- Release packaging (studio rule 2026-11-20, DwarvenDefender's csproj): a deterministic build whose matching portable PDB

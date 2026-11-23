@@ -1,18 +1,18 @@
 <!-- CHECKPOINT -->
-Updated: 2026-11-22
-RELEASED 1.2.0 (owner: "publish to hexium ts and gh"), FROZEN: HexiumDistrib/BlightedWorldHeart-v1.2.0.zip (md5 2a64161a, DLL d6246458)
-  - Thunderstore Wubarrk-BlightedWorldHeart-1.2.0 (download back 7 of 7 files identical); Hexium upload 522 (6 of 7: manifest
-    rewritten as usual); store APIs still showed latest 1.1.4 / 1.1.3 right after upload (cache / review) - poll was running.
-  - GitHub (public RGlabs84/BlightedWorldHeart): release v1.2.0 with the same zip (md5 checked), branch release/1.2.0 (4790d72),
-    PR #1 to main OPEN (not merged: owner's call).
-  - Carried forward from TS-only 1.1.4: website https://ravenirongames.com/ + its CHANGELOG entry.
-  - Gate: 7 PASS, 0 FAIL, 4 NOT ASSESSED (design check: no DESIGN.md; clean Gale install; 1.1.3 saves; multiplayer).
-Next step: confirm both listings show 1.2.0; owner: merge PR #1, Gale pass (clean install, old saves, two players). Any change
-  now = 1.2.1 (1.2.0 is frozen). Later: Husk Root armour route, vertex colours (not possible with the game's shaders).
-Public repo: art/subbosses is WHITELISTED in .gitignore (our runtime data + scripts + recipes/weights only; .blend, donor
-  meshes, renders stay local - the owner backs them up).
-Owner decisions 2026-11-22: biome mapping; tint multiplied ("they look fine"); Husk Root armour left off.
-NO SUBAGENTS ("just you"). Batch heavy runs, light work in parallel.
+Updated: 2026-11-23
+RELEASED 1.2.1 hotfix (owner: "publish 1.2.1 to hexium ts and gh"), FROZEN: HexiumDistrib/BlightedWorldHeart-v1.2.1.zip
+  (md5 eaeb47b5, DLL 27b9a970). Thunderstore Wubarrk-BlightedWorldHeart-1.2.1 (download back 7 of 7 identical); Hexium
+  upload 522 (6 of 7: manifest rewritten as usual). GitHub: branch release/1.2.1, release v1.2.1 with the same zip.
+Fixed (owner playtest 2026-11-23): Sub-Boss damage = donor's vanilla hit, no star bonus, capped per biome (owner: "cap to
+  biome"); no vanilla loot from any summon on any machine + Sub-Boss gear roll 25% (owner's pick); the Heart saves its biome
+  and Sub-Boss memory, so it resumes after everyone dies / a reload (was: no waves, Sub-Bosses or loot).
+Gate: 7 PASS, 0 FAIL, 4 NOT ASSESSED. Build 0/0; refcheck client+server OK (4654 refs, 16 Harmony targets); server smoke
+  PASS (6 of 6 prefabs, 0 errors); client autotest 140 of 140 (new phases D damage/drops, R resume); fold 0 failed of 20,
+  26 badges checked, PDB match. NOT ASSESSED: design check (no DESIGN.md), clean Gale install, 1.2.0 saves, multiplayer.
+Rollback: players go back to the 1.2.0 zip; 1.2.1 only adds ZDO keys (blighted_biome, blighted_summoned) that 1.2.0 ignores.
+Next step: owner's Gale pass (clean install, a 1.2.0 world with a live Heart, two players). PR #1 (1.2.0 -> main) still open;
+  release/1.2.1 contains it. Any further change = 1.2.2.
+NO SUBAGENTS ("just you"). Batch heavy runs, light work in parallel. Never push or mirror to TheWall / Google Drive.
 <!-- /CHECKPOINT -->
 
 # BlightedHeart status

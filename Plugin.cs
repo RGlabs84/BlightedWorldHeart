@@ -16,7 +16,7 @@ namespace BlightedHeart
     {
         public const string PluginGUID = "wubarrk.blightedworldheart";
         public const string PluginName = "BlightedWorldHeart";
-        public const string PluginVersion = "1.2.0";
+        public const string PluginVersion = "1.2.1";
 
         public static bool IsWackyDBInstalled = false;
         public static BlightedHeartPlugin Instance;

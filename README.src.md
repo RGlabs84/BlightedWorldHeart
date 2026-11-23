@@ -72,9 +72,9 @@ A health bar tracks the Heart and both Sub-Bosses on screen.
 | Wave | |
 |---|---|
 | 🧟 **The creatures** | drawn from the biome: Greydwarfs and Skeletons in the Black Forest, Draugr and Blobs in the Swamp, Fulings in the Plains |
-| 💰 **Their loot** | none: summoned creatures drop nothing, so the fight cannot be farmed |
+| 💰 **Their loot** | the waves drop nothing, so the fight cannot be farmed; each Sub-Boss has a {{key Sub-Boss Gear Drop Chance}} (25%) to drop one Blighted piece of its altar's biome |
 | 👹 **The Sub-Bosses** | the Hive's own six, half again the size of the creature they grew from, starred, with their own health set per altar |
-| ⭐ **Sub-Boss stars** | {{key Sub-Boss Level}}: each level above 1 adds +50% to all their damage |
+| ⚔️ **Sub-Boss damage** | the creature they grew from hits just as hard, no more, and never harder than the hardest-hitting vanilla creature of the altar's biome; {{key Sub-Boss Damage Multiplier}} scales it (1) |
 
 {{gen subbosses}}
 
@@ -150,7 +150,9 @@ Every setting is 🔒 **server-only**: the admin sets it and it syncs to everyon
 | Setting | |
 |---|---|
 | {{key Blighted Faction}} | the horde is one faction, hostile to everything (on) |
-| {{key Sub-Boss Level}} | Sub-Boss star level, 1–5 (2) |
+| {{key Sub-Boss Level}} | Sub-Boss star level, 1–5 (2); since 1.2.1 the stars add no damage |
+| {{key Sub-Boss Damage Multiplier}} | Sub-Boss damage as a multiple of the vanilla creature's hit, 0.1–3 (1) |
+| {{key Sub-Boss Gear Drop Chance}} | chance a slain Sub-Boss drops one Blighted piece of its biome, 0–1 (0.25) |
 | {{key Magic Damage Multiplier}} | how much elemental and magic damage the Heart and Sub-Bosses take (0.25) |
 | {{key Allow Refinement Forge Upgrades}} | Blighted items can also be upgraded at the Refinement Forge (off) |
 | {{key Enable Wave Announcement}} · {{key Wave Announcement Location}} | the wave message and where it shows |

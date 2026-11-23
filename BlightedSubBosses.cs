@@ -72,6 +72,8 @@ namespace BlightedHeart
 
                 // A Sub-Boss is never a pet, a mount or a breeder: the Wolf and the Lox carry taming and breeding.
                 StripTaming(go);
+                // Never vanilla loot (1.2.1): its drops are BlightedHeartLoot's gear roll.
+                foreach (var c in go.GetComponentsInChildren<CharacterDrop>(true)) Object.DestroyImmediate(c, true);
 
                 go.AddComponent<BlightedSubBossLook>().DefId = d.Id;
 
